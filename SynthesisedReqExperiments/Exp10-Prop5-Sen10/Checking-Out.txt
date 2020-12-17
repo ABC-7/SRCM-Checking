@@ -1,0 +1,9 @@
+Action Source Key: AS2
+	has Redundancy issue with 'AS1'
+	has Incompleteness issue "Unchecked value"
+	has Incompleteness issue "Unsatisfiable rule"
+=================================
+Action Source Key: AS1
+	has Incompleteness issue "Unchecked value"
+	has Incompleteness issue "Unsatisfiable rule"
+=================================

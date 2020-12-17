@@ -1,0 +1,4 @@
+inReq([inComp(cond,'the transmission error','[True]',equal,no,1),inComp(act,'the defined position','[True]',equal,no,1)],['','','','',''],"- , , if the transmission error equal [True]   , the defined position equal [True]   , ."). 
+inReq([inComp(cond,'the standstill request flag','[True]',equal,no,1),inComp(act,'the transmission error','[True]',equal,no,1)],['','','','',''],"- , , if the standstill request flag equal [True]   , the transmission error equal [True]   , ."). 
+inReq([inComp(cond,'the defined position','[True]',equal,no,1),inComp(act,'the standstill request flag','[True]',equal,no,1)],['','','','',''],"- , , if the defined position equal [True]   , the standstill request flag equal [True]   , ."). 
+inReq([inComp(cond,'the brake fault state','[True]',equal,no,1),inComp(act,'the transmission error','[True]',equal,no,1)],['','','','',''],"- , , if the brake fault state equal [True]   , the transmission error equal [True]   , ."). 

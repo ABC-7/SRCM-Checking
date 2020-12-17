@@ -1,0 +1,90 @@
+Action Source Key: AS2
+	has Incompleteness issue "Unsatisfiable rule"
+	has Incompleteness issue "Unchecked value"
+=================================
+Action Source Key: AS3
+	has Incompleteness issue "Unsatisfiable rule"
+	has Incompleteness issue "Unchecked value"
+=================================
+Action Source Key: AS4
+	has Inconsistency issue with 'AS3' "identical preconditions and different actions"
+	has Incompleteness issue "Unsatisfiable rule"
+	has Incompleteness issue "Unchecked value"
+=================================
+Action Source Key: AS5
+	has Incompleteness issue "Unsatisfiable rule"
+	has Incompleteness issue "Unchecked value"
+=================================
+Action Source Key: AS6
+	has Incompleteness issue "Unsatisfiable rule"
+	has Incompleteness issue "Unchecked value"
+=================================
+Action Source Key: AS19
+	has Incompleteness issue "Unsatisfiable rule"
+=================================
+Action Source Key: AS7
+	has Incompleteness issue "Unsatisfiable rule"
+	has Incompleteness issue "Unchecked value"
+=================================
+Action Source Key: AS8
+	has Incompleteness issue "Unchecked value"
+=================================
+Action Source Key: AS9
+	has Incompleteness issue "Unchecked value"
+=================================
+Action Source Key: AS18
+	has Incompleteness issue "Unsatisfiable rule"
+Action Source Key: AS14
+	has Incompleteness issue "Unchecked value"
+=================================
+Action Source Key: AS33
+	has Inconsistency issue with 'AS8' "fully-contained preconditions and different actions"
+=================================
+Action Source Key: AS11
+	has Incompleteness issue "Unchecked value"
+=================================
+Action Source Key: AS31
+	has Inconsistency issue with 'AS8' "fully-contained preconditions and different actions"
+	has Inconsistency issue with 'AS14' "fully-contained preconditions and different actions"
+=================================
+Action Source Key: AS32
+	has Inconsistency issue with 'AS15' "fully-contained preconditions and different actions"
+=================================
+Action Source Key: AS30
+	has Incompleteness issue "Unsatisfiable rule"
+=================================
+Action Source Key: AS28
+	has Inconsistency issue with 'AS1' "fully-contained preconditions and different actions"
+=================================
+Action Source Key: AS29
+	has Incompleteness issue "Unsatisfiable rule"
+=================================
+Action Source Key: AS26
+	has Incompleteness issue "Unsatisfiable rule"
+=================================
+Action Source Key: AS27
+	has Inconsistency issue with 'AS12' "fully-contained preconditions and different actions"
+=================================
+Action Source Key: AS24
+	has Incompleteness issue "Unsatisfiable rule"
+=================================
+Action Source Key: AS25
+	has Incompleteness issue "Unsatisfiable rule"
+=================================
+Action Source Key: AS22
+	has Incompleteness issue "Unsatisfiable rule"
+	has Incompleteness issue "Unchecked value"
+=================================
+Action Source Key: AS23
+	has Incompleteness issue "Unsatisfiable rule"
+=================================
+Action Source Key: AS20
+	has Incompleteness issue "Unsatisfiable rule"
+=================================
+Action Source Key: AS21
+	has Incompleteness issue "Unsatisfiable rule"
+	has Incompleteness issue "Unchecked value"
+=================================
+Action Source Key: AS1
+	has Incompleteness issue "Unchecked value"
+=================================

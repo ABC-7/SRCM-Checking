@@ -1,0 +1,2 @@
+inReq([inComp(cond,'the brake pedal','[False]',equal,no,1),inComp(cond,'the sailing request','[True]',equal,no,2),inComp(act,'the standstill request flag','[True]',equal,no,1)],['','','( 1 or 2 )','',''],"- , , if the brake pedal equal [False]   , or if the sailing request equal [True]   , the standstill request flag equal [True]   , ."). 
+inReq([inComp(cond,'the brake pedal','[False]',equal,no,1),inComp(act,'the vehicle speed setpoint','[True]',equal,no,1)],['','','','',''],"- , , if the brake pedal equal [False]   , the vehicle speed setpoint equal [True]   , ."). 

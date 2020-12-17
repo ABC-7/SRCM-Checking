@@ -1,0 +1,9 @@
+Action Source Key: AS2
+	has Inconsistency issue with 'AS1' "fully-contained preconditions and different actions"
+	has Incompleteness issue "Unsatisfiable rule"
+	has Incompleteness issue "Unchecked value"
+=================================
+Action Source Key: AS1
+	has Incompleteness issue "Unsatisfiable rule"
+	has Incompleteness issue "Unchecked value"
+=================================

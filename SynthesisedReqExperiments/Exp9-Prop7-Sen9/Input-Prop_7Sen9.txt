@@ -1,0 +1,1 @@
+inReq([inComp(cond,'the sailing inhibitor','[True]',equal,no,1),inComp(act,'the vehicle speed setpoint','',set,no,1)],['','','','',''],"- , , if the sailing inhibitor equal [True]   , the vehicle speed setpoint set   , ."). 

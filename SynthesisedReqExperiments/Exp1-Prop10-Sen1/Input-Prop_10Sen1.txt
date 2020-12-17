@@ -1,0 +1,4 @@
+inReq([inComp(cond,'the quality signal','[True]',equal,no,1),inComp(act,'the LSC','[True]',equal,no,1)],['','','','',''],"- , , if the quality signal equal [True]   , the LSC equal [True]   , ."). 
+inReq([inComp(cond,'the steering wheel angle','[True]',equal,no,1),inComp(act,'the quality signal','[True]',equal,no,1)],['','','','',''],"- , , if the steering wheel angle equal [True]   , the quality signal equal [True]   , ."). 
+inReq([inComp(cond,'the LSC','[True]',equal,no,1),inComp(act,'the steering wheel angle','[True]',equal,no,1)],['','','','',''],"- , , if the LSC equal [True]   , the steering wheel angle equal [True]   , ."). 
+inReq([inComp(cond,'the vehicle speed quality factor','[True]',equal,no,1),inComp(act,'the quality signal','[True]',equal,no,1)],['','','','',''],"- , , if the vehicle speed quality factor equal [True]   , the quality signal equal [True]   , ."). 

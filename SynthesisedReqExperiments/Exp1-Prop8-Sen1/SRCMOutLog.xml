@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+	<SRCM_Metrics>
+		Total Requirements = 3,Unique-ActionSources = 3
+		Total Triggers = 0, 		Unique-SystemTriggers = 0
+		Total Conditions = 2, 	Unique-SystemConditions = 2
+		Total Actions = 3,		Unique-SystemActions = 3
+		Total Entities = 5, 	Unique-SystemEntities = 4
+	</SRCM_Metrics>
+	<SystemActionSource>
+		<ActionSource>
+			Key = AS2
+			Req-Text = -    the IDC inhibitor equal [True]    .
+			Triggers-Relation = null
+			Conditions-Relation = null
+			Actions-Relation = A2
+			<SysAction>
+				Key = A2
+				<Entity>
+					Key = RCMVAR_the_IDC_inhibitor
+					Text = RCMVAR_the_IDC_inhibitor
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS3
+			Req-Text = -   if the transmission error equal [True]    the vehicle speed setpoint equal [True]    .
+			Triggers-Relation = null
+			Conditions-Relation = C2
+			Actions-Relation = A3
+			<SysCondition>
+				Key = C2
+				<Entity>
+					Key = RCMVAR_the_transmission_error
+					Text = RCMVAR_the_transmission_error
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A3
+				<Entity>
+					Key = RCMVAR_the_vehicle_speed_setpoint
+					Text = RCMVAR_the_vehicle_speed_setpoint
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS1
+			Req-Text = -   if the IDC inhibitor equal [True]    the engine error equal [True]    .
+			Triggers-Relation = null
+			Conditions-Relation = C1
+			Actions-Relation = A1
+			<SysCondition>
+				Key = C1
+				<Entity>
+					Key = RCMVAR_the_IDC_inhibitor
+					Text = RCMVAR_the_IDC_inhibitor
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A1
+				<Entity>
+					Key = RCMVAR_the_engine_error
+					Text = RCMVAR_the_engine_error
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+	</SystemActionSource>
+	<SystemTriggers>
+	</SystemTriggers>
+	<SystemConditions>
+		<SysCondition>
+			Key = C1
+			<Entity>
+				Key = RCMVAR_the_IDC_inhibitor
+				Text = RCMVAR_the_IDC_inhibitor
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS1]
+		</SysCondition>
+		<SysCondition>
+			Key = C2
+			<Entity>
+				Key = RCMVAR_the_transmission_error
+				Text = RCMVAR_the_transmission_error
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS3]
+		</SysCondition>
+	</SystemConditions>
+	<SystemActions>
+		<SysAction>
+			Key = A1
+			<Entity>
+				Key = RCMVAR_the_engine_error
+				Text = RCMVAR_the_engine_error
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS1]
+		</SysAction>
+		<SysAction>
+			Key = A2
+			<Entity>
+				Key = RCMVAR_the_IDC_inhibitor
+				Text = RCMVAR_the_IDC_inhibitor
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS2]
+		</SysAction>
+		<SysAction>
+			Key = A3
+			<Entity>
+				Key = RCMVAR_the_vehicle_speed_setpoint
+				Text = RCMVAR_the_vehicle_speed_setpoint
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS3]
+		</SysAction>
+	</SystemActions>
+	<SystemEntities>
+		<SysEntity>
+			Key = RCMVAR_the_transmission_error
+			Text = RCMVAR_the_transmission_error
+			<Values>
+				v[1] = RCMVAL_True
+				v[1].SystemAction = null
+				v[1].SystemCondition = C2
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_IDC_inhibitor
+			Text = RCMVAR_the_IDC_inhibitor
+			<Values>
+				v[1] = RCMVAL_True
+				v[1].SystemAction = A2
+				v[1].SystemCondition = C1
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_engine_error
+			Text = RCMVAR_the_engine_error
+			<Values>
+				v[1] = RCMVAL_True
+				v[1].SystemAction = A1
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_vehicle_speed_setpoint
+			Text = RCMVAR_the_vehicle_speed_setpoint
+			<Values>
+				v[1] = RCMVAL_True
+				v[1].SystemAction = A3
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+	</SystemEntities>
+</log>

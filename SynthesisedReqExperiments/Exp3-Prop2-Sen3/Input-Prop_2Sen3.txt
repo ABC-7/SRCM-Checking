@@ -1,0 +1,2 @@
+inReq([inComp(cond,'the standstill request flag','[False]',equal,no,1),inComp(cond,'the defined position','[True]',equal,no,2),inComp(act,'the NoSailing requests','[True]',equal,no,1)],['','','( 1 or 2 )','',''],"- , , if the standstill request flag equal [False]   , or if the defined position equal [True]   , the NoSailing requests equal [True]   , ."). 
+inReq([inComp(cond,'the standstill request flag','[False]',equal,no,1),inComp(act,'the LSC','[True]',equal,no,1)],['','','','',''],"- , , if the standstill request flag equal [False]   , the LSC equal [True]   , ."). 

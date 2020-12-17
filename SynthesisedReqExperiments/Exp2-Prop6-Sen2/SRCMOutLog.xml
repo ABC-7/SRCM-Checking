@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+	<SRCM_Metrics>
+		Total Requirements = 2,Unique-ActionSources = 2
+		Total Triggers = 0, 		Unique-SystemTriggers = 0
+		Total Conditions = 3, 	Unique-SystemConditions = 2
+		Total Actions = 2,		Unique-SystemActions = 1
+		Total Entities = 5, 	Unique-SystemEntities = 3
+	</SRCM_Metrics>
+	<SystemActionSource>
+		<ActionSource>
+			Key = AS2
+			Req-Text = -   if the sailing inhibitor equal [False]    the brake fault state equal [True]    .
+			Triggers-Relation = null
+			Conditions-Relation = C1
+			Actions-Relation = A1
+			<SysCondition>
+				Key = C1
+				<Entity>
+					Key = RCMVAR_the_sailing_inhibitor
+					Text = RCMVAR_the_sailing_inhibitor
+				</Entity>
+				<Value>
+					Text = RCMVAL_False
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A1
+				<Entity>
+					Key = RCMVAR_the_brake_fault_state
+					Text = RCMVAR_the_brake_fault_state
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS1
+			Req-Text = -   if the sailing inhibitor equal [False]    or if the standstill request flag equal [True]    the brake fault state equal [True]    .
+			Triggers-Relation = null
+			Conditions-Relation = ( C1 OR C2 )
+			Actions-Relation = A1
+			<SysCondition>
+				Key = C1
+				<Entity>
+					Key = RCMVAR_the_sailing_inhibitor
+					Text = RCMVAR_the_sailing_inhibitor
+				</Entity>
+				<Value>
+					Text = RCMVAL_False
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C2
+				<Entity>
+					Key = RCMVAR_the_standstill_request_flag
+					Text = RCMVAR_the_standstill_request_flag
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A1
+				<Entity>
+					Key = RCMVAR_the_brake_fault_state
+					Text = RCMVAR_the_brake_fault_state
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+	</SystemActionSource>
+	<SystemTriggers>
+	</SystemTriggers>
+	<SystemConditions>
+		<SysCondition>
+			Key = C1
+			<Entity>
+				Key = RCMVAR_the_sailing_inhibitor
+				Text = RCMVAR_the_sailing_inhibitor
+			</Entity>
+			<Value>
+				Text = RCMVAL_False
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS1, AS2]
+		</SysCondition>
+		<SysCondition>
+			Key = C2
+			<Entity>
+				Key = RCMVAR_the_standstill_request_flag
+				Text = RCMVAR_the_standstill_request_flag
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS1]
+		</SysCondition>
+	</SystemConditions>
+	<SystemActions>
+		<SysAction>
+			Key = A1
+			<Entity>
+				Key = RCMVAR_the_brake_fault_state
+				Text = RCMVAR_the_brake_fault_state
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS1, AS2]
+		</SysAction>
+	</SystemActions>
+	<SystemEntities>
+		<SysEntity>
+			Key = RCMVAR_the_sailing_inhibitor
+			Text = RCMVAR_the_sailing_inhibitor
+			<Values>
+				v[1] = RCMVAL_False
+				v[1].SystemAction = null
+				v[1].SystemCondition = C1
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_brake_fault_state
+			Text = RCMVAR_the_brake_fault_state
+			<Values>
+				v[1] = RCMVAL_True
+				v[1].SystemAction = A1
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_standstill_request_flag
+			Text = RCMVAR_the_standstill_request_flag
+			<Values>
+				v[1] = RCMVAL_True
+				v[1].SystemAction = null
+				v[1].SystemCondition = C2
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+	</SystemEntities>
+</log>

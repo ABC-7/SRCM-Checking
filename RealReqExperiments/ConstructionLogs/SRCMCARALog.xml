@@ -1,0 +1,2802 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+	<SRCM_Metrics>
+		Total Requirements = 29,Unique-ActionSources = 29
+		Total Triggers = 4, 		Unique-SystemTriggers = 3
+		Total Conditions = 59, 	Unique-SystemConditions = 36
+		Total Actions = 30,		Unique-SystemActions = 22
+		Total Entities = 93, 	Unique-SystemEntities = 28
+	</SRCM_Metrics>
+	<SystemActionSource>
+		<ActionSource>
+			Key = AS2
+			Req-Text = If an occlusion is detected and auto_control_mode is running auto_control_mode will be terminated.
+			Triggers-Relation = null
+			Conditions-Relation = ( C1 AND C2 )
+			Actions-Relation = A2
+			<SysCondition>
+				Key = C1
+				<Entity>
+					Key = RCMVAR_occlusion
+					Text = RCMVAR_occlusion
+				</Entity>
+				<Value>
+					Text = RCMVAL_detected
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C2
+				<Entity>
+					Key = RCMVAR_auto_control_mode
+					Text = RCMVAR_auto_control_mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_running
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A2
+				<Entity>
+					Key = RCMVAR_auto_control_mode
+					Text = RCMVAR_auto_control_mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_terminated
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "will be"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS3
+			Req-Text = If Air_Ok_signal is low auto_control_mode is terminated in 3 seconds. 
+			Triggers-Relation = null
+			Conditions-Relation = C3
+			Actions-Relation = A2
+			<SysCondition>
+				Key = C3
+				<Entity>
+					Key = RCMVAR_Air_Ok_signal
+					Text = RCMVAR_Air_Ok_signal
+				</Entity>
+				<Value>
+					Text = RCMVAL_low
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A2
+				<Entity>
+					Key = RCMVAR_auto_control_mode
+					Text = RCMVAR_auto_control_mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_terminated
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "will be"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS4
+			Req-Text = If arterial_line and pulse_wave are corroborated and cuff is available next arterial_line is selected.
+			Triggers-Relation = null
+			Conditions-Relation = ( C4 AND ( C5 AND C6 ) )
+			Actions-Relation = A3
+			<SysCondition>
+				Key = C4
+				<Entity>
+					Key = RCMVAR_arterial_line
+					Text = RCMVAR_arterial_line
+				</Entity>
+				<Value>
+					Text = RCMVAL_corroborated
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C5
+				<Entity>
+					Key = RCMVAR_pulse_wave
+					Text = RCMVAR_pulse_wave
+				</Entity>
+				<Value>
+					Text = RCMVAL_corroborated
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C6
+				<Entity>
+					Key = RCMVAR_cuff
+					Text = RCMVAR_cuff
+				</Entity>
+				<Value>
+					Text = RCMVAL_available
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A3
+				<Entity>
+					Key = RCMVAR_arterial_line
+					Text = RCMVAR_arterial_line
+				</Entity>
+				<Value>
+					Text = RCMVAL_selected
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS5
+			Req-Text = If pulse_wave is corroborated and cuff is available and arterial_line is not corroborated next pulse_wave is selected.
+			Triggers-Relation = null
+			Conditions-Relation = ( C5 AND ( C6 AND C7 ) )
+			Actions-Relation = A4
+			<SysCondition>
+				Key = C5
+				<Entity>
+					Key = RCMVAR_pulse_wave
+					Text = RCMVAR_pulse_wave
+				</Entity>
+				<Value>
+					Text = RCMVAL_corroborated
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C6
+				<Entity>
+					Key = RCMVAR_cuff
+					Text = RCMVAR_cuff
+				</Entity>
+				<Value>
+					Text = RCMVAL_available
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C7
+				<Entity>
+					Key = RCMVAR_arterial_line
+					Text = RCMVAR_arterial_line
+				</Entity>
+				<Value>
+					Text = RCMVAL_corroborated
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "!="
+			</SysCondition>
+			<SysAction>
+				Key = A4
+				<Entity>
+					Key = RCMVAR_pulse_wave
+					Text = RCMVAR_pulse_wave
+				</Entity>
+				<Value>
+					Text = RCMVAL_selected
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS6
+			Req-Text = If arterial_line is not corroborated and pulse_wave is not corroborated and cuff is available then cuff is selected.
+			Triggers-Relation = null
+			Conditions-Relation = ( C7 AND ( C8 AND C6 ) )
+			Actions-Relation = A5
+			<SysCondition>
+				Key = C6
+				<Entity>
+					Key = RCMVAR_cuff
+					Text = RCMVAR_cuff
+				</Entity>
+				<Value>
+					Text = RCMVAL_available
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C7
+				<Entity>
+					Key = RCMVAR_arterial_line
+					Text = RCMVAR_arterial_line
+				</Entity>
+				<Value>
+					Text = RCMVAL_corroborated
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "!="
+			</SysCondition>
+			<SysCondition>
+				Key = C8
+				<Entity>
+					Key = RCMVAR_pulse_wave
+					Text = RCMVAR_pulse_wave
+				</Entity>
+				<Value>
+					Text = RCMVAL_corroborated
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "!="
+			</SysCondition>
+			<SysAction>
+				Key = A5
+				<Entity>
+					Key = RCMVAR_cuff
+					Text = RCMVAR_cuff
+				</Entity>
+				<Value>
+					Text = RCMVAL_selected
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS19
+			Req-Text = When auto_control_mode is running terminate_auto_control_button should be available.
+			Triggers-Relation = T2
+			Conditions-Relation = null
+			Actions-Relation = A14
+			<SysTrigger>
+				Key = T2
+				<Entity>
+					Key = RCMVAR_auto_control_mode
+					Text = RCMVAR_auto_control_mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_running
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysTrigger>
+			<SysAction>
+				Key = A14
+				<Entity>
+					Key = RCMVAR_terminate_auto_control_button
+					Text = RCMVAR_terminate_auto_control_button
+				</Entity>
+				<Value>
+					Text = RCMVAL_available
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "should be"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS7
+			Req-Text = If a pump is plugged_in and an infusate is ready and the occlusion_line is clear auto_control_mode can be started.
+			Triggers-Relation = null
+			Conditions-Relation = ( C9 AND ( C10 AND C11 ) )
+			Actions-Relation = A6
+			<SysCondition>
+				Key = C10
+				<Entity>
+					Key = RCMVAR_infusate
+					Text = RCMVAR_infusate
+				</Entity>
+				<Value>
+					Text = RCMVAL_ready
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C11
+				<Entity>
+					Key = RCMVAR_occlusion_line
+					Text = RCMVAR_occlusion_line
+				</Entity>
+				<Value>
+					Text = RCMVAL_clear
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C9
+				<Entity>
+					Key = RCMVAR_pump
+					Text = RCMVAR_pump
+				</Entity>
+				<Value>
+					Text = RCMVAL_plugged_in
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A6
+				<Entity>
+					Key = RCMVAR_auto_control_mode
+					Text = RCMVAR_auto_control_mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_started
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "can be"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS8
+			Req-Text = When auto_control_mode is running eventually the cuff  will be inflated.
+			Triggers-Relation = T2
+			Conditions-Relation = null
+			Actions-Relation = A7
+			<SysTrigger>
+				Key = T2
+				<Entity>
+					Key = RCMVAR_auto_control_mode
+					Text = RCMVAR_auto_control_mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_running
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysTrigger>
+			<SysAction>
+				Key = A7
+				<Entity>
+					Key = RCMVAR_cuff
+					Text = RCMVAR_cuff
+				</Entity>
+				<Value>
+					Text = RCMVAL_inflated
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "will be"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS17
+			Req-Text = If pulse_wave or arterial_line is available and cuff is selected corroboration is triggered.
+			Triggers-Relation = null
+			Conditions-Relation = ( C22 AND ( C23 OR C24 ) )
+			Actions-Relation = A12
+			<SysCondition>
+				Key = C22
+				<Entity>
+					Key = RCMVAR_cuff
+					Text = RCMVAR_cuff
+				</Entity>
+				<Value>
+					Text = RCMVAL_selected
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C23
+				<Entity>
+					Key = RCMVAR_pulse_wave
+					Text = RCMVAR_pulse_wave
+				</Entity>
+				<Value>
+					Text = RCMVAL_available
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C24
+				<Entity>
+					Key = RCMVAR_arterial_line
+					Text = RCMVAR_arterial_line
+				</Entity>
+				<Value>
+					Text = RCMVAL_available
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A12
+				<Entity>
+					Key = RCMVAR_corroboration
+					Text = RCMVAR_corroboration
+				</Entity>
+				<Value>
+					Text = RCMVAL_triggered
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS9
+			Req-Text = If start_auto_control_button is pressed and cuff is not available an alarm is issued and override_selection is provided.
+			Triggers-Relation = null
+			Conditions-Relation = ( C12 AND C13 )
+			Actions-Relation = ( A8 AND A9 )
+			<SysCondition>
+				Key = C12
+				<Entity>
+					Key = RCMVAR_start_auto_control_button
+					Text = RCMVAR_start_auto_control_button
+				</Entity>
+				<Value>
+					Text = RCMVAL_pressed
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C13
+				<Entity>
+					Key = RCMVAR_cuff
+					Text = RCMVAR_cuff
+				</Entity>
+				<Value>
+					Text = RCMVAL_available
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "!="
+			</SysCondition>
+			<SysAction>
+				Key = A8
+				<Entity>
+					Key = RCMVAR_alarm
+					Text = RCMVAR_alarm
+				</Entity>
+				<Value>
+					Text = RCMVAL_issued
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysAction>
+			<SysAction>
+				Key = A9
+				<Entity>
+					Key = RCMVAR_override_selection
+					Text = RCMVAR_override_selection
+				</Entity>
+				<Value>
+					Text = RCMVAL_provided
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS18
+			Req-Text = If pulse_wave is selected and arterial_line is available corroboration is triggered.
+			Triggers-Relation = null
+			Conditions-Relation = ( C25 AND C24 )
+			Actions-Relation = A12
+			<SysCondition>
+				Key = C24
+				<Entity>
+					Key = RCMVAR_arterial_line
+					Text = RCMVAR_arterial_line
+				</Entity>
+				<Value>
+					Text = RCMVAL_available
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C25
+				<Entity>
+					Key = RCMVAR_pulse_wave
+					Text = RCMVAR_pulse_wave
+				</Entity>
+				<Value>
+					Text = RCMVAL_selected
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A12
+				<Entity>
+					Key = RCMVAR_corroboration
+					Text = RCMVAR_corroboration
+				</Entity>
+				<Value>
+					Text = RCMVAL_triggered
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS15
+			Req-Text = If manual_mode is running and start_auto_control_button is pressed next corroboration is triggered.
+			Triggers-Relation = null
+			Conditions-Relation = ( C20 AND C12 )
+			Actions-Relation = A12
+			<SysCondition>
+				Key = C12
+				<Entity>
+					Key = RCMVAR_start_auto_control_button
+					Text = RCMVAR_start_auto_control_button
+				</Entity>
+				<Value>
+					Text = RCMVAL_pressed
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C20
+				<Entity>
+					Key = RCMVAR_manual_mode
+					Text = RCMVAR_manual_mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_running
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A12
+				<Entity>
+					Key = RCMVAR_corroboration
+					Text = RCMVAR_corroboration
+				</Entity>
+				<Value>
+					Text = RCMVAL_triggered
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS16
+			Req-Text = If a blood_pressure is valid in 180 seconds manual_mode should be triggered.
+			Triggers-Relation = null
+			Conditions-Relation = C21
+			Actions-Relation = A13
+			<SysCondition>
+				Key = C21
+				<Entity>
+					Key = RCMVAR_blood_pressure
+					Text = RCMVAR_blood_pressure
+				</Entity>
+				<Value>
+					Text = RCMVAL_valid
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A13
+				<Entity>
+					Key = RCMVAR_manual_mode_should
+					Text = RCMVAR_manual_mode_should
+				</Entity>
+				<Value>
+					Text = RCMVAL_triggered
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "should be"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS13
+			Req-Text = If override_selection is provided if override_no is pressed next manual_mode is started.
+			Triggers-Relation = null
+			Conditions-Relation = ( C15 AND C17 )
+			Actions-Relation = A11
+			<SysCondition>
+				Key = C15
+				<Entity>
+					Key = RCMVAR_override_selection
+					Text = RCMVAR_override_selection
+				</Entity>
+				<Value>
+					Text = RCMVAL_provided
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C17
+				<Entity>
+					Key = RCMVAR_override_no
+					Text = RCMVAR_override_no
+				</Entity>
+				<Value>
+					Text = RCMVAL_pressed
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A11
+				<Entity>
+					Key = RCMVAR_manual_mode
+					Text = RCMVAR_manual_mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_started
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS14
+			Req-Text = If cuff and arterial_line and pulse_wave are not available next manual_mode is started.
+			Triggers-Relation = null
+			Conditions-Relation = ( C13 AND ( C18 AND C19 ) )
+			Actions-Relation = A11
+			<SysCondition>
+				Key = C13
+				<Entity>
+					Key = RCMVAR_cuff
+					Text = RCMVAR_cuff
+				</Entity>
+				<Value>
+					Text = RCMVAL_available
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "!="
+			</SysCondition>
+			<SysCondition>
+				Key = C18
+				<Entity>
+					Key = RCMVAR_arterial_line
+					Text = RCMVAR_arterial_line
+				</Entity>
+				<Value>
+					Text = RCMVAL_available
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "!="
+			</SysCondition>
+			<SysCondition>
+				Key = C19
+				<Entity>
+					Key = RCMVAR_pulse_wave
+					Text = RCMVAR_pulse_wave
+				</Entity>
+				<Value>
+					Text = RCMVAL_available
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "!="
+			</SysCondition>
+			<SysAction>
+				Key = A11
+				<Entity>
+					Key = RCMVAR_manual_mode
+					Text = RCMVAR_manual_mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_started
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS11
+			Req-Text = If override_selection is provided if override_yes is pressed and arterial_line is not corroborated next arterial_line is selected.
+			Triggers-Relation = null
+			Conditions-Relation = ( C15 AND ( C16 AND C7 ) )
+			Actions-Relation = A3
+			<SysCondition>
+				Key = C15
+				<Entity>
+					Key = RCMVAR_override_selection
+					Text = RCMVAR_override_selection
+				</Entity>
+				<Value>
+					Text = RCMVAL_provided
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C16
+				<Entity>
+					Key = RCMVAR_override_yes
+					Text = RCMVAR_override_yes
+				</Entity>
+				<Value>
+					Text = RCMVAL_pressed
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C7
+				<Entity>
+					Key = RCMVAR_arterial_line
+					Text = RCMVAR_arterial_line
+				</Entity>
+				<Value>
+					Text = RCMVAL_corroborated
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "!="
+			</SysCondition>
+			<SysAction>
+				Key = A3
+				<Entity>
+					Key = RCMVAR_arterial_line
+					Text = RCMVAR_arterial_line
+				</Entity>
+				<Value>
+					Text = RCMVAL_selected
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS12
+			Req-Text = If override_selection is provided if override_yes is pressed and arterial_line is corroborated and pulse_wave is not corroborated next pulse_wave is selected.
+			Triggers-Relation = null
+			Conditions-Relation = ( C15 AND ( C16 AND ( C4 AND C8 ) ) )
+			Actions-Relation = A4
+			<SysCondition>
+				Key = C15
+				<Entity>
+					Key = RCMVAR_override_selection
+					Text = RCMVAR_override_selection
+				</Entity>
+				<Value>
+					Text = RCMVAL_provided
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C16
+				<Entity>
+					Key = RCMVAR_override_yes
+					Text = RCMVAR_override_yes
+				</Entity>
+				<Value>
+					Text = RCMVAL_pressed
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C4
+				<Entity>
+					Key = RCMVAR_arterial_line
+					Text = RCMVAR_arterial_line
+				</Entity>
+				<Value>
+					Text = RCMVAL_corroborated
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C8
+				<Entity>
+					Key = RCMVAR_pulse_wave
+					Text = RCMVAR_pulse_wave
+				</Entity>
+				<Value>
+					Text = RCMVAL_corroborated
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "!="
+			</SysCondition>
+			<SysAction>
+				Key = A4
+				<Entity>
+					Key = RCMVAR_pulse_wave
+					Text = RCMVAR_pulse_wave
+				</Entity>
+				<Value>
+					Text = RCMVAL_selected
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS10
+			Req-Text = If alarm_reset_button is pressed the alarm is disabled.
+			Triggers-Relation = null
+			Conditions-Relation = C14
+			Actions-Relation = A10
+			<SysCondition>
+				Key = C14
+				<Entity>
+					Key = RCMVAR_alarm_reset_button
+					Text = RCMVAR_alarm_reset_button
+				</Entity>
+				<Value>
+					Text = RCMVAL_pressed
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A10
+				<Entity>
+					Key = RCMVAR_alarm
+					Text = RCMVAR_alarm
+				</Entity>
+				<Value>
+					Text = RCMVAL_disabled
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS28
+			Req-Text = When a start_auto_control_button is enabled  the start_auto_control_button is enabled until it is pressed.
+			Triggers-Relation = null
+			Conditions-Relation = C35
+			Actions-Relation = A21
+			<SysCondition>
+				Key = C35
+				<Entity>
+					Key = RCMVAR_start_auto_control_button
+					Text = RCMVAR_start_auto_control_button
+				</Entity>
+				<Value>
+					Text = RCMVAL_enabled
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A21
+				<Entity>
+					Key = RCMVAR_start_auto_control_button
+					Text = RCMVAR_start_auto_control_button
+				</Entity>
+				<Value>
+					Text = RCMVAL_enabled
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS29
+			Req-Text = If auto_control_mode is running and impedance_reading is unavailable next auto_control_model is terminated.
+			Triggers-Relation = null
+			Conditions-Relation = ( C2 AND C36 )
+			Actions-Relation = A22
+			<SysCondition>
+				Key = C2
+				<Entity>
+					Key = RCMVAR_auto_control_mode
+					Text = RCMVAR_auto_control_mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_running
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C36
+				<Entity>
+					Key = RCMVAR_impedance_reading
+					Text = RCMVAR_impedance_reading
+				</Entity>
+				<Value>
+					Text = RCMVAL_unavailable
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A22
+				<Entity>
+					Key = RCMVAR_auto_control_model
+					Text = RCMVAR_auto_control_model
+				</Entity>
+				<Value>
+					Text = RCMVAL_terminated
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS26
+			Req-Text = If a confirmation_button is available and confirmation_no is pressed next confirmation_no is disabled.
+			Triggers-Relation = null
+			Conditions-Relation = ( C31 AND C33 )
+			Actions-Relation = A19
+			<SysCondition>
+				Key = C31
+				<Entity>
+					Key = RCMVAR_confirmation_button
+					Text = RCMVAR_confirmation_button
+				</Entity>
+				<Value>
+					Text = RCMVAL_available
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C33
+				<Entity>
+					Key = RCMVAR_confirmation_no
+					Text = RCMVAR_confirmation_no
+				</Entity>
+				<Value>
+					Text = RCMVAL_pressed
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A19
+				<Entity>
+					Key = RCMVAR_confirmation_no
+					Text = RCMVAR_confirmation_no
+				</Entity>
+				<Value>
+					Text = RCMVAL_disabled
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS27
+			Req-Text = If a confirmation_button is available and terminate_auto_control_button is pressed next terminate_auto_control_button is disabled.
+			Triggers-Relation = null
+			Conditions-Relation = ( C31 AND C34 )
+			Actions-Relation = A20
+			<SysCondition>
+				Key = C31
+				<Entity>
+					Key = RCMVAR_confirmation_button
+					Text = RCMVAR_confirmation_button
+				</Entity>
+				<Value>
+					Text = RCMVAL_available
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C34
+				<Entity>
+					Key = RCMVAR_terminate_auto_control_button
+					Text = RCMVAR_terminate_auto_control_button
+				</Entity>
+				<Value>
+					Text = RCMVAL_pressed
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A20
+				<Entity>
+					Key = RCMVAR_terminate_auto_control_button
+					Text = RCMVAR_terminate_auto_control_button
+				</Entity>
+				<Value>
+					Text = RCMVAL_disabled
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS24
+			Req-Text = If a confirmation_button is available and confirmation_no is pressed auto_control_mode is running.
+			Triggers-Relation = null
+			Conditions-Relation = ( C31 AND C33 )
+			Actions-Relation = A17
+			<SysCondition>
+				Key = C31
+				<Entity>
+					Key = RCMVAR_confirmation_button
+					Text = RCMVAR_confirmation_button
+				</Entity>
+				<Value>
+					Text = RCMVAL_available
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C33
+				<Entity>
+					Key = RCMVAR_confirmation_no
+					Text = RCMVAR_confirmation_no
+				</Entity>
+				<Value>
+					Text = RCMVAL_pressed
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A17
+				<Entity>
+					Key = RCMVAR_auto_control_mode
+					Text = RCMVAR_auto_control_mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_running
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS25
+			Req-Text = If a confirmation_button is available and confirmation_yes is pressed next confirmation_yes is disabled.
+			Triggers-Relation = null
+			Conditions-Relation = ( C31 AND C32 )
+			Actions-Relation = A18
+			<SysCondition>
+				Key = C31
+				<Entity>
+					Key = RCMVAR_confirmation_button
+					Text = RCMVAR_confirmation_button
+				</Entity>
+				<Value>
+					Text = RCMVAL_available
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C32
+				<Entity>
+					Key = RCMVAR_confirmation_yes
+					Text = RCMVAR_confirmation_yes
+				</Entity>
+				<Value>
+					Text = RCMVAL_pressed
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A18
+				<Entity>
+					Key = RCMVAR_confirmation_yes
+					Text = RCMVAR_confirmation_yes
+				</Entity>
+				<Value>
+					Text = RCMVAL_disabled
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS22
+			Req-Text = Whenever termiante_auto_control_button is selected a confirmation_button is available.
+			Triggers-Relation = T3
+			Conditions-Relation = null
+			Actions-Relation = A16
+			<SysTrigger>
+				Key = T3
+				<Entity>
+					Key = RCMVAR_termiante_auto_control_button
+					Text = RCMVAR_termiante_auto_control_button
+				</Entity>
+				<Value>
+					Text = RCMVAL_selected
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysTrigger>
+			<SysAction>
+				Key = A16
+				<Entity>
+					Key = RCMVAR_confirmation_button
+					Text = RCMVAR_confirmation_button
+				</Entity>
+				<Value>
+					Text = RCMVAL_available
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS23
+			Req-Text = If a confirmation_button is available and confirmation_yes is pressed manual_mode is started.
+			Triggers-Relation = null
+			Conditions-Relation = ( C31 AND C32 )
+			Actions-Relation = A11
+			<SysCondition>
+				Key = C31
+				<Entity>
+					Key = RCMVAR_confirmation_button
+					Text = RCMVAR_confirmation_button
+				</Entity>
+				<Value>
+					Text = RCMVAL_available
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C32
+				<Entity>
+					Key = RCMVAR_confirmation_yes
+					Text = RCMVAR_confirmation_yes
+				</Entity>
+				<Value>
+					Text = RCMVAL_pressed
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A11
+				<Entity>
+					Key = RCMVAR_manual_mode
+					Text = RCMVAR_manual_mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_started
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS20
+			Req-Text = When auto_control_mode is running and the arterial_line or pulse_wave or cuff is lost an alarm should sound in 60 seconds.
+			Triggers-Relation = null
+			Conditions-Relation = ( C2 AND ( C26 OR ( C27 OR C28 ) ) )
+			Actions-Relation = A15
+			<SysCondition>
+				Key = C2
+				<Entity>
+					Key = RCMVAR_auto_control_mode
+					Text = RCMVAR_auto_control_mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_running
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C26
+				<Entity>
+					Key = RCMVAR_arterial_line
+					Text = RCMVAR_arterial_line
+				</Entity>
+				<Value>
+					Text = RCMVAL_lost
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C27
+				<Entity>
+					Key = RCMVAR_pulse_wave
+					Text = RCMVAR_pulse_wave
+				</Entity>
+				<Value>
+					Text = RCMVAL_lost
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C28
+				<Entity>
+					Key = RCMVAR_cuff
+					Text = RCMVAR_cuff
+				</Entity>
+				<Value>
+					Text = RCMVAL_lost
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A15
+				<Entity>
+					Key = RCMVAR_alarm
+					Text = RCMVAR_alarm
+				</Entity>
+				<Value>
+					Text = RCMVAL_
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "should sound"
+				Operator is "NONE"
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS21
+			Req-Text = pulse_wave and arterial_line are unavailable and cuff is selected and blood_pressure is not valid next manual_mode is started.
+			Triggers-Relation = null
+			Conditions-Relation = ( C29 AND ( C30 AND ( C22 AND C21 ) ) )
+			Actions-Relation = A11
+			<SysCondition>
+				Key = C21
+				<Entity>
+					Key = RCMVAR_blood_pressure
+					Text = RCMVAR_blood_pressure
+				</Entity>
+				<Value>
+					Text = RCMVAL_valid
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C22
+				<Entity>
+					Key = RCMVAR_cuff
+					Text = RCMVAR_cuff
+				</Entity>
+				<Value>
+					Text = RCMVAL_selected
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C29
+				<Entity>
+					Key = RCMVAR_pulse_wave
+					Text = RCMVAR_pulse_wave
+				</Entity>
+				<Value>
+					Text = RCMVAL_unavailable
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C30
+				<Entity>
+					Key = RCMVAR_arterial_line
+					Text = RCMVAR_arterial_line
+				</Entity>
+				<Value>
+					Text = RCMVAL_unavailable
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A11
+				<Entity>
+					Key = RCMVAR_manual_mode
+					Text = RCMVAR_manual_mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_started
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS1
+			Req-Text = The CARA will be operational whenever the LSTAT is powered_on.
+			Triggers-Relation = T1
+			Conditions-Relation = null
+			Actions-Relation = A1
+			<SysTrigger>
+				Key = T1
+				<Entity>
+					Key = RCMVAR_LSTAT
+					Text = RCMVAR_LSTAT
+				</Entity>
+				<Value>
+					Text = RCMVAL_powered_on
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysTrigger>
+			<SysAction>
+				Key = A1
+				<Entity>
+					Key = RCMVAR_CARA
+					Text = RCMVAR_CARA
+				</Entity>
+				<Value>
+					Text = RCMVAL_operational
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "will be"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+	</SystemActionSource>
+	<SystemTriggers>
+		<SysTrigger>
+			<Entity>
+				Key = RCMVAR_LSTAT
+				Text = RCMVAR_LSTAT
+			</Entity>
+			<Value>
+				Text = RCMVAL_powered_on
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS1]
+		</SysTrigger>
+		<SysTrigger>
+			<Entity>
+				Key = RCMVAR_auto_control_mode
+				Text = RCMVAR_auto_control_mode
+			</Entity>
+			<Value>
+				Text = RCMVAL_running
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS8, AS19]
+		</SysTrigger>
+		<SysTrigger>
+			<Entity>
+				Key = RCMVAR_termiante_auto_control_button
+				Text = RCMVAR_termiante_auto_control_button
+			</Entity>
+			<Value>
+				Text = RCMVAL_selected
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS22]
+		</SysTrigger>
+	</SystemTriggers>
+	<SystemConditions>
+		<SysCondition>
+			Key = C20
+			<Entity>
+				Key = RCMVAR_manual_mode
+				Text = RCMVAR_manual_mode
+			</Entity>
+			<Value>
+				Text = RCMVAL_running
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS15]
+		</SysCondition>
+		<SysCondition>
+			Key = C22
+			<Entity>
+				Key = RCMVAR_cuff
+				Text = RCMVAR_cuff
+			</Entity>
+			<Value>
+				Text = RCMVAL_selected
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS17, AS21]
+		</SysCondition>
+		<SysCondition>
+			Key = C21
+			<Entity>
+				Key = RCMVAR_blood_pressure
+				Text = RCMVAR_blood_pressure
+			</Entity>
+			<Value>
+				Text = RCMVAL_valid
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS16, AS21]
+		</SysCondition>
+		<SysCondition>
+			Key = C24
+			<Entity>
+				Key = RCMVAR_arterial_line
+				Text = RCMVAR_arterial_line
+			</Entity>
+			<Value>
+				Text = RCMVAL_available
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS17, AS18]
+		</SysCondition>
+		<SysCondition>
+			Key = C23
+			<Entity>
+				Key = RCMVAR_pulse_wave
+				Text = RCMVAR_pulse_wave
+			</Entity>
+			<Value>
+				Text = RCMVAL_available
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS17]
+		</SysCondition>
+		<SysCondition>
+			Key = C26
+			<Entity>
+				Key = RCMVAR_arterial_line
+				Text = RCMVAR_arterial_line
+			</Entity>
+			<Value>
+				Text = RCMVAL_lost
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS20]
+		</SysCondition>
+		<SysCondition>
+			Key = C25
+			<Entity>
+				Key = RCMVAR_pulse_wave
+				Text = RCMVAR_pulse_wave
+			</Entity>
+			<Value>
+				Text = RCMVAL_selected
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS18]
+		</SysCondition>
+		<SysCondition>
+			Key = C28
+			<Entity>
+				Key = RCMVAR_cuff
+				Text = RCMVAR_cuff
+			</Entity>
+			<Value>
+				Text = RCMVAL_lost
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS20]
+		</SysCondition>
+		<SysCondition>
+			Key = C27
+			<Entity>
+				Key = RCMVAR_pulse_wave
+				Text = RCMVAR_pulse_wave
+			</Entity>
+			<Value>
+				Text = RCMVAL_lost
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS20]
+		</SysCondition>
+		<SysCondition>
+			Key = C29
+			<Entity>
+				Key = RCMVAR_pulse_wave
+				Text = RCMVAR_pulse_wave
+			</Entity>
+			<Value>
+				Text = RCMVAL_unavailable
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS21]
+		</SysCondition>
+		<SysCondition>
+			Key = C1
+			<Entity>
+				Key = RCMVAR_occlusion
+				Text = RCMVAR_occlusion
+			</Entity>
+			<Value>
+				Text = RCMVAL_detected
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS2]
+		</SysCondition>
+		<SysCondition>
+			Key = C2
+			<Entity>
+				Key = RCMVAR_auto_control_mode
+				Text = RCMVAR_auto_control_mode
+			</Entity>
+			<Value>
+				Text = RCMVAL_running
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS2, AS20, AS29]
+		</SysCondition>
+		<SysCondition>
+			Key = C3
+			<Entity>
+				Key = RCMVAR_Air_Ok_signal
+				Text = RCMVAR_Air_Ok_signal
+			</Entity>
+			<Value>
+				Text = RCMVAL_low
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS3]
+		</SysCondition>
+		<SysCondition>
+			Key = C4
+			<Entity>
+				Key = RCMVAR_arterial_line
+				Text = RCMVAR_arterial_line
+			</Entity>
+			<Value>
+				Text = RCMVAL_corroborated
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS4, AS12]
+		</SysCondition>
+		<SysCondition>
+			Key = C5
+			<Entity>
+				Key = RCMVAR_pulse_wave
+				Text = RCMVAR_pulse_wave
+			</Entity>
+			<Value>
+				Text = RCMVAL_corroborated
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS4, AS5]
+		</SysCondition>
+		<SysCondition>
+			Key = C6
+			<Entity>
+				Key = RCMVAR_cuff
+				Text = RCMVAR_cuff
+			</Entity>
+			<Value>
+				Text = RCMVAL_available
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS4, AS5, AS6]
+		</SysCondition>
+		<SysCondition>
+			Key = C7
+			<Entity>
+				Key = RCMVAR_arterial_line
+				Text = RCMVAR_arterial_line
+			</Entity>
+			<Value>
+				Text = RCMVAL_corroborated
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "!="
+			Action-Sources = [AS5, AS6, AS11]
+		</SysCondition>
+		<SysCondition>
+			Key = C8
+			<Entity>
+				Key = RCMVAR_pulse_wave
+				Text = RCMVAR_pulse_wave
+			</Entity>
+			<Value>
+				Text = RCMVAL_corroborated
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "!="
+			Action-Sources = [AS6, AS12]
+		</SysCondition>
+		<SysCondition>
+			Key = C9
+			<Entity>
+				Key = RCMVAR_pump
+				Text = RCMVAR_pump
+			</Entity>
+			<Value>
+				Text = RCMVAL_plugged_in
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS7]
+		</SysCondition>
+		<SysCondition>
+			Key = C31
+			<Entity>
+				Key = RCMVAR_confirmation_button
+				Text = RCMVAR_confirmation_button
+			</Entity>
+			<Value>
+				Text = RCMVAL_available
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS23, AS24, AS25, AS26, AS27]
+		</SysCondition>
+		<SysCondition>
+			Key = C30
+			<Entity>
+				Key = RCMVAR_arterial_line
+				Text = RCMVAR_arterial_line
+			</Entity>
+			<Value>
+				Text = RCMVAL_unavailable
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS21]
+		</SysCondition>
+		<SysCondition>
+			Key = C11
+			<Entity>
+				Key = RCMVAR_occlusion_line
+				Text = RCMVAR_occlusion_line
+			</Entity>
+			<Value>
+				Text = RCMVAL_clear
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS7]
+		</SysCondition>
+		<SysCondition>
+			Key = C33
+			<Entity>
+				Key = RCMVAR_confirmation_no
+				Text = RCMVAR_confirmation_no
+			</Entity>
+			<Value>
+				Text = RCMVAL_pressed
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS24, AS26]
+		</SysCondition>
+		<SysCondition>
+			Key = C10
+			<Entity>
+				Key = RCMVAR_infusate
+				Text = RCMVAR_infusate
+			</Entity>
+			<Value>
+				Text = RCMVAL_ready
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS7]
+		</SysCondition>
+		<SysCondition>
+			Key = C32
+			<Entity>
+				Key = RCMVAR_confirmation_yes
+				Text = RCMVAR_confirmation_yes
+			</Entity>
+			<Value>
+				Text = RCMVAL_pressed
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS23, AS25]
+		</SysCondition>
+		<SysCondition>
+			Key = C13
+			<Entity>
+				Key = RCMVAR_cuff
+				Text = RCMVAR_cuff
+			</Entity>
+			<Value>
+				Text = RCMVAL_available
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "!="
+			Action-Sources = [AS9, AS14]
+		</SysCondition>
+		<SysCondition>
+			Key = C35
+			<Entity>
+				Key = RCMVAR_start_auto_control_button
+				Text = RCMVAR_start_auto_control_button
+			</Entity>
+			<Value>
+				Text = RCMVAL_enabled
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS28]
+		</SysCondition>
+		<SysCondition>
+			Key = C12
+			<Entity>
+				Key = RCMVAR_start_auto_control_button
+				Text = RCMVAR_start_auto_control_button
+			</Entity>
+			<Value>
+				Text = RCMVAL_pressed
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS9, AS15]
+		</SysCondition>
+		<SysCondition>
+			Key = C34
+			<Entity>
+				Key = RCMVAR_terminate_auto_control_button
+				Text = RCMVAR_terminate_auto_control_button
+			</Entity>
+			<Value>
+				Text = RCMVAL_pressed
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS27]
+		</SysCondition>
+		<SysCondition>
+			Key = C15
+			<Entity>
+				Key = RCMVAR_override_selection
+				Text = RCMVAR_override_selection
+			</Entity>
+			<Value>
+				Text = RCMVAL_provided
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS11, AS12, AS13]
+		</SysCondition>
+		<SysCondition>
+			Key = C14
+			<Entity>
+				Key = RCMVAR_alarm_reset_button
+				Text = RCMVAR_alarm_reset_button
+			</Entity>
+			<Value>
+				Text = RCMVAL_pressed
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS10]
+		</SysCondition>
+		<SysCondition>
+			Key = C36
+			<Entity>
+				Key = RCMVAR_impedance_reading
+				Text = RCMVAR_impedance_reading
+			</Entity>
+			<Value>
+				Text = RCMVAL_unavailable
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS29]
+		</SysCondition>
+		<SysCondition>
+			Key = C17
+			<Entity>
+				Key = RCMVAR_override_no
+				Text = RCMVAR_override_no
+			</Entity>
+			<Value>
+				Text = RCMVAL_pressed
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS13]
+		</SysCondition>
+		<SysCondition>
+			Key = C16
+			<Entity>
+				Key = RCMVAR_override_yes
+				Text = RCMVAR_override_yes
+			</Entity>
+			<Value>
+				Text = RCMVAL_pressed
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS11, AS12]
+		</SysCondition>
+		<SysCondition>
+			Key = C19
+			<Entity>
+				Key = RCMVAR_pulse_wave
+				Text = RCMVAR_pulse_wave
+			</Entity>
+			<Value>
+				Text = RCMVAL_available
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "!="
+			Action-Sources = [AS14]
+		</SysCondition>
+		<SysCondition>
+			Key = C18
+			<Entity>
+				Key = RCMVAR_arterial_line
+				Text = RCMVAR_arterial_line
+			</Entity>
+			<Value>
+				Text = RCMVAL_available
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "!="
+			Action-Sources = [AS14]
+		</SysCondition>
+	</SystemConditions>
+	<SystemActions>
+		<SysAction>
+			Key = A10
+			<Entity>
+				Key = RCMVAR_alarm
+				Text = RCMVAR_alarm
+			</Entity>
+			<Value>
+				Text = RCMVAL_disabled
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS10]
+		</SysAction>
+		<SysAction>
+			Key = A21
+			<Entity>
+				Key = RCMVAR_start_auto_control_button
+				Text = RCMVAR_start_auto_control_button
+			</Entity>
+			<Value>
+				Text = RCMVAL_enabled
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS28]
+		</SysAction>
+		<SysAction>
+			Key = A11
+			<Entity>
+				Key = RCMVAR_manual_mode
+				Text = RCMVAR_manual_mode
+			</Entity>
+			<Value>
+				Text = RCMVAL_started
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS13, AS14, AS21, AS23]
+		</SysAction>
+		<SysAction>
+			Key = A22
+			<Entity>
+				Key = RCMVAR_auto_control_model
+				Text = RCMVAR_auto_control_model
+			</Entity>
+			<Value>
+				Text = RCMVAL_terminated
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS29]
+		</SysAction>
+		<SysAction>
+			Key = A12
+			<Entity>
+				Key = RCMVAR_corroboration
+				Text = RCMVAR_corroboration
+			</Entity>
+			<Value>
+				Text = RCMVAL_triggered
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS15, AS17, AS18]
+		</SysAction>
+		<SysAction>
+			Key = A13
+			<Entity>
+				Key = RCMVAR_manual_mode_should
+				Text = RCMVAR_manual_mode_should
+			</Entity>
+			<Value>
+				Text = RCMVAL_triggered
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "should be"
+			Operator is "="
+			Action-Sources = [AS16]
+		</SysAction>
+		<SysAction>
+			Key = A14
+			<Entity>
+				Key = RCMVAR_terminate_auto_control_button
+				Text = RCMVAR_terminate_auto_control_button
+			</Entity>
+			<Value>
+				Text = RCMVAL_available
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "should be"
+			Operator is "="
+			Action-Sources = [AS19]
+		</SysAction>
+		<SysAction>
+			Key = A15
+			<Entity>
+				Key = RCMVAR_alarm
+				Text = RCMVAR_alarm
+			</Entity>
+			<Value>
+				Text = RCMVAL_
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "should sound"
+			Operator is "NONE"
+			Action-Sources = [AS20]
+		</SysAction>
+		<SysAction>
+			Key = A16
+			<Entity>
+				Key = RCMVAR_confirmation_button
+				Text = RCMVAR_confirmation_button
+			</Entity>
+			<Value>
+				Text = RCMVAL_available
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS22]
+		</SysAction>
+		<SysAction>
+			Key = A17
+			<Entity>
+				Key = RCMVAR_auto_control_mode
+				Text = RCMVAR_auto_control_mode
+			</Entity>
+			<Value>
+				Text = RCMVAL_running
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS24]
+		</SysAction>
+		<SysAction>
+			Key = A18
+			<Entity>
+				Key = RCMVAR_confirmation_yes
+				Text = RCMVAR_confirmation_yes
+			</Entity>
+			<Value>
+				Text = RCMVAL_disabled
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS25]
+		</SysAction>
+		<SysAction>
+			Key = A19
+			<Entity>
+				Key = RCMVAR_confirmation_no
+				Text = RCMVAR_confirmation_no
+			</Entity>
+			<Value>
+				Text = RCMVAL_disabled
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS26]
+		</SysAction>
+		<SysAction>
+			Key = A1
+			<Entity>
+				Key = RCMVAR_CARA
+				Text = RCMVAR_CARA
+			</Entity>
+			<Value>
+				Text = RCMVAL_operational
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "will be"
+			Operator is "="
+			Action-Sources = [AS1]
+		</SysAction>
+		<SysAction>
+			Key = A2
+			<Entity>
+				Key = RCMVAR_auto_control_mode
+				Text = RCMVAR_auto_control_mode
+			</Entity>
+			<Value>
+				Text = RCMVAL_terminated
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "will be"
+			Operator is "="
+			Action-Sources = [AS2, AS3]
+		</SysAction>
+		<SysAction>
+			Key = A3
+			<Entity>
+				Key = RCMVAR_arterial_line
+				Text = RCMVAR_arterial_line
+			</Entity>
+			<Value>
+				Text = RCMVAL_selected
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS4, AS11]
+		</SysAction>
+		<SysAction>
+			Key = A4
+			<Entity>
+				Key = RCMVAR_pulse_wave
+				Text = RCMVAR_pulse_wave
+			</Entity>
+			<Value>
+				Text = RCMVAL_selected
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS5, AS12]
+		</SysAction>
+		<SysAction>
+			Key = A5
+			<Entity>
+				Key = RCMVAR_cuff
+				Text = RCMVAR_cuff
+			</Entity>
+			<Value>
+				Text = RCMVAL_selected
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS6]
+		</SysAction>
+		<SysAction>
+			Key = A6
+			<Entity>
+				Key = RCMVAR_auto_control_mode
+				Text = RCMVAR_auto_control_mode
+			</Entity>
+			<Value>
+				Text = RCMVAL_started
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "can be"
+			Operator is "="
+			Action-Sources = [AS7]
+		</SysAction>
+		<SysAction>
+			Key = A7
+			<Entity>
+				Key = RCMVAR_cuff
+				Text = RCMVAR_cuff
+			</Entity>
+			<Value>
+				Text = RCMVAL_inflated
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "will be"
+			Operator is "="
+			Action-Sources = [AS8]
+		</SysAction>
+		<SysAction>
+			Key = A8
+			<Entity>
+				Key = RCMVAR_alarm
+				Text = RCMVAR_alarm
+			</Entity>
+			<Value>
+				Text = RCMVAL_issued
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS9]
+		</SysAction>
+		<SysAction>
+			Key = A9
+			<Entity>
+				Key = RCMVAR_override_selection
+				Text = RCMVAR_override_selection
+			</Entity>
+			<Value>
+				Text = RCMVAL_provided
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS9]
+		</SysAction>
+		<SysAction>
+			Key = A20
+			<Entity>
+				Key = RCMVAR_terminate_auto_control_button
+				Text = RCMVAR_terminate_auto_control_button
+			</Entity>
+			<Value>
+				Text = RCMVAL_disabled
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS27]
+		</SysAction>
+	</SystemActions>
+	<SystemEntities>
+		<SysEntity>
+			Key = RCMVAR_auto_control_mode
+			Text = RCMVAR_auto_control_mode
+			<Values>
+				v[1] = RCMVAL_running
+				v[1].SystemAction = A17
+				v[1].SystemCondition = C2
+				v[1].SystemTrigger = T2
+				v[2] = RCMVAL_terminated
+				v[2].SystemAction = A2
+				v[2].SystemCondition = null
+				v[2].SystemTrigger = null
+				v[3] = RCMVAL_started
+				v[3].SystemAction = A6
+				v[3].SystemCondition = null
+				v[3].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_infusate
+			Text = RCMVAR_infusate
+			<Values>
+				v[1] = RCMVAL_ready
+				v[1].SystemAction = null
+				v[1].SystemCondition = C10
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_start_auto_control_button
+			Text = RCMVAR_start_auto_control_button
+			<Values>
+				v[1] = RCMVAL_enabled
+				v[1].SystemAction = A21
+				v[1].SystemCondition = C35
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_pressed
+				v[2].SystemAction = null
+				v[2].SystemCondition = C12
+				v[2].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_alarm_reset_button
+			Text = RCMVAR_alarm_reset_button
+			<Values>
+				v[1] = RCMVAL_pressed
+				v[1].SystemAction = null
+				v[1].SystemCondition = C14
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_override_selection
+			Text = RCMVAR_override_selection
+			<Values>
+				v[1] = RCMVAL_provided
+				v[1].SystemAction = A9
+				v[1].SystemCondition = C15
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_override_no
+			Text = RCMVAR_override_no
+			<Values>
+				v[1] = RCMVAL_pressed
+				v[1].SystemAction = null
+				v[1].SystemCondition = C17
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_terminate_auto_control_button
+			Text = RCMVAR_terminate_auto_control_button
+			<Values>
+				v[1] = RCMVAL_disabled
+				v[1].SystemAction = A20
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_available
+				v[2].SystemAction = A14
+				v[2].SystemCondition = null
+				v[2].SystemTrigger = null
+				v[3] = RCMVAL_pressed
+				v[3].SystemAction = null
+				v[3].SystemCondition = C34
+				v[3].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_confirmation_button
+			Text = RCMVAR_confirmation_button
+			<Values>
+				v[1] = RCMVAL_available
+				v[1].SystemAction = A16
+				v[1].SystemCondition = C31
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_confirmation_yes
+			Text = RCMVAR_confirmation_yes
+			<Values>
+				v[1] = RCMVAL_disabled
+				v[1].SystemAction = A18
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_pressed
+				v[2].SystemAction = null
+				v[2].SystemCondition = C32
+				v[2].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_termiante_auto_control_button
+			Text = RCMVAR_termiante_auto_control_button
+			<Values>
+				v[1] = RCMVAL_selected
+				v[1].SystemAction = null
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = T3
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_pulse_wave
+			Text = RCMVAR_pulse_wave
+			<Values>
+				v[1] = RCMVAL_selected
+				v[1].SystemAction = A4
+				v[1].SystemCondition = C25
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_lost
+				v[2].SystemAction = null
+				v[2].SystemCondition = C27
+				v[2].SystemTrigger = null
+				v[3] = RCMVAL_corroborated
+				v[3].SystemAction = null
+				v[3].SystemCondition = C5
+				v[3].SystemTrigger = null
+				v[4] = RCMVAL_unavailable
+				v[4].SystemAction = null
+				v[4].SystemCondition = C29
+				v[4].SystemTrigger = null
+				v[5] = RCMVAL_available
+				v[5].SystemAction = null
+				v[5].SystemCondition = C19
+				v[5].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_Air_Ok_signal
+			Text = RCMVAR_Air_Ok_signal
+			<Values>
+				v[1] = RCMVAL_low
+				v[1].SystemAction = null
+				v[1].SystemCondition = C3
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_pump
+			Text = RCMVAR_pump
+			<Values>
+				v[1] = RCMVAL_plugged_in
+				v[1].SystemAction = null
+				v[1].SystemCondition = C9
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_corroboration
+			Text = RCMVAR_corroboration
+			<Values>
+				v[1] = RCMVAL_triggered
+				v[1].SystemAction = A12
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_impedance_reading
+			Text = RCMVAR_impedance_reading
+			<Values>
+				v[1] = RCMVAL_unavailable
+				v[1].SystemAction = null
+				v[1].SystemCondition = C36
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_override_yes
+			Text = RCMVAR_override_yes
+			<Values>
+				v[1] = RCMVAL_pressed
+				v[1].SystemAction = null
+				v[1].SystemCondition = C16
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_occlusion_line
+			Text = RCMVAR_occlusion_line
+			<Values>
+				v[1] = RCMVAL_clear
+				v[1].SystemAction = null
+				v[1].SystemCondition = C11
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_blood_pressure
+			Text = RCMVAR_blood_pressure
+			<Values>
+				v[1] = RCMVAL_valid
+				v[1].SystemAction = null
+				v[1].SystemCondition = C21
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_LSTAT
+			Text = RCMVAR_LSTAT
+			<Values>
+				v[1] = RCMVAL_powered_on
+				v[1].SystemAction = null
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = T1
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_occlusion
+			Text = RCMVAR_occlusion
+			<Values>
+				v[1] = RCMVAL_detected
+				v[1].SystemAction = null
+				v[1].SystemCondition = C1
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_cuff
+			Text = RCMVAR_cuff
+			<Values>
+				v[1] = RCMVAL_selected
+				v[1].SystemAction = A5
+				v[1].SystemCondition = C22
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_inflated
+				v[2].SystemAction = A7
+				v[2].SystemCondition = null
+				v[2].SystemTrigger = null
+				v[3] = RCMVAL_lost
+				v[3].SystemAction = null
+				v[3].SystemCondition = C28
+				v[3].SystemTrigger = null
+				v[4] = RCMVAL_available
+				v[4].SystemAction = null
+				v[4].SystemCondition = C6
+				v[4].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_confirmation_no
+			Text = RCMVAR_confirmation_no
+			<Values>
+				v[1] = RCMVAL_disabled
+				v[1].SystemAction = A19
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_pressed
+				v[2].SystemAction = null
+				v[2].SystemCondition = C33
+				v[2].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_CARA
+			Text = RCMVAR_CARA
+			<Values>
+				v[1] = RCMVAL_operational
+				v[1].SystemAction = A1
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_auto_control_model
+			Text = RCMVAR_auto_control_model
+			<Values>
+				v[1] = RCMVAL_terminated
+				v[1].SystemAction = A22
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_alarm
+			Text = RCMVAR_alarm
+			<Values>
+				v[1] = RCMVAL_disabled
+				v[1].SystemAction = A10
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_
+				v[2].SystemAction = A15
+				v[2].SystemCondition = null
+				v[2].SystemTrigger = null
+				v[3] = RCMVAL_issued
+				v[3].SystemAction = A8
+				v[3].SystemCondition = null
+				v[3].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_manual_mode_should
+			Text = RCMVAR_manual_mode_should
+			<Values>
+				v[1] = RCMVAL_triggered
+				v[1].SystemAction = A13
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_manual_mode
+			Text = RCMVAR_manual_mode
+			<Values>
+				v[1] = RCMVAL_running
+				v[1].SystemAction = null
+				v[1].SystemCondition = C20
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_started
+				v[2].SystemAction = A11
+				v[2].SystemCondition = null
+				v[2].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_arterial_line
+			Text = RCMVAR_arterial_line
+			<Values>
+				v[1] = RCMVAL_selected
+				v[1].SystemAction = A3
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_lost
+				v[2].SystemAction = null
+				v[2].SystemCondition = C26
+				v[2].SystemTrigger = null
+				v[3] = RCMVAL_corroborated
+				v[3].SystemAction = null
+				v[3].SystemCondition = C4
+				v[3].SystemTrigger = null
+				v[4] = RCMVAL_unavailable
+				v[4].SystemAction = null
+				v[4].SystemCondition = C30
+				v[4].SystemTrigger = null
+				v[5] = RCMVAL_available
+				v[5].SystemAction = null
+				v[5].SystemCondition = C18
+				v[5].SystemTrigger = null
+			</Values>
+		</SysEntity>
+	</SystemEntities>
+</log>

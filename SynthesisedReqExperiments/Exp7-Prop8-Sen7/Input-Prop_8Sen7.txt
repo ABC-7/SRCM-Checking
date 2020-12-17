@@ -1,0 +1,3 @@
+inReq([inComp(cond,'the vehicle speed setpoint','[True]',equal,no,1),inComp(act,'the vehicle speed quality factor','[True]',equal,no,1)],['','','','',''],"- , , if the vehicle speed setpoint equal [True]   , the vehicle speed quality factor equal [True]   , ."). 
+inReq([inComp(act,'the vehicle speed setpoint','[True]',equal,no,1)],['','','','',''],"- , , , the vehicle speed setpoint equal [True]   , ."). 
+inReq([inComp(cond,'the IDC inhibitor','[True]',equal,no,1),inComp(act,'the sailing termination','[True]',equal,no,1)],['','','','',''],"- , , if the IDC inhibitor equal [True]   , the sailing termination equal [True]   , ."). 

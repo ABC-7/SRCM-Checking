@@ -1,0 +1,1 @@
+inReq([inComp(cond,'the standstill request flag','[True]',equal,no,1),inComp(act,'the sailing termination','',set,no,1)],['','','','',''],"- , , if the standstill request flag equal [True]   , the sailing termination set   , ."). 

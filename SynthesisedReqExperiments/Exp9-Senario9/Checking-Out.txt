@@ -1,0 +1,85 @@
+Action Source Key: AS2
+	has Inconsistency issue with 'AS1' "identical preconditions and different actions"
+=================================
+Action Source Key: AS3
+	has Inconsistency issue "DeadLock-- found Cycle AS3 AS3"
+	has Incompleteness issue "Unsatisfiable rule"
+=================================
+Action Source Key: AS4
+	has Inconsistency issue with 'AS3' "fully-contained preconditions and different actions"
+	has Incompleteness issue "Unchecked value"
+	has Incompleteness issue "Unsatisfiable rule"
+=================================
+Action Source Key: AS5
+	has Incompleteness issue "Unsatisfiable rule"
+=================================
+Action Source Key: AS6
+	has Inconsistency issue with 'AS5' "partially-contained preconditions and different actions"
+	has Incompleteness issue "Unchecked value"
+	has Incompleteness issue "Unsatisfiable rule"
+=================================
+Action Source Key: AS7
+	has Correctness issue "Infiniteloop-- found Cycle AS2 AS7 AS9 AS8 AS7"
+	has Correctness issue "Infiniteloop-- found Cycle AS2 AS7 AS9 AS18 AS7"
+=================================
+Action Source Key: AS17
+	has Inconsistency issue with 'AS10' "identical preconditions and different actions"
+	has Inconsistency issue with 'AS11' "identical preconditions and different actions"
+	has Inconsistency issue "DeadLock-- found Cycle AS17 AS12 AS20 AS22 AS1 AS17"
+=================================
+Action Source Key: AS8
+	has Correctness issue "Infiniteloop-- found Cycle AS5 AS8 AS7 AS9 AS8"
+=================================
+Action Source Key: AS18
+	has Redundancy issue with 'AS8'
+	has Correctness issue "Infiniteloop-- found Cycle AS5 AS18 AS7 AS9 AS18"
+=================================
+Action Source Key: AS9
+	has Inconsistency issue "DeadLock-- found Cycle AS9 AS8 AS7 AS9"
+	has Inconsistency issue "DeadLock-- found Cycle AS9 AS18 AS7 AS9"
+=================================
+Action Source Key: AS15
+	has Inconsistency issue with 'AS6' "partially-contained preconditions and different actions"
+	has Inconsistency issue with 'AS5' "fully-contained preconditions and different actions"
+=================================
+Action Source Key: AS13
+	has Redundancy issue with 'AS12' "fully-contained preconditions and equivalent actions"
+	has Incompleteness issue "Unsatisfiable rule"
+=================================
+Action Source Key: AS14
+	has Inconsistency issue with 'AS6' "partially-contained preconditions and different actions"
+	has Inconsistency issue with 'AS5' "fully-contained preconditions and different actions"
+	has Incompleteness issue "misses attributes at Value"
+	has Incompleteness issue "Unchecked value"
+=================================
+Action Source Key: AS11
+	has Redundancy issue with 'AS10'
+	has Incompleteness issue "Unchecked value"
+=================================
+Action Source Key: AS22
+	has Inconsistency issue "DeadLock-- found Cycle AS22 AS1 AS17 AS12 AS20 AS22"
+	has Inconsistency issue "DeadLock-- found Cycle AS22 AS21 AS20 AS22"
+=================================
+Action Source Key: AS23
+	has Inconsistency issue with 'AS6' "partially-contained preconditions and different actions"
+	has Inconsistency issue with 'AS5' "fully-contained preconditions and different actions"
+=================================
+Action Source Key: AS12
+	has Inconsistency issue "DeadLock-- found Cycle AS12 AS20 AS22 AS1 AS17 AS12"
+	has Incompleteness issue "Unsatisfiable rule"
+=================================
+Action Source Key: AS20
+	has Correctness issue "Infiniteloop-- found Cycle AS12 AS20 AS22 AS21 AS20"
+	has Correctness issue "Infiniteloop-- found Cycle AS13 AS20 AS22 AS1 AS17 AS12 AS20"
+=================================
+Action Source Key: AS21
+	has Inconsistency issue with 'AS2' "identical preconditions and different actions"
+	has Inconsistency issue with 'AS1' "identical preconditions and different actions"
+	has Inconsistency issue "DeadLock-- found Cycle AS21 AS20 AS22 AS21"
+=================================
+Action Source Key: AS10
+	has Incompleteness issue "Unchecked value"
+=================================
+Action Source Key: AS1
+	has Inconsistency issue "DeadLock-- found Cycle AS1 AS17 AS12 AS20 AS22 AS1"
+=================================

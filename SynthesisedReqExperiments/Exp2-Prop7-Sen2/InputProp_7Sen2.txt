@@ -1,0 +1,1 @@
+inReq([inComp(cond,'the standstill request flag','[True]',equal,no,1),inComp(act,'the engine error','',set,no,1)],['','','','',''],"- , , if the standstill request flag equal [True]   , the engine error set   , ."). 

@@ -1,0 +1,3 @@
+inReq([inComp(cond,'the sailing request','[True]',equal,no,1),inComp(act,'the vehicle speed setpoint','[True]',equal,no,1)],['','','','',''],"- , , if the sailing request equal [True]   , the vehicle speed setpoint equal [True]   , ."). 
+inReq([inComp(cond,'the LCS','[True]',equal,no,1),inComp(act,'the sailing request','[True]',equal,no,1)],['','','','',''],"- , , if the LCS equal [True]   , the sailing request equal [True]   , ."). 
+inReq([inComp(cond,'the vehicle speed setpoint','[True]',equal,no,1),inComp(act,'the LCS','[True]',equal,no,1)],['','','','',''],"- , , if the vehicle speed setpoint equal [True]   , the LCSt equal [True]   , ."). 

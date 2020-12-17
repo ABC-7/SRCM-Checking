@@ -1,0 +1,93 @@
+Action Source Key: AS2
+	has Inconsistency issue with 'AS1' "identical preconditions and different actions"
+=================================
+Action Source Key: AS3
+	has Correctness issue "Infiniteloop-- found Cycle AS8 AS3 AS3"
+	has Correctness issue "Infiniteloop-- found Cycle AS3 AS3 AS7 AS9 AS8 AS3"
+	has Correctness issue "Infiniteloop-- found Cycle AS3 AS3 AS7 AS9 AS21 AS20 AS22 AS8 AS3"
+	has Incompleteness issue "Unsatisfiable rule"
+=================================
+Action Source Key: AS4
+	has Inconsistency issue with 'AS3' "fully-contained preconditions and different actions"
+	has Incompleteness issue "Unchecked value"
+	has Incompleteness issue "Unsatisfiable rule"
+=================================
+Action Source Key: AS5
+	has Incompleteness issue "Unsatisfiable rule"
+=================================
+Action Source Key: AS6
+	has Inconsistency issue with 'AS5' "partially-contained preconditions and different actions"
+	has Incompleteness issue "Unsatisfiable rule"
+	has Incompleteness issue "Unchecked value"
+=================================
+Action Source Key: AS7
+	has Inconsistency issue with 'AS3' "fully-contained preconditions and different actions"
+	has Correctness issue "Infiniteloop-- found Cycle AS3 AS7 AS9 AS8 AS7"
+	has Correctness issue "Infiniteloop-- found Cycle AS3 AS7 AS9 AS21 AS20 AS22 AS8 AS7"
+	has Correctness issue "Infiniteloop-- found Cycle AS8 AS7 AS9 AS8 AS3 AS7"
+	has Correctness issue "Infiniteloop-- found Cycle AS8 AS7 AS9 AS21 AS20 AS22 AS8 AS3 AS7"
+=================================
+Action Source Key: AS8
+	has Correctness issue "Infiniteloop-- found Cycle AS22 AS8 AS3 AS7 AS9 AS8"
+	has Correctness issue "Infiniteloop-- found Cycle AS22 AS8 AS7 AS9 AS8"
+	has Correctness issue "Infiniteloop-- found Cycle AS9 AS8 AS3 AS7 AS9 AS21 AS20 AS22 AS8"
+	has Correctness issue "Infiniteloop-- found Cycle AS9 AS8 AS7 AS9 AS21 AS20 AS22 AS8"
+=================================
+Action Source Key: AS17
+	has Correctness issue "Infiniteloop-- found Cycle AS13 AS17 AS12 AS17"
+=================================
+Action Source Key: AS18
+	has Inconsistency issue with 'AS10' "identical preconditions and different actions"
+	has Inconsistency issue with 'AS11' "identical preconditions and different actions"
+	has Inconsistency issue with 'AS2' "identical preconditions and different actions"
+	has Inconsistency issue with 'AS1' "identical preconditions and different actions"
+=================================
+Action Source Key: AS9
+	has Correctness issue "Infiniteloop-- found Cycle AS2 AS9 AS8 AS3 AS7 AS9"
+	has Correctness issue "Infiniteloop-- found Cycle AS2 AS9 AS8 AS7 AS9"
+	has Correctness issue "Infiniteloop-- found Cycle AS2 AS9 AS21 AS20 AS22 AS8 AS3 AS7 AS9"
+	has Correctness issue "Infiniteloop-- found Cycle AS2 AS9 AS21 AS20 AS22 AS8 AS7 AS9"
+=================================
+Action Source Key: AS15
+	has Inconsistency issue with 'AS14' "identical preconditions and different actions"
+=================================
+Action Source Key: AS13
+	has Redundancy issue with 'AS12' "fully-contained preconditions and equivalent actions"
+	has Incompleteness issue "Unsatisfiable rule"
+=================================
+Action Source Key: AS14
+	has Incompleteness issue "misses attributes at Value"
+	has Incompleteness issue "Unchecked value"
+=================================
+Action Source Key: AS11
+	has Redundancy issue with 'AS10'
+	has Inconsistency issue with 'AS2' "identical preconditions and different actions"
+	has Inconsistency issue with 'AS1' "identical preconditions and different actions"
+=================================
+Action Source Key: AS22
+	has Inconsistency issue "DeadLock-- found Cycle AS22 AS8 AS3 AS7 AS9 AS21 AS20 AS22"
+	has Inconsistency issue "DeadLock-- found Cycle AS22 AS8 AS7 AS9 AS21 AS20 AS22"
+	has Inconsistency issue "DeadLock-- found Cycle AS22 AS21 AS20 AS22"
+=================================
+Action Source Key: AS12
+	has Correctness issue "Infiniteloop-- found Cycle AS18 AS12 AS17 AS12"
+	has Incompleteness issue "Unsatisfiable rule"
+=================================
+Action Source Key: AS20
+	has Correctness issue "Infiniteloop-- found Cycle AS5 AS20 AS22 AS8 AS3 AS7 AS9 AS21 AS20"
+	has Correctness issue "Infiniteloop-- found Cycle AS5 AS20 AS22 AS8 AS7 AS9 AS21 AS20"
+	has Correctness issue "Infiniteloop-- found Cycle AS5 AS20 AS22 AS21 AS20"
+=================================
+Action Source Key: AS10
+	has Inconsistency issue with 'AS2' "identical preconditions and different actions"
+	has Inconsistency issue with 'AS1' "identical preconditions and different actions"
+=================================
+Action Source Key: AS21
+	has Inconsistency issue with 'AS8' "identical preconditions and different actions"
+	has Correctness issue "Infiniteloop-- found Cycle AS9 AS21 AS20 AS22 AS21"
+	has Correctness issue "Infiniteloop-- found Cycle AS22 AS21 AS20 AS22 AS8 AS3 AS7 AS9 AS21"
+	has Correctness issue "Infiniteloop-- found Cycle AS22 AS21 AS20 AS22 AS8 AS7 AS9 AS21"
+=================================
+Action Source Key: AS1
+	has Incompleteness issue "Unchecked value"
+=================================

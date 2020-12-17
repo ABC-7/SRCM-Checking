@@ -1,0 +1,4 @@
+inReq([inComp(cond,'the sailing termination','[True]',equal,no,1),inComp(act,'the defined position','[True]',equal,no,1)],['','','','',''],"- , , if the sailing termination equal [True]   , the defined position equal [True]   , ."). 
+inReq([inComp(cond,'the transmission error','[True]',equal,no,1),inComp(act,'the sailing termination','[True]',equal,no,1)],['','','','',''],"- , , if the transmission error equal [True]   , the sailing termination equal [True]   , ."). 
+inReq([inComp(cond,'the defined position','[True]',equal,no,1),inComp(act,'the transmission error','[True]',equal,no,1)],['','','','',''],"- , , if the defined position equal [True]   , the transmission error equal [True]   , ."). 
+inReq([inComp(cond,'the engine error','[True]',equal,no,1),inComp(act,'the sailing termination','[True]',equal,no,1)],['','','','',''],"- , , if the engine error equal [True]   , the sailing termination equal [True]   , ."). 

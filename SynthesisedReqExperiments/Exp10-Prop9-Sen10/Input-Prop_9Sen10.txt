@@ -1,0 +1,2 @@
+inReq([inComp(cond,'the engine error','[True]',equal,no,1),inComp(act,'the sailing termination','[True]',equal,no,1)],['','','','',''],"- , , if the engine error equal [True]   , the sailing termination equal [True]   , ."). 
+inReq([inComp(act,'the engine error','[True]',equal,no,1)],['','','','',''],"- , , , the engine error equal [True]   , ."). 

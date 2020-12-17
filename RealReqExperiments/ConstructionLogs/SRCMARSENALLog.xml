@@ -1,0 +1,2747 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+	<SRCM_Metrics>
+		Total Requirements = 33,Unique-ActionSources = 33
+		Total Triggers = 1, 		Unique-SystemTriggers = 1
+		Total Conditions = 48, 	Unique-SystemConditions = 37
+		Total Actions = 33,		Unique-SystemActions = 28
+		Total Entities = 84, 	Unique-SystemEntities = 27
+	</SRCM_Metrics>
+	<SystemActionSource>
+		<ActionSource>
+			Key = AS2
+			Req-Text = If the Regulator Mode equals [NORMAL]  the Output Regulator Status shall be set to [Status_On].
+			Triggers-Relation = null
+			Conditions-Relation = C2
+			Actions-Relation = A2
+			<SysCondition>
+				Key = C2
+				<Entity>
+					Key = RCMVAR_the_Regulator_Mode_equals
+					Text = RCMVAR_the_Regulator_Mode_equals
+				</Entity>
+				<Value>
+					Text = RCMVAL_NORMAL
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A2
+				<Entity>
+					Key = RCMVAR_the_Output_Regulator_Status
+					Text = RCMVAR_the_Output_Regulator_Status
+				</Entity>
+				<Value>
+					Text = RCMVAL_Status_On
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS3
+			Req-Text = If the Regulator Mode equals [FAILED]  the Output Regulator Status shall be set to [Failed].
+			Triggers-Relation = null
+			Conditions-Relation = C3
+			Actions-Relation = A3
+			<SysCondition>
+				Key = C3
+				<Entity>
+					Key = RCMVAR_the_Regulator_Mode_equals
+					Text = RCMVAR_the_Regulator_Mode_equals
+				</Entity>
+				<Value>
+					Text = RCMVAL_FAILED
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A3
+				<Entity>
+					Key = RCMVAR_the_Output_Regulator_Status
+					Text = RCMVAR_the_Output_Regulator_Status
+				</Entity>
+				<Value>
+					Text = RCMVAL_Failed
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS4
+			Req-Text = If the Regulator Mode equals [FAILED]  the Heat Control shall be set to [Control_Off].
+			Triggers-Relation = null
+			Conditions-Relation = C3
+			Actions-Relation = A4
+			<SysCondition>
+				Key = C3
+				<Entity>
+					Key = RCMVAR_the_Regulator_Mode_equals
+					Text = RCMVAR_the_Regulator_Mode_equals
+				</Entity>
+				<Value>
+					Text = RCMVAL_FAILED
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A4
+				<Entity>
+					Key = RCMVAR_the_Heat_Control
+					Text = RCMVAR_the_Heat_Control
+				</Entity>
+				<Value>
+					Text = RCMVAL_Control_Off
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS5
+			Req-Text = If the Manage Monitor Interface mode equals [INIT]  the Output Monitor Status shall be set to [Init].
+			Triggers-Relation = null
+			Conditions-Relation = C4
+			Actions-Relation = A5
+			<SysCondition>
+				Key = C4
+				<Entity>
+					Key = RCMVAR_the_Manage_Monitor_Interface_mode
+					Text = RCMVAR_the_Manage_Monitor_Interface_mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_INIT
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A5
+				<Entity>
+					Key = RCMVAR_the_output_Monitor_Status
+					Text = RCMVAR_the_output_Monitor_Status
+				</Entity>
+				<Value>
+					Text = RCMVAL_Init
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS6
+			Req-Text = If the Manage Monitor Interface mode equals [NORMAL]  the Output Monitor Status shall be set to [Status_On].
+			Triggers-Relation = null
+			Conditions-Relation = C5
+			Actions-Relation = A6
+			<SysCondition>
+				Key = C5
+				<Entity>
+					Key = RCMVAR_the_Manage_Monitor_Interface_mode
+					Text = RCMVAR_the_Manage_Monitor_Interface_mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_NORMAL
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A6
+				<Entity>
+					Key = RCMVAR_the_output_Monitor_Status
+					Text = RCMVAR_the_output_Monitor_Status
+				</Entity>
+				<Value>
+					Text = RCMVAL_Status_On
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS19
+			Req-Text = If the Status attribute of the Lower Desired Temperature or the Upper Desired Temperature equals Invalid  the Regulator Interface Failure shall be set to True.
+			Triggers-Relation = null
+			Conditions-Relation = ( C14 OR C15 )
+			Actions-Relation = A17
+			<SysCondition>
+				Key = C14
+				<Entity>
+					Key = RCMVAR_the_Status_attribute_of_the_Lower_Desired_Temperature
+					Text = RCMVAR_the_Status_attribute_of_the_Lower_Desired_Temperature
+				</Entity>
+				<Value>
+					Text = RCMVAL_Invalid
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C15
+				<Entity>
+					Key = RCMVAR_the_Status_attribute_of_the_Upper_Desired_Temperature
+					Text = RCMVAR_the_Status_attribute_of_the_Upper_Desired_Temperature
+				</Entity>
+				<Value>
+					Text = RCMVAL_Invalid
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A17
+				<Entity>
+					Key = RCMVAR_the_Regulator_Interface_Failure
+					Text = RCMVAR_the_Regulator_Interface_Failure
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS7
+			Req-Text = If the Manage Monitor Interface mode equals [FAILED]  the Output Monitor Status shall be set to [Failed].
+			Triggers-Relation = null
+			Conditions-Relation = C6
+			Actions-Relation = A7
+			<SysCondition>
+				Key = C6
+				<Entity>
+					Key = RCMVAR_the_Manage_Monitor_Interface_mode
+					Text = RCMVAR_the_Manage_Monitor_Interface_mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_FAILED
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A7
+				<Entity>
+					Key = RCMVAR_the_output_Monitor_Status
+					Text = RCMVAR_the_output_Monitor_Status
+				</Entity>
+				<Value>
+					Text = RCMVAL_Failed
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS8
+			Req-Text = If the Monitor Mode equals [INIT]  the Alarm Control shall be set to [Control_Off].
+			Triggers-Relation = null
+			Conditions-Relation = C7
+			Actions-Relation = A8
+			<SysCondition>
+				Key = C7
+				<Entity>
+					Key = RCMVAR_the_Monitor_Mode
+					Text = RCMVAR_the_Monitor_Mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_INIT
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A8
+				<Entity>
+					Key = RCMVAR_the_Alarm_Control
+					Text = RCMVAR_the_Alarm_Control
+				</Entity>
+				<Value>
+					Text = RCMVAL_Control_Off
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS17
+			Req-Text = If the Monitor Mode equals [FAILED]  the Regulator Mode shall never be set to [NORMAL].
+			Triggers-Relation = null
+			Conditions-Relation = C13
+			Actions-Relation = A16
+			<SysCondition>
+				Key = C13
+				<Entity>
+					Key = RCMVAR_the_Monitor_Mode
+					Text = RCMVAR_the_Monitor_Mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_FAILED
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A16
+				<Entity>
+					Key = RCMVAR_the_Regulator_Mode
+					Text = RCMVAR_the_Regulator_Mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_NORMAL
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS9
+			Req-Text = the Manage Monitor Interface mode shall be set to the Monitor Mode.
+			Triggers-Relation = null
+			Conditions-Relation = null
+			Actions-Relation = A9
+			<SysAction>
+				Key = A9
+				<Entity>
+					Key = RCMVAR_the_Manage_Monitor_Interface_mode
+					Text = RCMVAR_the_Manage_Monitor_Interface_mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_the_Monitor_Mode
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS18
+			Req-Text = when Reset equals True  the Regulator Mode shall be set to [INIT].
+			Triggers-Relation = T1
+			Conditions-Relation = null
+			Actions-Relation = A10
+			<SysTrigger>
+				Key = T1
+				<Entity>
+					Key = RCMVAR_Reset
+					Text = RCMVAR_Reset
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysTrigger>
+			<SysAction>
+				Key = A10
+				<Entity>
+					Key = RCMVAR_the_Regulator_Mode
+					Text = RCMVAR_the_Regulator_Mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_INIT
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "initialise to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS15
+			Req-Text = If the Monitor Status equals False  the Monitor Init Timeout shall be set to True.
+			Triggers-Relation = null
+			Conditions-Relation = C11
+			Actions-Relation = A15
+			<SysCondition>
+				Key = C11
+				<Entity>
+					Key = RCMVAR_the_Monitor_Status
+					Text = RCMVAR_the_Monitor_Status
+				</Entity>
+				<Value>
+					Text = RCMVAL_False
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A15
+				<Entity>
+					Key = RCMVAR_the_Monitor_Init_Timeout
+					Text = RCMVAR_the_Monitor_Init_Timeout
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS16
+			Req-Text = If the Regulator Mode equals [FAILED]  the Regulator Mode shall never be set to [NORMAL].
+			Triggers-Relation = null
+			Conditions-Relation = C12
+			Actions-Relation = A16
+			<SysCondition>
+				Key = C12
+				<Entity>
+					Key = RCMVAR_the_Regulator_Mode
+					Text = RCMVAR_the_Regulator_Mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_FAILED
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A16
+				<Entity>
+					Key = RCMVAR_the_Regulator_Mode
+					Text = RCMVAR_the_Regulator_Mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_NORMAL
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS13
+			Req-Text = the Monitor Mode shall be initialized to [INIT].
+			Triggers-Relation = null
+			Conditions-Relation = null
+			Actions-Relation = A13
+			<SysAction>
+				Key = A13
+				<Entity>
+					Key = RCMVAR_the_Monitor_Mode
+					Text = RCMVAR_the_Monitor_Mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_INIT
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "initialise to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS14
+			Req-Text = If the Monitor Status equals True  the Monitor Init Timeout shall be set to False.
+			Triggers-Relation = null
+			Conditions-Relation = C10
+			Actions-Relation = A14
+			<SysCondition>
+				Key = C10
+				<Entity>
+					Key = RCMVAR_the_Monitor_Status
+					Text = RCMVAR_the_Monitor_Status
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A14
+				<Entity>
+					Key = RCMVAR_the_Monitor_Init_Timeout
+					Text = RCMVAR_the_Monitor_Init_Timeout
+				</Entity>
+				<Value>
+					Text = RCMVAL_False
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS11
+			Req-Text = If the Regulator Status equals True  the Regulator Init Timeout shall be set to False.
+			Triggers-Relation = null
+			Conditions-Relation = C8
+			Actions-Relation = A11
+			<SysCondition>
+				Key = C8
+				<Entity>
+					Key = RCMVAR_the_Regulator_Status
+					Text = RCMVAR_the_Regulator_Status
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A11
+				<Entity>
+					Key = RCMVAR_the_Regulator_Init_Timeout
+					Text = RCMVAR_the_Regulator_Init_Timeout
+				</Entity>
+				<Value>
+					Text = RCMVAL_False
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS33
+			Req-Text = If the Monitor Mode is set to [INIT] and the Monitor Init Timeout is set to True  the Monitor Mode shall be set to [FAILED].
+			Triggers-Relation = null
+			Conditions-Relation = ( C7 AND C37 )
+			Actions-Relation = A28
+			<SysCondition>
+				Key = C37
+				<Entity>
+					Key = RCMVAR_the_Monitor_Init_Timeout
+					Text = RCMVAR_the_Monitor_Init_Timeout
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C7
+				<Entity>
+					Key = RCMVAR_the_Monitor_Mode
+					Text = RCMVAR_the_Monitor_Mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_INIT
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A28
+				<Entity>
+					Key = RCMVAR_the_Monitor_Mode
+					Text = RCMVAR_the_Monitor_Mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_FAILED
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS12
+			Req-Text = If the Regulator Status equals False  the Regulator Init Timeout shall be set to True.
+			Triggers-Relation = null
+			Conditions-Relation = C9
+			Actions-Relation = A12
+			<SysCondition>
+				Key = C9
+				<Entity>
+					Key = RCMVAR_the_Regulator_Status
+					Text = RCMVAR_the_Regulator_Status
+				</Entity>
+				<Value>
+					Text = RCMVAL_False
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A12
+				<Entity>
+					Key = RCMVAR_the_Regulator_Init_Timeout
+					Text = RCMVAR_the_Regulator_Init_Timeout
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS31
+			Req-Text = If the Monitor Mode is set to [INIT] and the Monitor Status is set to True  the Monitor Mode shall be set to [NORMAL].
+			Triggers-Relation = null
+			Conditions-Relation = ( C7 AND C10 )
+			Actions-Relation = A27
+			<SysCondition>
+				Key = C10
+				<Entity>
+					Key = RCMVAR_the_Monitor_Status
+					Text = RCMVAR_the_Monitor_Status
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C7
+				<Entity>
+					Key = RCMVAR_the_Monitor_Mode
+					Text = RCMVAR_the_Monitor_Mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_INIT
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A27
+				<Entity>
+					Key = RCMVAR_the_Monitor_Mode
+					Text = RCMVAR_the_Monitor_Mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_NORMAL
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS10
+			Req-Text = the Regulator Mode shall be initialized to [INIT].
+			Triggers-Relation = null
+			Conditions-Relation = null
+			Actions-Relation = A10
+			<SysAction>
+				Key = A10
+				<Entity>
+					Key = RCMVAR_the_Regulator_Mode
+					Text = RCMVAR_the_Regulator_Mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_INIT
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "initialise to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS32
+			Req-Text = If the Monitor Mode is set to [NORMAL] and the Monitor Status is set to False  the Monitor Mode shall be set to [FAILED].
+			Triggers-Relation = null
+			Conditions-Relation = ( C36 AND C11 )
+			Actions-Relation = A28
+			<SysCondition>
+				Key = C11
+				<Entity>
+					Key = RCMVAR_the_Monitor_Status
+					Text = RCMVAR_the_Monitor_Status
+				</Entity>
+				<Value>
+					Text = RCMVAL_False
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C36
+				<Entity>
+					Key = RCMVAR_the_Monitor_Mode
+					Text = RCMVAR_the_Monitor_Mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_NORMAL
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A28
+				<Entity>
+					Key = RCMVAR_the_Monitor_Mode
+					Text = RCMVAR_the_Monitor_Mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_FAILED
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS30
+			Req-Text = If the Monitor Interface Failure is set to True or the Monitor Internal Failure is set to True or the Status attribute of the Current Temperature is not set to [Valid]  the Monitor Status shall be set to False.
+			Triggers-Relation = null
+			Conditions-Relation = ( C34 OR ( C35 OR C30 ) )
+			Actions-Relation = A26
+			<SysCondition>
+				Key = C30
+				<Entity>
+					Key = RCMVAR_the_Status_attribute_of_the_Current_Temperature
+					Text = RCMVAR_the_Status_attribute_of_the_Current_Temperature
+				</Entity>
+				<Value>
+					Text = RCMVAL_Valid
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "!="
+			</SysCondition>
+			<SysCondition>
+				Key = C34
+				<Entity>
+					Key = RCMVAR_the_Monitor_Interface_Failure
+					Text = RCMVAR_the_Monitor_Interface_Failure
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C35
+				<Entity>
+					Key = RCMVAR_the_Monitor_Internal_Failure
+					Text = RCMVAR_the_Monitor_Internal_Failure
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A26
+				<Entity>
+					Key = RCMVAR_the_Monitor_Status
+					Text = RCMVAR_the_Monitor_Status
+				</Entity>
+				<Value>
+					Text = RCMVAL_False
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS28
+			Req-Text = If the Regulator Mode is set to [INIT] and the Regulator Init Timeout is set to True  the Regulator Mode shall be set to [FAILED].
+			Triggers-Relation = null
+			Conditions-Relation = ( C1 AND C31 )
+			Actions-Relation = A24
+			<SysCondition>
+				Key = C1
+				<Entity>
+					Key = RCMVAR_the_Regulator_Mode
+					Text = RCMVAR_the_Regulator_Mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_INIT
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C31
+				<Entity>
+					Key = RCMVAR_the_Regulator_Init_Timeout
+					Text = RCMVAR_the_Regulator_Init_Timeout
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A24
+				<Entity>
+					Key = RCMVAR_the_Regulator_Mode
+					Text = RCMVAR_the_Regulator_Mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_FAILED
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS29
+			Req-Text = If the Monitor Interface Failure is set to False and the Monitor Internal Failure is set to False and the Status attribute of the Current Temperature is set to Valid  the Monitor Status shall be set to True.
+			Triggers-Relation = null
+			Conditions-Relation = ( C32 AND ( C33 AND C27 ) )
+			Actions-Relation = A25
+			<SysCondition>
+				Key = C27
+				<Entity>
+					Key = RCMVAR_the_Status_attribute_of_the_Current_Temperature
+					Text = RCMVAR_the_Status_attribute_of_the_Current_Temperature
+				</Entity>
+				<Value>
+					Text = RCMVAL_Valid
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C32
+				<Entity>
+					Key = RCMVAR_the_Monitor_Interface_Failure
+					Text = RCMVAR_the_Monitor_Interface_Failure
+				</Entity>
+				<Value>
+					Text = RCMVAL_False
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C33
+				<Entity>
+					Key = RCMVAR_the_Monitor_Internal_Failure
+					Text = RCMVAR_the_Monitor_Internal_Failure
+				</Entity>
+				<Value>
+					Text = RCMVAL_False
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A25
+				<Entity>
+					Key = RCMVAR_the_Monitor_Status
+					Text = RCMVAR_the_Monitor_Status
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS26
+			Req-Text = If the Regulator Interface Failure is set to True or the Regulator Internal Failure is set to True or the Status attribute of the Current Temperature is not set to [Valid]  the Regulator Status shall be set to False.
+			Triggers-Relation = null
+			Conditions-Relation = ( C28 OR ( C29 OR C30 ) )
+			Actions-Relation = A23
+			<SysCondition>
+				Key = C28
+				<Entity>
+					Key = RCMVAR_the_Regulator_Interface_Failure
+					Text = RCMVAR_the_Regulator_Interface_Failure
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C29
+				<Entity>
+					Key = RCMVAR_the_Regulator_Internal_Failure
+					Text = RCMVAR_the_Regulator_Internal_Failure
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C30
+				<Entity>
+					Key = RCMVAR_the_Status_attribute_of_the_Current_Temperature
+					Text = RCMVAR_the_Status_attribute_of_the_Current_Temperature
+				</Entity>
+				<Value>
+					Text = RCMVAL_Valid
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "!="
+			</SysCondition>
+			<SysAction>
+				Key = A23
+				<Entity>
+					Key = RCMVAR_the_Regulator_Status
+					Text = RCMVAR_the_Regulator_Status
+				</Entity>
+				<Value>
+					Text = RCMVAL_False
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS27
+			Req-Text = If the Regulator Mode is set to [NORMAL] and the Regulator Status is set to False  the Regulator Mode shall be set to [FAILED].
+			Triggers-Relation = null
+			Conditions-Relation = ( C18 AND C9 )
+			Actions-Relation = A24
+			<SysCondition>
+				Key = C18
+				<Entity>
+					Key = RCMVAR_the_Regulator_Mode
+					Text = RCMVAR_the_Regulator_Mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_NORMAL
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C9
+				<Entity>
+					Key = RCMVAR_the_Regulator_Status
+					Text = RCMVAR_the_Regulator_Status
+				</Entity>
+				<Value>
+					Text = RCMVAL_False
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A24
+				<Entity>
+					Key = RCMVAR_the_Regulator_Mode
+					Text = RCMVAR_the_Regulator_Mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_FAILED
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS24
+			Req-Text = If the Status attribute of the Lower Alarm Temperature and the Upper Alarm Temperature equals Valid  the Monitor Interface Failure shall be set to False.
+			Triggers-Relation = null
+			Conditions-Relation = ( C23 AND C24 )
+			Actions-Relation = A21
+			<SysCondition>
+				Key = C23
+				<Entity>
+					Key = RCMVAR_the_Status_attribute_of_the_Lower_Alarm_Temperature
+					Text = RCMVAR_the_Status_attribute_of_the_Lower_Alarm_Temperature
+				</Entity>
+				<Value>
+					Text = RCMVAL_Valid
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C24
+				<Entity>
+					Key = RCMVAR_the_Status_attribute_of_the_Upper_Alarm_Temperature
+					Text = RCMVAR_the_Status_attribute_of_the_Upper_Alarm_Temperature
+				</Entity>
+				<Value>
+					Text = RCMVAL_Valid
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A21
+				<Entity>
+					Key = RCMVAR_the_Monitor_Interface_Failure
+					Text = RCMVAR_the_Monitor_Interface_Failure
+				</Entity>
+				<Value>
+					Text = RCMVAL_False
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS25
+			Req-Text = If the Regulator Interface Failure is set to False  and the Regulator Internal Failure is set to False  and the Status attribute of the Current Temperature is set to Valid  the Regulator Status shall be set to True.
+			Triggers-Relation = null
+			Conditions-Relation = ( C25 AND ( C26 AND C27 ) )
+			Actions-Relation = A22
+			<SysCondition>
+				Key = C25
+				<Entity>
+					Key = RCMVAR_the_Regulator_Interface_Failure
+					Text = RCMVAR_the_Regulator_Interface_Failure
+				</Entity>
+				<Value>
+					Text = RCMVAL_False
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C26
+				<Entity>
+					Key = RCMVAR_the_Regulator_Internal_Failure
+					Text = RCMVAR_the_Regulator_Internal_Failure
+				</Entity>
+				<Value>
+					Text = RCMVAL_False
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C27
+				<Entity>
+					Key = RCMVAR_the_Status_attribute_of_the_Current_Temperature
+					Text = RCMVAR_the_Status_attribute_of_the_Current_Temperature
+				</Entity>
+				<Value>
+					Text = RCMVAL_Valid
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A22
+				<Entity>
+					Key = RCMVAR_the_Regulator_Status
+					Text = RCMVAR_the_Regulator_Status
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS22
+			Req-Text = If the Regulator Mode equals [NORMAL]  and the Temp attribute of the Current Temperature exceeds the Temp attribute of the Upper Desired Temperature  the Heat Control shall be set to [Control_Off].
+			Triggers-Relation = null
+			Conditions-Relation = ( C18 AND C20 )
+			Actions-Relation = A4
+			<SysCondition>
+				Key = C18
+				<Entity>
+					Key = RCMVAR_the_Regulator_Mode
+					Text = RCMVAR_the_Regulator_Mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_NORMAL
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C20
+				<Entity>
+					Key = RCMVAR_Temp_attribute_of_the_Current_Temperature
+					Text = RCMVAR_Temp_attribute_of_the_Current_Temperature
+				</Entity>
+				<Value>
+					Text = RCMVAR_the_Temp_attribute_of_the_Upper_Desired_Temperature
+					Type = ExternalValue
+					SourceEntity = Checking.SRCM.Entity@d4d09ec8
+				</Value>
+				Relation is "exceeds"
+				Operator is ">"
+			</SysCondition>
+			<SysAction>
+				Key = A4
+				<Entity>
+					Key = RCMVAR_the_Heat_Control
+					Text = RCMVAR_the_Heat_Control
+				</Entity>
+				<Value>
+					Text = RCMVAL_Control_Off
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS23
+			Req-Text = If the Status attribute of the Lower Alarm Temperature or the Upper Alarm Temperature equals Invalid  the Monitor Interface Failure shall be set to True.
+			Triggers-Relation = null
+			Conditions-Relation = ( C21 OR C22 )
+			Actions-Relation = A20
+			<SysCondition>
+				Key = C21
+				<Entity>
+					Key = RCMVAR_the_Status_attribute_of_the_Lower_Alarm_Temperature
+					Text = RCMVAR_the_Status_attribute_of_the_Lower_Alarm_Temperature
+				</Entity>
+				<Value>
+					Text = RCMVAL_Invalid
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C22
+				<Entity>
+					Key = RCMVAR_the_Status_attribute_of_the_Upper_Alarm_Temperature
+					Text = RCMVAR_the_Status_attribute_of_the_Upper_Alarm_Temperature
+				</Entity>
+				<Value>
+					Text = RCMVAL_Invalid
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A20
+				<Entity>
+					Key = RCMVAR_the_Monitor_Interface_Failure
+					Text = RCMVAR_the_Monitor_Interface_Failure
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS20
+			Req-Text = If the Status attribute of the Lower Desired Temperature and the Upper Desired Temperature equals Valid  the Regulator Interface Failure shall be set to False.
+			Triggers-Relation = null
+			Conditions-Relation = ( C16 AND C17 )
+			Actions-Relation = A18
+			<SysCondition>
+				Key = C16
+				<Entity>
+					Key = RCMVAR_the_Status_attribute_of_the_Lower_Desired_Temperature
+					Text = RCMVAR_the_Status_attribute_of_the_Lower_Desired_Temperature
+				</Entity>
+				<Value>
+					Text = RCMVAL_Valid
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C17
+				<Entity>
+					Key = RCMVAR_the_Status_attribute_of_the_Upper_Desired_Temperature
+					Text = RCMVAR_the_Status_attribute_of_the_Upper_Desired_Temperature
+				</Entity>
+				<Value>
+					Text = RCMVAL_Valid
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A18
+				<Entity>
+					Key = RCMVAR_the_Regulator_Interface_Failure
+					Text = RCMVAR_the_Regulator_Interface_Failure
+				</Entity>
+				<Value>
+					Text = RCMVAL_False
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS21
+			Req-Text = If the Regulator Mode equals [NORMAL]  and Temp attribute of the Lower Desired Temperature exceeds the Temp attribute of the Current Temperature  the Heat Control shall be set to [Control_On].
+			Triggers-Relation = null
+			Conditions-Relation = ( C18 AND C19 )
+			Actions-Relation = A19
+			<SysCondition>
+				Key = C18
+				<Entity>
+					Key = RCMVAR_the_Regulator_Mode
+					Text = RCMVAR_the_Regulator_Mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_NORMAL
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C19
+				<Entity>
+					Key = RCMVAR_the_Temp_attribute_of_the_Lower_Desired_Temperature
+					Text = RCMVAR_the_Temp_attribute_of_the_Lower_Desired_Temperature
+				</Entity>
+				<Value>
+					Text = RCMVAR_the_Temp_attribute_of_the_Current_Temperature
+					Type = ExternalValue
+					SourceEntity = Checking.SRCM.Entity@1c84b6e4
+				</Value>
+				Relation is "exceeds"
+				Operator is ">"
+			</SysCondition>
+			<SysAction>
+				Key = A19
+				<Entity>
+					Key = RCMVAR_the_Heat_Control
+					Text = RCMVAR_the_Heat_Control
+				</Entity>
+				<Value>
+					Text = RCMVAL_Control_On
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS1
+			Req-Text = If the Regulator Mode equals [INIT]  the Output Regulator Status shall be set to [Init].
+			Triggers-Relation = null
+			Conditions-Relation = C1
+			Actions-Relation = A1
+			<SysCondition>
+				Key = C1
+				<Entity>
+					Key = RCMVAR_the_Regulator_Mode
+					Text = RCMVAR_the_Regulator_Mode
+				</Entity>
+				<Value>
+					Text = RCMVAL_INIT
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A1
+				<Entity>
+					Key = RCMVAR_the_output_Regulator_Status
+					Text = RCMVAR_the_output_Regulator_Status
+				</Entity>
+				<Value>
+					Text = RCMVAL_Init
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is set to"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+	</SystemActionSource>
+	<SystemTriggers>
+		<SysTrigger>
+			<Entity>
+				Key = RCMVAR_Reset
+				Text = RCMVAR_Reset
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equals"
+			Operator is "="
+			Action-Sources = [AS18]
+		</SysTrigger>
+	</SystemTriggers>
+	<SystemConditions>
+		<SysCondition>
+			Key = C20
+			<Entity>
+				Key = RCMVAR_Temp_attribute_of_the_Current_Temperature
+				Text = RCMVAR_Temp_attribute_of_the_Current_Temperature
+			</Entity>
+			<Value>
+				Text = RCMVAR_the_Temp_attribute_of_the_Upper_Desired_Temperature
+				Type = ExternalValue
+				SourceEntity = Checking.SRCM.Entity@d4d09ec8
+			</Value>
+			Relation is "exceeds"
+			Operator is ">"
+			Action-Sources = [AS22]
+		</SysCondition>
+		<SysCondition>
+			Key = C22
+			<Entity>
+				Key = RCMVAR_the_Status_attribute_of_the_Upper_Alarm_Temperature
+				Text = RCMVAR_the_Status_attribute_of_the_Upper_Alarm_Temperature
+			</Entity>
+			<Value>
+				Text = RCMVAL_Invalid
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equals"
+			Operator is "="
+			Action-Sources = [AS23]
+		</SysCondition>
+		<SysCondition>
+			Key = C21
+			<Entity>
+				Key = RCMVAR_the_Status_attribute_of_the_Lower_Alarm_Temperature
+				Text = RCMVAR_the_Status_attribute_of_the_Lower_Alarm_Temperature
+			</Entity>
+			<Value>
+				Text = RCMVAL_Invalid
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equals"
+			Operator is "="
+			Action-Sources = [AS23]
+		</SysCondition>
+		<SysCondition>
+			Key = C24
+			<Entity>
+				Key = RCMVAR_the_Status_attribute_of_the_Upper_Alarm_Temperature
+				Text = RCMVAR_the_Status_attribute_of_the_Upper_Alarm_Temperature
+			</Entity>
+			<Value>
+				Text = RCMVAL_Valid
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equals"
+			Operator is "="
+			Action-Sources = [AS24]
+		</SysCondition>
+		<SysCondition>
+			Key = C23
+			<Entity>
+				Key = RCMVAR_the_Status_attribute_of_the_Lower_Alarm_Temperature
+				Text = RCMVAR_the_Status_attribute_of_the_Lower_Alarm_Temperature
+			</Entity>
+			<Value>
+				Text = RCMVAL_Valid
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equals"
+			Operator is "="
+			Action-Sources = [AS24]
+		</SysCondition>
+		<SysCondition>
+			Key = C26
+			<Entity>
+				Key = RCMVAR_the_Regulator_Internal_Failure
+				Text = RCMVAR_the_Regulator_Internal_Failure
+			</Entity>
+			<Value>
+				Text = RCMVAL_False
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS25]
+		</SysCondition>
+		<SysCondition>
+			Key = C25
+			<Entity>
+				Key = RCMVAR_the_Regulator_Interface_Failure
+				Text = RCMVAR_the_Regulator_Interface_Failure
+			</Entity>
+			<Value>
+				Text = RCMVAL_False
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS25]
+		</SysCondition>
+		<SysCondition>
+			Key = C28
+			<Entity>
+				Key = RCMVAR_the_Regulator_Interface_Failure
+				Text = RCMVAR_the_Regulator_Interface_Failure
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS26]
+		</SysCondition>
+		<SysCondition>
+			Key = C27
+			<Entity>
+				Key = RCMVAR_the_Status_attribute_of_the_Current_Temperature
+				Text = RCMVAR_the_Status_attribute_of_the_Current_Temperature
+			</Entity>
+			<Value>
+				Text = RCMVAL_Valid
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS25, AS29]
+		</SysCondition>
+		<SysCondition>
+			Key = C29
+			<Entity>
+				Key = RCMVAR_the_Regulator_Internal_Failure
+				Text = RCMVAR_the_Regulator_Internal_Failure
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS26]
+		</SysCondition>
+		<SysCondition>
+			Key = C1
+			<Entity>
+				Key = RCMVAR_the_Regulator_Mode
+				Text = RCMVAR_the_Regulator_Mode
+			</Entity>
+			<Value>
+				Text = RCMVAL_INIT
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equals"
+			Operator is "="
+			Action-Sources = [AS1, AS28]
+		</SysCondition>
+		<SysCondition>
+			Key = C2
+			<Entity>
+				Key = RCMVAR_the_Regulator_Mode_equals
+				Text = RCMVAR_the_Regulator_Mode_equals
+			</Entity>
+			<Value>
+				Text = RCMVAL_NORMAL
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equals"
+			Operator is "="
+			Action-Sources = [AS2]
+		</SysCondition>
+		<SysCondition>
+			Key = C3
+			<Entity>
+				Key = RCMVAR_the_Regulator_Mode_equals
+				Text = RCMVAR_the_Regulator_Mode_equals
+			</Entity>
+			<Value>
+				Text = RCMVAL_FAILED
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equals"
+			Operator is "="
+			Action-Sources = [AS3, AS4]
+		</SysCondition>
+		<SysCondition>
+			Key = C4
+			<Entity>
+				Key = RCMVAR_the_Manage_Monitor_Interface_mode
+				Text = RCMVAR_the_Manage_Monitor_Interface_mode
+			</Entity>
+			<Value>
+				Text = RCMVAL_INIT
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equals"
+			Operator is "="
+			Action-Sources = [AS5]
+		</SysCondition>
+		<SysCondition>
+			Key = C5
+			<Entity>
+				Key = RCMVAR_the_Manage_Monitor_Interface_mode
+				Text = RCMVAR_the_Manage_Monitor_Interface_mode
+			</Entity>
+			<Value>
+				Text = RCMVAL_NORMAL
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equals"
+			Operator is "="
+			Action-Sources = [AS6]
+		</SysCondition>
+		<SysCondition>
+			Key = C6
+			<Entity>
+				Key = RCMVAR_the_Manage_Monitor_Interface_mode
+				Text = RCMVAR_the_Manage_Monitor_Interface_mode
+			</Entity>
+			<Value>
+				Text = RCMVAL_FAILED
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equals"
+			Operator is "="
+			Action-Sources = [AS7]
+		</SysCondition>
+		<SysCondition>
+			Key = C7
+			<Entity>
+				Key = RCMVAR_the_Monitor_Mode
+				Text = RCMVAR_the_Monitor_Mode
+			</Entity>
+			<Value>
+				Text = RCMVAL_INIT
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equals"
+			Operator is "="
+			Action-Sources = [AS8, AS31, AS33]
+		</SysCondition>
+		<SysCondition>
+			Key = C8
+			<Entity>
+				Key = RCMVAR_the_Regulator_Status
+				Text = RCMVAR_the_Regulator_Status
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equals"
+			Operator is "="
+			Action-Sources = [AS11]
+		</SysCondition>
+		<SysCondition>
+			Key = C9
+			<Entity>
+				Key = RCMVAR_the_Regulator_Status
+				Text = RCMVAR_the_Regulator_Status
+			</Entity>
+			<Value>
+				Text = RCMVAL_False
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equals"
+			Operator is "="
+			Action-Sources = [AS12, AS27]
+		</SysCondition>
+		<SysCondition>
+			Key = C31
+			<Entity>
+				Key = RCMVAR_the_Regulator_Init_Timeout
+				Text = RCMVAR_the_Regulator_Init_Timeout
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS28]
+		</SysCondition>
+		<SysCondition>
+			Key = C30
+			<Entity>
+				Key = RCMVAR_the_Status_attribute_of_the_Current_Temperature
+				Text = RCMVAR_the_Status_attribute_of_the_Current_Temperature
+			</Entity>
+			<Value>
+				Text = RCMVAL_Valid
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "!="
+			Action-Sources = [AS26, AS30]
+		</SysCondition>
+		<SysCondition>
+			Key = C11
+			<Entity>
+				Key = RCMVAR_the_Monitor_Status
+				Text = RCMVAR_the_Monitor_Status
+			</Entity>
+			<Value>
+				Text = RCMVAL_False
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equals"
+			Operator is "="
+			Action-Sources = [AS15, AS32]
+		</SysCondition>
+		<SysCondition>
+			Key = C33
+			<Entity>
+				Key = RCMVAR_the_Monitor_Internal_Failure
+				Text = RCMVAR_the_Monitor_Internal_Failure
+			</Entity>
+			<Value>
+				Text = RCMVAL_False
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS29]
+		</SysCondition>
+		<SysCondition>
+			Key = C10
+			<Entity>
+				Key = RCMVAR_the_Monitor_Status
+				Text = RCMVAR_the_Monitor_Status
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equals"
+			Operator is "="
+			Action-Sources = [AS14, AS31]
+		</SysCondition>
+		<SysCondition>
+			Key = C32
+			<Entity>
+				Key = RCMVAR_the_Monitor_Interface_Failure
+				Text = RCMVAR_the_Monitor_Interface_Failure
+			</Entity>
+			<Value>
+				Text = RCMVAL_False
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS29]
+		</SysCondition>
+		<SysCondition>
+			Key = C13
+			<Entity>
+				Key = RCMVAR_the_Monitor_Mode
+				Text = RCMVAR_the_Monitor_Mode
+			</Entity>
+			<Value>
+				Text = RCMVAL_FAILED
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equals"
+			Operator is "="
+			Action-Sources = [AS17]
+		</SysCondition>
+		<SysCondition>
+			Key = C35
+			<Entity>
+				Key = RCMVAR_the_Monitor_Internal_Failure
+				Text = RCMVAR_the_Monitor_Internal_Failure
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS30]
+		</SysCondition>
+		<SysCondition>
+			Key = C12
+			<Entity>
+				Key = RCMVAR_the_Regulator_Mode
+				Text = RCMVAR_the_Regulator_Mode
+			</Entity>
+			<Value>
+				Text = RCMVAL_FAILED
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equals"
+			Operator is "="
+			Action-Sources = [AS16]
+		</SysCondition>
+		<SysCondition>
+			Key = C34
+			<Entity>
+				Key = RCMVAR_the_Monitor_Interface_Failure
+				Text = RCMVAR_the_Monitor_Interface_Failure
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS30]
+		</SysCondition>
+		<SysCondition>
+			Key = C15
+			<Entity>
+				Key = RCMVAR_the_Status_attribute_of_the_Upper_Desired_Temperature
+				Text = RCMVAR_the_Status_attribute_of_the_Upper_Desired_Temperature
+			</Entity>
+			<Value>
+				Text = RCMVAL_Invalid
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equals"
+			Operator is "="
+			Action-Sources = [AS19]
+		</SysCondition>
+		<SysCondition>
+			Key = C37
+			<Entity>
+				Key = RCMVAR_the_Monitor_Init_Timeout
+				Text = RCMVAR_the_Monitor_Init_Timeout
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS33]
+		</SysCondition>
+		<SysCondition>
+			Key = C14
+			<Entity>
+				Key = RCMVAR_the_Status_attribute_of_the_Lower_Desired_Temperature
+				Text = RCMVAR_the_Status_attribute_of_the_Lower_Desired_Temperature
+			</Entity>
+			<Value>
+				Text = RCMVAL_Invalid
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equals"
+			Operator is "="
+			Action-Sources = [AS19]
+		</SysCondition>
+		<SysCondition>
+			Key = C36
+			<Entity>
+				Key = RCMVAR_the_Monitor_Mode
+				Text = RCMVAR_the_Monitor_Mode
+			</Entity>
+			<Value>
+				Text = RCMVAL_NORMAL
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS32]
+		</SysCondition>
+		<SysCondition>
+			Key = C17
+			<Entity>
+				Key = RCMVAR_the_Status_attribute_of_the_Upper_Desired_Temperature
+				Text = RCMVAR_the_Status_attribute_of_the_Upper_Desired_Temperature
+			</Entity>
+			<Value>
+				Text = RCMVAL_Valid
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equals"
+			Operator is "="
+			Action-Sources = [AS20]
+		</SysCondition>
+		<SysCondition>
+			Key = C16
+			<Entity>
+				Key = RCMVAR_the_Status_attribute_of_the_Lower_Desired_Temperature
+				Text = RCMVAR_the_Status_attribute_of_the_Lower_Desired_Temperature
+			</Entity>
+			<Value>
+				Text = RCMVAL_Valid
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equals"
+			Operator is "="
+			Action-Sources = [AS20]
+		</SysCondition>
+		<SysCondition>
+			Key = C19
+			<Entity>
+				Key = RCMVAR_the_Temp_attribute_of_the_Lower_Desired_Temperature
+				Text = RCMVAR_the_Temp_attribute_of_the_Lower_Desired_Temperature
+			</Entity>
+			<Value>
+				Text = RCMVAR_the_Temp_attribute_of_the_Current_Temperature
+				Type = ExternalValue
+				SourceEntity = Checking.SRCM.Entity@1c84b6e4
+			</Value>
+			Relation is "exceeds"
+			Operator is ">"
+			Action-Sources = [AS21]
+		</SysCondition>
+		<SysCondition>
+			Key = C18
+			<Entity>
+				Key = RCMVAR_the_Regulator_Mode
+				Text = RCMVAR_the_Regulator_Mode
+			</Entity>
+			<Value>
+				Text = RCMVAL_NORMAL
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equals"
+			Operator is "="
+			Action-Sources = [AS21, AS22, AS27]
+		</SysCondition>
+	</SystemConditions>
+	<SystemActions>
+		<SysAction>
+			Key = A21
+			<Entity>
+				Key = RCMVAR_the_Monitor_Interface_Failure
+				Text = RCMVAR_the_Monitor_Interface_Failure
+			</Entity>
+			<Value>
+				Text = RCMVAL_False
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is set to"
+			Operator is "="
+			Action-Sources = [AS24]
+		</SysAction>
+		<SysAction>
+			Key = A22
+			<Entity>
+				Key = RCMVAR_the_Regulator_Status
+				Text = RCMVAR_the_Regulator_Status
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is set to"
+			Operator is "="
+			Action-Sources = [AS25]
+		</SysAction>
+		<SysAction>
+			Key = A23
+			<Entity>
+				Key = RCMVAR_the_Regulator_Status
+				Text = RCMVAR_the_Regulator_Status
+			</Entity>
+			<Value>
+				Text = RCMVAL_False
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is set to"
+			Operator is "="
+			Action-Sources = [AS26]
+		</SysAction>
+		<SysAction>
+			Key = A24
+			<Entity>
+				Key = RCMVAR_the_Regulator_Mode
+				Text = RCMVAR_the_Regulator_Mode
+			</Entity>
+			<Value>
+				Text = RCMVAL_FAILED
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is set to"
+			Operator is "="
+			Action-Sources = [AS27, AS28]
+		</SysAction>
+		<SysAction>
+			Key = A25
+			<Entity>
+				Key = RCMVAR_the_Monitor_Status
+				Text = RCMVAR_the_Monitor_Status
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is set to"
+			Operator is "="
+			Action-Sources = [AS29]
+		</SysAction>
+		<SysAction>
+			Key = A26
+			<Entity>
+				Key = RCMVAR_the_Monitor_Status
+				Text = RCMVAR_the_Monitor_Status
+			</Entity>
+			<Value>
+				Text = RCMVAL_False
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is set to"
+			Operator is "="
+			Action-Sources = [AS30]
+		</SysAction>
+		<SysAction>
+			Key = A27
+			<Entity>
+				Key = RCMVAR_the_Monitor_Mode
+				Text = RCMVAR_the_Monitor_Mode
+			</Entity>
+			<Value>
+				Text = RCMVAL_NORMAL
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is set to"
+			Operator is "="
+			Action-Sources = [AS31]
+		</SysAction>
+		<SysAction>
+			Key = A28
+			<Entity>
+				Key = RCMVAR_the_Monitor_Mode
+				Text = RCMVAR_the_Monitor_Mode
+			</Entity>
+			<Value>
+				Text = RCMVAL_FAILED
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is set to"
+			Operator is "="
+			Action-Sources = [AS32, AS33]
+		</SysAction>
+		<SysAction>
+			Key = A1
+			<Entity>
+				Key = RCMVAR_the_output_Regulator_Status
+				Text = RCMVAR_the_output_Regulator_Status
+			</Entity>
+			<Value>
+				Text = RCMVAL_Init
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is set to"
+			Operator is "="
+			Action-Sources = [AS1]
+		</SysAction>
+		<SysAction>
+			Key = A2
+			<Entity>
+				Key = RCMVAR_the_Output_Regulator_Status
+				Text = RCMVAR_the_Output_Regulator_Status
+			</Entity>
+			<Value>
+				Text = RCMVAL_Status_On
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is set to"
+			Operator is "="
+			Action-Sources = [AS2]
+		</SysAction>
+		<SysAction>
+			Key = A3
+			<Entity>
+				Key = RCMVAR_the_Output_Regulator_Status
+				Text = RCMVAR_the_Output_Regulator_Status
+			</Entity>
+			<Value>
+				Text = RCMVAL_Failed
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is set to"
+			Operator is "="
+			Action-Sources = [AS3]
+		</SysAction>
+		<SysAction>
+			Key = A4
+			<Entity>
+				Key = RCMVAR_the_Heat_Control
+				Text = RCMVAR_the_Heat_Control
+			</Entity>
+			<Value>
+				Text = RCMVAL_Control_Off
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is set to"
+			Operator is "="
+			Action-Sources = [AS4, AS22]
+		</SysAction>
+		<SysAction>
+			Key = A5
+			<Entity>
+				Key = RCMVAR_the_output_Monitor_Status
+				Text = RCMVAR_the_output_Monitor_Status
+			</Entity>
+			<Value>
+				Text = RCMVAL_Init
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is set to"
+			Operator is "="
+			Action-Sources = [AS5]
+		</SysAction>
+		<SysAction>
+			Key = A6
+			<Entity>
+				Key = RCMVAR_the_output_Monitor_Status
+				Text = RCMVAR_the_output_Monitor_Status
+			</Entity>
+			<Value>
+				Text = RCMVAL_Status_On
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is set to"
+			Operator is "="
+			Action-Sources = [AS6]
+		</SysAction>
+		<SysAction>
+			Key = A7
+			<Entity>
+				Key = RCMVAR_the_output_Monitor_Status
+				Text = RCMVAR_the_output_Monitor_Status
+			</Entity>
+			<Value>
+				Text = RCMVAL_Failed
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is set to"
+			Operator is "="
+			Action-Sources = [AS7]
+		</SysAction>
+		<SysAction>
+			Key = A8
+			<Entity>
+				Key = RCMVAR_the_Alarm_Control
+				Text = RCMVAR_the_Alarm_Control
+			</Entity>
+			<Value>
+				Text = RCMVAL_Control_Off
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is set to"
+			Operator is "="
+			Action-Sources = [AS8]
+		</SysAction>
+		<SysAction>
+			Key = A9
+			<Entity>
+				Key = RCMVAR_the_Manage_Monitor_Interface_mode
+				Text = RCMVAR_the_Manage_Monitor_Interface_mode
+			</Entity>
+			<Value>
+				Text = RCMVAL_the_Monitor_Mode
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is set to"
+			Operator is "="
+			Action-Sources = [AS9]
+		</SysAction>
+		<SysAction>
+			Key = A10
+			<Entity>
+				Key = RCMVAR_the_Regulator_Mode
+				Text = RCMVAR_the_Regulator_Mode
+			</Entity>
+			<Value>
+				Text = RCMVAL_INIT
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "initialise to"
+			Operator is "="
+			Action-Sources = [AS10, AS18]
+		</SysAction>
+		<SysAction>
+			Key = A11
+			<Entity>
+				Key = RCMVAR_the_Regulator_Init_Timeout
+				Text = RCMVAR_the_Regulator_Init_Timeout
+			</Entity>
+			<Value>
+				Text = RCMVAL_False
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is set to"
+			Operator is "="
+			Action-Sources = [AS11]
+		</SysAction>
+		<SysAction>
+			Key = A12
+			<Entity>
+				Key = RCMVAR_the_Regulator_Init_Timeout
+				Text = RCMVAR_the_Regulator_Init_Timeout
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is set to"
+			Operator is "="
+			Action-Sources = [AS12]
+		</SysAction>
+		<SysAction>
+			Key = A13
+			<Entity>
+				Key = RCMVAR_the_Monitor_Mode
+				Text = RCMVAR_the_Monitor_Mode
+			</Entity>
+			<Value>
+				Text = RCMVAL_INIT
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "initialise to"
+			Operator is "="
+			Action-Sources = [AS13]
+		</SysAction>
+		<SysAction>
+			Key = A14
+			<Entity>
+				Key = RCMVAR_the_Monitor_Init_Timeout
+				Text = RCMVAR_the_Monitor_Init_Timeout
+			</Entity>
+			<Value>
+				Text = RCMVAL_False
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is set to"
+			Operator is "="
+			Action-Sources = [AS14]
+		</SysAction>
+		<SysAction>
+			Key = A15
+			<Entity>
+				Key = RCMVAR_the_Monitor_Init_Timeout
+				Text = RCMVAR_the_Monitor_Init_Timeout
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is set to"
+			Operator is "="
+			Action-Sources = [AS15]
+		</SysAction>
+		<SysAction>
+			Key = A16
+			<Entity>
+				Key = RCMVAR_the_Regulator_Mode
+				Text = RCMVAR_the_Regulator_Mode
+			</Entity>
+			<Value>
+				Text = RCMVAL_NORMAL
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is set to"
+			Operator is "="
+			Action-Sources = [AS16, AS17]
+		</SysAction>
+		<SysAction>
+			Key = A17
+			<Entity>
+				Key = RCMVAR_the_Regulator_Interface_Failure
+				Text = RCMVAR_the_Regulator_Interface_Failure
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is set to"
+			Operator is "="
+			Action-Sources = [AS19]
+		</SysAction>
+		<SysAction>
+			Key = A18
+			<Entity>
+				Key = RCMVAR_the_Regulator_Interface_Failure
+				Text = RCMVAR_the_Regulator_Interface_Failure
+			</Entity>
+			<Value>
+				Text = RCMVAL_False
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is set to"
+			Operator is "="
+			Action-Sources = [AS20]
+		</SysAction>
+		<SysAction>
+			Key = A19
+			<Entity>
+				Key = RCMVAR_the_Heat_Control
+				Text = RCMVAR_the_Heat_Control
+			</Entity>
+			<Value>
+				Text = RCMVAL_Control_On
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is set to"
+			Operator is "="
+			Action-Sources = [AS21]
+		</SysAction>
+		<SysAction>
+			Key = A20
+			<Entity>
+				Key = RCMVAR_the_Monitor_Interface_Failure
+				Text = RCMVAR_the_Monitor_Interface_Failure
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is set to"
+			Operator is "="
+			Action-Sources = [AS23]
+		</SysAction>
+	</SystemActions>
+	<SystemEntities>
+		<SysEntity>
+			Key = RCMVAR_the_Monitor_Status
+			Text = RCMVAR_the_Monitor_Status
+			<Values>
+				v[1] = RCMVAL_True
+				v[1].SystemAction = A25
+				v[1].SystemCondition = C10
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_False
+				v[2].SystemAction = A26
+				v[2].SystemCondition = C11
+				v[2].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_Monitor_Interface_Failure
+			Text = RCMVAR_the_Monitor_Interface_Failure
+			<Values>
+				v[1] = RCMVAL_True
+				v[1].SystemAction = A20
+				v[1].SystemCondition = C34
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_False
+				v[2].SystemAction = A21
+				v[2].SystemCondition = C32
+				v[2].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_Monitor_Mode
+			Text = RCMVAR_the_Monitor_Mode
+			<Values>
+				v[1] = RCMVAL_FAILED
+				v[1].SystemAction = A28
+				v[1].SystemCondition = C13
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_INIT
+				v[2].SystemAction = A13
+				v[2].SystemCondition = C7
+				v[2].SystemTrigger = null
+				v[3] = RCMVAL_NORMAL
+				v[3].SystemAction = A27
+				v[3].SystemCondition = C36
+				v[3].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_Regulator_Interface_Failure
+			Text = RCMVAR_the_Regulator_Interface_Failure
+			<Values>
+				v[1] = RCMVAL_True
+				v[1].SystemAction = A17
+				v[1].SystemCondition = C28
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_False
+				v[2].SystemAction = A18
+				v[2].SystemCondition = C25
+				v[2].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_Regulator_Mode_equals
+			Text = RCMVAR_the_Regulator_Mode_equals
+			<Values>
+				v[1] = RCMVAL_FAILED
+				v[1].SystemAction = null
+				v[1].SystemCondition = C3
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_NORMAL
+				v[2].SystemAction = null
+				v[2].SystemCondition = C2
+				v[2].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_Status_attribute_of_the_Upper_Alarm_Temperature
+			Text = RCMVAR_the_Status_attribute_of_the_Upper_Alarm_Temperature
+			<Values>
+				v[1] = RCMVAL_Valid
+				v[1].SystemAction = null
+				v[1].SystemCondition = C24
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_Invalid
+				v[2].SystemAction = null
+				v[2].SystemCondition = C22
+				v[2].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_Temp_attribute_of_the_Lower_Desired_Temperature
+			Text = RCMVAR_the_Temp_attribute_of_the_Lower_Desired_Temperature
+			<Values>
+				v[1] = RCMVAR_the_Temp_attribute_of_the_Current_Temperature
+				v[1].SystemAction = null
+				v[1].SystemCondition = C19
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_Manage_Monitor_Interface_mode
+			Text = RCMVAR_the_Manage_Monitor_Interface_mode
+			<Values>
+				v[1] = RCMVAL_the_Monitor_Mode
+				v[1].SystemAction = A9
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_FAILED
+				v[2].SystemAction = null
+				v[2].SystemCondition = C6
+				v[2].SystemTrigger = null
+				v[3] = RCMVAL_INIT
+				v[3].SystemAction = null
+				v[3].SystemCondition = C4
+				v[3].SystemTrigger = null
+				v[4] = RCMVAL_NORMAL
+				v[4].SystemAction = null
+				v[4].SystemCondition = C5
+				v[4].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_Regulator_Internal_Failure
+			Text = RCMVAR_the_Regulator_Internal_Failure
+			<Values>
+				v[1] = RCMVAL_True
+				v[1].SystemAction = null
+				v[1].SystemCondition = C29
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_False
+				v[2].SystemAction = null
+				v[2].SystemCondition = C26
+				v[2].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_Monitor_Init_Timeout
+			Text = RCMVAR_the_Monitor_Init_Timeout
+			<Values>
+				v[1] = RCMVAL_True
+				v[1].SystemAction = A15
+				v[1].SystemCondition = C37
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_False
+				v[2].SystemAction = A14
+				v[2].SystemCondition = null
+				v[2].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_Status_attribute_of_the_Lower_Alarm_Temperature
+			Text = RCMVAR_the_Status_attribute_of_the_Lower_Alarm_Temperature
+			<Values>
+				v[1] = RCMVAL_Valid
+				v[1].SystemAction = null
+				v[1].SystemCondition = C23
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_Invalid
+				v[2].SystemAction = null
+				v[2].SystemCondition = C21
+				v[2].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_Temp_attribute_of_the_Upper_Desired_Temperature
+			Text = RCMVAR_the_Temp_attribute_of_the_Upper_Desired_Temperature
+			<Values>
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_Temp_attribute_of_the_Current_Temperature
+			Text = RCMVAR_Temp_attribute_of_the_Current_Temperature
+			<Values>
+				v[1] = RCMVAR_the_Temp_attribute_of_the_Upper_Desired_Temperature
+				v[1].SystemAction = null
+				v[1].SystemCondition = C20
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_Alarm_Control
+			Text = RCMVAR_the_Alarm_Control
+			<Values>
+				v[1] = RCMVAL_Control_Off
+				v[1].SystemAction = A8
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_Temp_attribute_of_the_Current_Temperature
+			Text = RCMVAR_the_Temp_attribute_of_the_Current_Temperature
+			<Values>
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_Output_Regulator_Status
+			Text = RCMVAR_the_Output_Regulator_Status
+			<Values>
+				v[1] = RCMVAL_Failed
+				v[1].SystemAction = A3
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_Status_On
+				v[2].SystemAction = A2
+				v[2].SystemCondition = null
+				v[2].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_Regulator_Status
+			Text = RCMVAR_the_Regulator_Status
+			<Values>
+				v[1] = RCMVAL_True
+				v[1].SystemAction = A22
+				v[1].SystemCondition = C8
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_False
+				v[2].SystemAction = A23
+				v[2].SystemCondition = C9
+				v[2].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_Reset
+			Text = RCMVAR_Reset
+			<Values>
+				v[1] = RCMVAL_True
+				v[1].SystemAction = null
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = T1
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_Monitor_Internal_Failure
+			Text = RCMVAR_the_Monitor_Internal_Failure
+			<Values>
+				v[1] = RCMVAL_True
+				v[1].SystemAction = null
+				v[1].SystemCondition = C35
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_False
+				v[2].SystemAction = null
+				v[2].SystemCondition = C33
+				v[2].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_Status_attribute_of_the_Lower_Desired_Temperature
+			Text = RCMVAR_the_Status_attribute_of_the_Lower_Desired_Temperature
+			<Values>
+				v[1] = RCMVAL_Valid
+				v[1].SystemAction = null
+				v[1].SystemCondition = C16
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_Invalid
+				v[2].SystemAction = null
+				v[2].SystemCondition = C14
+				v[2].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_output_Regulator_Status
+			Text = RCMVAR_the_output_Regulator_Status
+			<Values>
+				v[1] = RCMVAL_Init
+				v[1].SystemAction = A1
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_Status_attribute_of_the_Current_Temperature
+			Text = RCMVAR_the_Status_attribute_of_the_Current_Temperature
+			<Values>
+				v[1] = RCMVAL_Valid
+				v[1].SystemAction = null
+				v[1].SystemCondition = C27
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_output_Monitor_Status
+			Text = RCMVAR_the_output_Monitor_Status
+			<Values>
+				v[1] = RCMVAL_Failed
+				v[1].SystemAction = A7
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_Status_On
+				v[2].SystemAction = A6
+				v[2].SystemCondition = null
+				v[2].SystemTrigger = null
+				v[3] = RCMVAL_Init
+				v[3].SystemAction = A5
+				v[3].SystemCondition = null
+				v[3].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_Heat_Control
+			Text = RCMVAR_the_Heat_Control
+			<Values>
+				v[1] = RCMVAL_Control_Off
+				v[1].SystemAction = A4
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_Control_On
+				v[2].SystemAction = A19
+				v[2].SystemCondition = null
+				v[2].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_Regulator_Init_Timeout
+			Text = RCMVAR_the_Regulator_Init_Timeout
+			<Values>
+				v[1] = RCMVAL_True
+				v[1].SystemAction = A12
+				v[1].SystemCondition = C31
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_False
+				v[2].SystemAction = A11
+				v[2].SystemCondition = null
+				v[2].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_Status_attribute_of_the_Upper_Desired_Temperature
+			Text = RCMVAR_the_Status_attribute_of_the_Upper_Desired_Temperature
+			<Values>
+				v[1] = RCMVAL_Valid
+				v[1].SystemAction = null
+				v[1].SystemCondition = C17
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_Invalid
+				v[2].SystemAction = null
+				v[2].SystemCondition = C15
+				v[2].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_Regulator_Mode
+			Text = RCMVAR_the_Regulator_Mode
+			<Values>
+				v[1] = RCMVAL_FAILED
+				v[1].SystemAction = A24
+				v[1].SystemCondition = C12
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_INIT
+				v[2].SystemAction = A10
+				v[2].SystemCondition = C1
+				v[2].SystemTrigger = null
+				v[3] = RCMVAL_NORMAL
+				v[3].SystemAction = A16
+				v[3].SystemCondition = C18
+				v[3].SystemTrigger = null
+			</Values>
+		</SysEntity>
+	</SystemEntities>
+</log>

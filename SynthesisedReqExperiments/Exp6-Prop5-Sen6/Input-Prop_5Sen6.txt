@@ -1,0 +1,2 @@
+inReq([inComp(cond,'the sailing request','[True]',equal,no,1),inComp(act,'the quality signal','[True]',equal,no,1)],['','','','',''],"- , , if the sailing request equal [True]   , the quality signal equal [True]   , ."). 
+inReq([inComp(cond,'the sailing request','[True]',equal,no,1),inComp(act,'the quality signal','[True]',equal,no,1)],['','','','',''],"- , , if the sailing request equal [True]   , the quality signal equal [True]   , . "). 

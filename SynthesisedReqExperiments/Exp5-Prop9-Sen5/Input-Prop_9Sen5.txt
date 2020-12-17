@@ -1,0 +1,2 @@
+inReq([inComp(cond,'the transmission error','[True]',equal,no,1),inComp(act,'the IDC inhibitor','[True]',equal,no,1)],['','','','',''],"- , , if the transmission error equal [True]   , the IDC inhibitor equal [True]   , ."). 
+inReq([inComp(act,'the transmission error','[True]',equal,no,1)],['','','','',''],"- , , , the transmission error equal [True]   , ."). 

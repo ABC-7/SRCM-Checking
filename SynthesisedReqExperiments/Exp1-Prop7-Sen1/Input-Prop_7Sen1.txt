@@ -1,0 +1,1 @@
+inReq([inComp(cond,'the engine error','[True]',equal,no,1),inComp(act,'the defined position','',set,no,1)],['','','','',''],"- , , if the engine error equal [True]   , the defined position set   , ."). 

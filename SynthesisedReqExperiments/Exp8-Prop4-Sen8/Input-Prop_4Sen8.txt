@@ -1,0 +1,3 @@
+inReq([inComp(cond,'the quality signal','[True]',equal,no,1),inComp(act,'the vehicle speed setpoint','[True]',equal,no,1)],['','','','',''],"- , , if the quality signal equal [True]   , the vehicle speed setpoint equal [True]   , ."). 
+inReq([inComp(cond,'the defined position','[True]',equal,no,1),inComp(act,'the quality signal','[True]',equal,no,1)],['','','','',''],"- , , if the defined position equal [True]   , the quality signal equal [True]   , ."). 
+inReq([inComp(cond,'the vehicle speed setpoint','[True]',equal,no,1),inComp(act,'the defined position','[True]',equal,no,1)],['','','','',''],"- , , if the vehicle speed setpoint equal [True]   , the defined position equal [True]   , ."). 

@@ -1,0 +1,2 @@
+inReq([inComp(cond,'the IDC inhibitor','[True]',equal,no,1),inComp(act,'the quality signal','[True]',equal,no,1)],['','','','',''],"- , , if the IDC inhibitor equal [True]   , the quality signal equal [True]   , ."). 
+inReq([inComp(cond,'the IDC inhibitor','[True]',equal,no,1),inComp(act,'the quality signal','[True]',equal,no,1)],['','','','',''],"- , , if the IDC inhibitor equal [True]   , the quality signal equal [True]   , . "). 

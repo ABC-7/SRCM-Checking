@@ -1,0 +1,12 @@
+ction Source Key: AS2
+	has Inconsistency issue "DeadLock-- found Cycle AS2 AS1 AS3 AS2"
+=================================
+Action Source Key: AS3
+	has Inconsistency issue "DeadLock-- found Cycle AS3 AS2 AS1 AS3"
+=================================
+Action Source Key: AS4
+	has Incompleteness issue "Unsatisfiable rule"
+=================================
+Action Source Key: AS1
+	has Correctness issue "Infiniteloop-- found Cycle AS4 AS1 AS3 AS2 AS1"
+=================================

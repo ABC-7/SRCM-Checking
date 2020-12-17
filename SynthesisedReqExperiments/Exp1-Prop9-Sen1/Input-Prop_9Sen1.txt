@@ -1,0 +1,2 @@
+inReq([inComp(cond,'the NoSailing requests','[True]',equal,no,1),inComp(act,'the sailing inhibitor','[True]',equal,no,1)],['','','','',''],"- , , if the NoSailing requests equal [True]   , the sailing inhibitor equal [True]   , ."). 
+inReq([inComp(act,'the NoSailing requests','[True]',equal,no,1)],['','','','',''],"- , , , the NoSailing requests equal [True]   , ."). 

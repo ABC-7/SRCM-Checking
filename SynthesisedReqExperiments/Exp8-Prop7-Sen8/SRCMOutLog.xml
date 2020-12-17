@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+	<SRCM_Metrics>
+		Total Requirements = 1,Unique-ActionSources = 1
+		Total Triggers = 0, 		Unique-SystemTriggers = 0
+		Total Conditions = 1, 	Unique-SystemConditions = 1
+		Total Actions = 1,		Unique-SystemActions = 1
+		Total Entities = 2, 	Unique-SystemEntities = 2
+	</SRCM_Metrics>
+	<SystemActionSource>
+		<ActionSource>
+			Key = AS1
+			Req-Text = -   if the vehicle speed setpoint equal [True]    the defined position set    .
+			Triggers-Relation = null
+			Conditions-Relation = C1
+			Actions-Relation = A1
+			<SysCondition>
+				Key = C1
+				<Entity>
+					Key = RCMVAR_the_vehicle_speed_setpoint
+					Text = RCMVAR_the_vehicle_speed_setpoint
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A1
+				<Entity>
+					Key = RCMVAR_the_defined_position
+					Text = RCMVAR_the_defined_position
+				</Entity>
+				<Value>
+					Text = RCMVAL_
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "set"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+	</SystemActionSource>
+	<SystemTriggers>
+	</SystemTriggers>
+	<SystemConditions>
+		<SysCondition>
+			Key = C1
+			<Entity>
+				Key = RCMVAR_the_vehicle_speed_setpoint
+				Text = RCMVAR_the_vehicle_speed_setpoint
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS1]
+		</SysCondition>
+	</SystemConditions>
+	<SystemActions>
+		<SysAction>
+			Key = A1
+			<Entity>
+				Key = RCMVAR_the_defined_position
+				Text = RCMVAR_the_defined_position
+			</Entity>
+			<Value>
+				Text = RCMVAL_
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "set"
+			Operator is "="
+			Action-Sources = [AS1]
+		</SysAction>
+	</SystemActions>
+	<SystemEntities>
+		<SysEntity>
+			Key = RCMVAR_the_defined_position
+			Text = RCMVAR_the_defined_position
+			<Values>
+				v[1] = RCMVAL_
+				v[1].SystemAction = A1
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_vehicle_speed_setpoint
+			Text = RCMVAR_the_vehicle_speed_setpoint
+			<Values>
+				v[1] = RCMVAL_True
+				v[1].SystemAction = null
+				v[1].SystemCondition = C1
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+	</SystemEntities>
+</log>

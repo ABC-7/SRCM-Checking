@@ -1,0 +1,91 @@
+Req-01:The CARA will be operational whenever the LSTAT is powered_on. 
+inReq([inComp('trig', 'LSTAT', 'powered_on', 'is', 'no', 1), inComp('act', 'CARA', 'operational', 'will be','no', 1)], ['','', '', '', ''] , "The CARA will be operational whenever the LSTAT is powered_on.")
+===================================
+Req-07: If an occlusion is detected, and auto_control_mode is running, auto_control_mode will be terminated. 
+inReq([inComp('cond', 'occlusion', 'detected', 'is', 'no', 1),inComp('cond', 'auto_control_mode', 'running', 'is', 'no', 2), inComp('act', 'auto_control_mode', 'terminated', 'will be','no', 1)], ['','', '(1 and 2)', '', ''] , "If an occlusion is detected, and auto_control_mode is running, auto_control_mode will be terminated.")
+===================================
+Req-08: If Air_Ok_signal is low, auto_control_mode is terminated in 3 seconds. 
+inReq([inComp('cond', 'Air_Ok_signal', 'low', 'is', 'no', 1), inComp('act', 'auto_control_mode', 'terminated', 'is', 'no', 1)], ['','', '', '', ''] , "If Air_Ok_signal is low, auto_control_mode is terminated in 3 seconds. ")
+===================================
+===================================
+Req-13.1 If arterial_line and pulse_wave are corroborated, and cuff is available, next arterial_line is selected. 
+inReq([inComp('cond', 'arterial_line', 'corroborated', 'is', 'no', 1),inComp('cond', 'pulse_wave', 'corroborated', 'is', 'no', 2), inComp('cond', 'cuff', 'available', 'is', 'no', 3), inComp('act', 'arterial_line', 'selected', 'is','no', 1)], ['','', '(1 and (2 and 3))', '', ''] , "If arterial_line and pulse_wave are corroborated, and cuff is available, next arterial_line is selected.")
+===================================
+Req-13.2: If pulse_wave is corroborated, and cuff is available, and arterial_line is not corroborated, next pulse_wave is selected. 
+inReq([inComp('cond', 'pulse_wave', 'corroborated', 'is', 'no', 1), inComp('cond', 'cuff', 'available', 'is', 'no', 2), inComp('cond', 'arterial_line', 'corroborated', 'is', 'yes', 3), inComp('act', 'pulse_wave', 'selected', 'is', 'no', 1)], ['','', '(1 and (2 and 3))', '', ''] , "If pulse_wave is corroborated, and cuff is available, and arterial_line is not corroborated, next pulse_wave is selected.")
+===================================
+R-13.3: If arterial_line is not corroborated, and pulse_wave is not corroborated, and cuff is available, then cuff is selected. 
+inReq([inComp('cond', 'arterial_line', 'corroborated', 'is', 'yes', 1), inComp('cond', 'pulse_wave', 'corroborated', 'is', 'yes', 2), inComp('cond', 'cuff', 'available', 'is', 'no', 3), inComp('act', 'cuff', 'selected', 'is', 'no', 1)], ['','', '(1 and (2 and 3))', '', ''] , "If arterial_line is not corroborated, and pulse_wave is not corroborated, and cuff is available, then cuff is selected.")
+===================================
+Req-16 If a pump is plugged_in, and an infusate is ready, and the occlusion_line is clear, auto_control_mode can be started. 
+inReq([inComp('cond', 'pump', 'plugged_in', 'is', 'no', 1), inComp('cond', 'infusate', 'ready', 'is', 'no', 2), inComp('cond', 'occlusion_line', 'clear', 'is', 'no', 3), inComp('act', 'auto_control_mode', 'started', 'can be', 'no', 1)], ['','', '(1 and (2 and 3))', '', ''] , "If a pump is plugged_in, and an infusate is ready, and the occlusion_line is clear, auto_control_mode can be started.")
+===================================
+Req-17.1: When auto_control_mode is running, eventually the cuff  will be inflated.
+inReq([inComp('trig', 'auto_control_mode', 'running', 'is', 'no', 1), inComp('act', 'cuff', 'inflated', 'will be', 'no', 1)], ['','', '', '', ''] , "When auto_control_mode is running, eventually the cuff  will be inflated.")
+===================================
+Req-17.2: If start_auto_control_button is pressed, and cuff is not available, an alarm is issued and override_selection is provided. 
+inReq([inComp('cond', 'start_auto_control_button', 'pressed', 'is', 'no', 1), inComp('cond', 'cuff', 'available', 'is', 'yes', 2), inComp('act', 'alarm', 'issued', 'is', 'no', 1), inComp('act', 'override_selection', 'provided', 'is', 'no', 2)], ['','', '(1 and 2)', '(1 and 2)', ''] , "If start_auto_control_button is pressed, and cuff is not available, an alarm is issued and override_selection is provided.")
+===================================
+Req-17.3: If alarm_reset_button is pressed, the alarm is disabled. 
+inReq([inComp('cond', 'alarm_reset_button', 'pressed', 'is', 'no', 1), inComp('act', 'alarm', 'disabled', 'is', 'no', 1)], ['','', '', '', ''] , "If alarm_reset_button is pressed, the alarm is disabled.")
+===================================
+Req-17.4: If override_selection is provided, if override_yes is pressed, and arterial_line is not corroborated, next arterial_line is selected.
+inReq([inComp('cond', 'override_selection', 'provided', 'is', 'no', 1), inComp('cond', 'override_yes', 'pressed', 'is', 'no', 2), inComp('cond', 'arterial_line', 'corroborated', 'is', 'yes', 3), inComp('act', 'arterial_line', 'selected', 'is', 'no', 1)], ['','', '(1 and (2 and 3))', '', ''] , "If override_selection is provided, if override_yes is pressed, and arterial_line is not corroborated, next arterial_line is selected.")
+===================================
+Req-17.5: If override_selection is provided, if override_yes is pressed, and arterial_line is corroborated, and pulse_wave is not corroborated, next pulse_wave is selected.
+inReq([inComp('cond', 'override_selection', 'provided', 'is', 'no', 1), inComp('cond', 'override_yes', 'pressed', 'is', 'no', 2), inComp('cond', 'arterial_line', 'corroborated', 'is', 'no', 3), inComp('cond', 'pulse_wave', 'corroborated', 'is', 'yes', 4), inComp('act', 'pulse_wave', 'selected', 'is', 'no', 1)], ['','', '(1 and (2 and (3 and 4)))', '', ''] , "If override_selection is provided, if override_yes is pressed, and arterial_line is corroborated, and pulse_wave is not corroborated, next pulse_wave is selected.")
+===================================
+Req-17.6: If override_selection is provided, if override_no is pressed, next manual_mode is started.
+inReq([inComp('cond', 'override_selection', 'provided', 'is', 'no', 1), inComp('cond', 'override_no', 'pressed', 'is', 'no', 2), inComp('act', 'manual_mode', 'started', 'is', 'no', 1)], ['','', '(1 and 2)', '', ''] , "If override_selection is provided, if override_no is pressed, next manual_mode is started.")
+===================================
+Req-17.7: If cuff and arterial_line and pulse_wave are not available, next manual_mode is started.
+inReq([inComp('cond', 'cuff', 'available', 'is', 'yes', 1), inComp('cond', 'arterial_line', 'available', 'is', 'yes', 2), inComp('cond', 'pulse_wave', 'available', 'is', 'yes', 3), inComp('act', 'manual_mode', 'started', 'is', 'no', 1)], ['','', '(1 and (2 and 3))', '', ''] , "If cuff and arterial_line and pulse_wave are not available, next manual_mode is started.")
+===================================
+Req-20: If manual_mode is running and start_auto_control_button is pressed, next corroboration is triggered.
+inReq([inComp('cond', 'manual_mode', 'running', 'is', 'no', 1), inComp('cond', 'start_auto_control_button', 'pressed', 'is', 'no', 2), inComp('act', 'corroboration', 'triggered', 'is', 'no', 1)], ['','', '(1 and 2)', '', ''] , "If manual_mode is running and start_auto_control_button is pressed, next corroboration is triggered.")
+===================================
+Req-28: If a blood_pressure is valid in 180 seconds, manual_mode should be triggered.
+inReq([inComp('cond', 'blood_pressure', 'valid', 'is', 'no', 1), inComp('act', 'manual_mode should', 'triggered', 'should be', 'no', 1)], ['','', '', '', ''] , "If a blood_pressure is valid in 180 seconds, manual_mode should be triggered.")
+===================================
+===================================
+Req-32.1: If pulse_wave or arterial_line is available, and cuff is selected, corroboration is triggered.
+inReq([inComp('cond', 'pulse_wave', 'available', 'is', 'no', 1), inComp('cond', 'arterial_line', 'available', 'is', 'no', 2), inComp('cond', 'cuff', 'selected', 'is', 'no', 3), inComp('act', 'corroboration', 'triggered', 'is', 'no', 1)], ['','', '(3 and (1 or 2))', '', ''] , "If pulse_wave or arterial_line is available, and cuff is selected, corroboration is triggered.")
+===================================
+Req-32.2: If pulse_wave is selected, and arterial_line is available, corroboration is triggered.
+inReq([inComp('cond', 'pulse_wave', 'selected', 'is', 'no', 1), inComp('cond', 'arterial_line', 'available', 'is', 'no', 2), inComp('act', 'corroboration', 'triggered', 'is', 'no', 1)], ['','', '(1 and 2)', '', ''] , "If pulse_wave is selected, and arterial_line is available, corroboration is triggered.")
+===================================
+Req-34: When auto_control_mode is running, terminate_auto_control_button should be available.
+inReq([inComp('trig', 'auto_control_mode', 'running', 'is', 'no', 1), inComp('act', 'terminate_auto_control_button', 'available', 'should be', 'no', 1)], ['','', '', '', ''] , "When auto_control_mode is running, terminate_auto_control_button should be available.")
+===================================
+Req-42: When auto_control_mode is running, and the arterial_line, or pulse_wave or cuff is lost, an alarm should sound in 60 seconds.
+inReq([inComp('cond', 'auto_control_mode', 'running', 'is', 'no', 1), inComp('cond', 'arterial_line', 'lost', 'is', 'no', 2), inComp('cond', 'pulse_wave', 'lost', 'is', 'no', 3), inComp('cond', 'cuff', 'lost', 'is', 'no', 4), inComp('act', 'alarm', '', 'should sound', 'no', 1)], ['','', '(1 and (2 or (3 or 4)))', '', ''] , "When auto_control_mode is running, and the arterial_line, or pulse_wave or cuff is lost, an alarm should sound in 60 seconds.") --missed attribute
+===================================
+===================================
+Req-44 If: pulse_wave and arterial_line are unavailable, and cuff is selected, and blood_pressure is not valid, next manual_mode is started.
+inReq([inComp('cond', 'pulse_wave', 'unavailable', 'is', 'no', 1), inComp('cond', 'arterial_line', 'unavailable', 'is', 'no', 2), inComp('cond', 'cuff', 'selected', 'is', 'no', 3), inComp('cond', 'blood_pressure', 'valid', 'is', 'no', 3), inComp('act', 'manual_mode', 'started', 'is', 'no', 1)], ['','', '(1 and (2 and (3 and 4)))', '', ''] , "pulse_wave and arterial_line are unavailable, and cuff is selected, and blood_pressure is not valid, next manual_mode is started.")
+===================================
+Req-48.1: Whenever termiante_auto_control_button is selected, a confirmation_button is available.
+inReq([inComp('trig', 'termiante_auto_control_button', 'selected', 'is', 'no', 1), inComp('act', 'confirmation_button', 'available', 'is', 'no', 1)], ['','', '', '', ''] , "Whenever termiante_auto_control_button is selected, a confirmation_button is available.")
+===================================
+Req-48.2: If a confirmation_button is available, and confirmation_yes is pressed, manual_mode is started.
+inReq([inComp('cond', 'confirmation_button', 'available', 'is', 'no', 1), inComp('cond', 'confirmation_yes', 'pressed', 'is', 'no', 2), inComp('act', 'manual_mode', 'started', 'is', 'no', 1)], ['','', '(1 and 2)', '', ''] , "If a confirmation_button is available, and confirmation_yes is pressed, manual_mode is started.")
+===================================
+Req-48.3: If a confirmation_button is available, and confirmation_no is pressed, auto_control_mode is running.
+inReq([inComp('cond', 'confirmation_button', 'available', 'is', 'no', 1), inComp('cond', 'confirmation_no', 'pressed', 'is', 'no', 2), inComp('act', 'auto_control_mode', 'running', 'is', 'no', 1)], ['','', '(1 and 2)', '', ''] , "If a confirmation_button is available, and confirmation_no is pressed, auto_control_mode is running.")
+===================================
+Req-48.4: If a confirmation_button is available, and confirmation_yes is pressed, next confirmation_yes is disabled. 
+inReq([inComp('cond', 'confirmation_button', 'available', 'is', 'no', 1), inComp('cond', 'confirmation_yes', 'pressed', 'is', 'no', 2), inComp('act', 'confirmation_yes', 'disabled', 'is', 'no', 1)], ['','', '(1 and 2)', '', ''] , "If a confirmation_button is available, and confirmation_yes is pressed, next confirmation_yes is disabled.")
+===================================
+Req-48.5: If a confirmation_button is available, and confirmation_no is pressed, next confirmation_no is disabled. 
+inReq([inComp('cond', 'confirmation_button', 'available', 'is', 'no', 1), inComp('cond', 'confirmation_no', 'pressed', 'is', 'no', 2), inComp('act', 'confirmation_no', 'disabled', 'is', 'no', 1)], ['','', '(1 and 2)', '', ''] , "If a confirmation_button is available, and confirmation_no is pressed, next confirmation_no is disabled.")
+===================================
+Req-48.6: If a confirmation_button is available and terminate_auto_control_button is pressed, next terminate_auto_control_button is disabled. 
+inReq([inComp('cond', 'confirmation_button', 'available', 'is', 'no', 1), inComp('cond', 'terminate_auto_control_button', 'pressed', 'is', 'no', 2), inComp('act', 'terminate_auto_control_button', 'disabled', 'is', 'no', 1)], ['','', '(1 and 2)', '', ''] , "If a confirmation_button is available and terminate_auto_control_button is pressed, next terminate_auto_control_button is disabled.")
+===================================
+Req-49: When a start_auto_control_button is enabled,  the start_auto_control_button is enabled until it is pressed. 
+inReq([inComp('cond', 'start_auto_control_button', 'enabled', 'is', 'no', 1), inComp('act', 'start_auto_control_button', 'enabled', 'is', 'no', 1)], ['','', '', '', ''] , "When a start_auto_control_button is enabled,  the start_auto_control_button is enabled until it is pressed.")
+===================================
+===================================
+Req-54: If auto_control_mode is running, and impedance_reading is unavailable, next auto_control_model is terminated. 
+inReq([inComp('cond', 'auto_control_mode', 'running', 'is', 'no', 1), inComp('cond', 'impedance_reading', 'unavailable', 'is', 'no', 2), inComp('act', 'auto_control_model', 'terminated', 'is', 'no', 1)], ['','', '(1 and 2)', '', ''] , "If auto_control_mode is running, and impedance_reading is unavailable, next auto_control_model is terminated.")
+===================================

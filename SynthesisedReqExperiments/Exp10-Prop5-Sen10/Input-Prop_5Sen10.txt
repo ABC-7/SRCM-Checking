@@ -1,0 +1,2 @@
+inReq([inComp(cond,'the defined position','[True]',equal,no,1),inComp(act,'the LCS','[True]',equal,no,1)],['','','','',''],"- , , if the defined position equal [True]   , the LCS equal [True]   , ."). 
+inReq([inComp(cond,'the defined position','[True]',equal,no,1),inComp(act,'the LCS','[True]',equal,no,1)],['','','','',''],"- , , if the defined position equal [True]   , the LCS equal [True]   , . "). 

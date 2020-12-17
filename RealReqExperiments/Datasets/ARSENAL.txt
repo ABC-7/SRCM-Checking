@@ -1,0 +1,99 @@
+R1: If the Regulator Mode equals [INIT] , the Output Regulator Status shall be set to [Init].
+inReq([inComp('cond', 'the Regulator Mode', '[INIT]', 'equals', 'no', 1), inComp('act', 'the output Regulator Status', '[Init]', 'is set to', 'no', 1)], ['','', '', '', ''] , "If the Regulator Mode equals [INIT] , the Output Regulator Status shall be set to [Init].")
+===================================
+R2: If the Regulator Mode equals [NORMAL] , the Output Regulator Status shall be set to [Status_On].
+inReq([inComp('cond', 'the Regulator Mode equals', '[NORMAL]', 'equals', 'no', 1), inComp('act', 'the Output Regulator Status', '[Status_On]', 'is set to', 'no', 1)], ['','', '', '', ''] , "If the Regulator Mode equals [NORMAL] , the Output Regulator Status shall be set to [Status_On].")
+===================================
+R3: If the Regulator Mode equals [FAILED] , the Output Regulator Status shall be set to [Failed].
+inReq([inComp('cond', 'the Regulator Mode equals', '[FAILED]', 'equals', 'no', 1), inComp('act', 'the Output Regulator Status', '[Failed]', 'is set to', 'no', 1)], ['','', '', '', ''] , "If the Regulator Mode equals [FAILED] , the Output Regulator Status shall be set to [Failed].")
+===================================
+R4: If the Regulator Mode equals [FAILED] , the Heat Control shall be set to [Control_Off].
+inReq([inComp('cond', 'the Regulator Mode equals', '[FAILED]', 'equals', 'no', 1), inComp('act', 'the Heat Control', '[Control_Off]', 'is set to', 'no', 1)], ['','', '', '', ''] , "If the Regulator Mode equals [FAILED] , the Heat Control shall be set to [Control_Off].")
+===================================
+R5: If the Manage Monitor Interface mode equals [INIT] , the Output Monitor Status shall be set to [Init].
+inReq([inComp('cond', 'the Manage Monitor Interface mode', '[INIT]', 'equals', 'no', 1), inComp('act', 'the output Monitor Status', '[Init]', 'is set to', 'no', 1)], ['','', '', '', ''] , "If the Manage Monitor Interface mode equals [INIT] , the Output Monitor Status shall be set to [Init].")
+===================================
+R6: If the Manage Monitor Interface mode equals [NORMAL] , the Output Monitor Status shall be set to [Status_On].
+inReq([inComp('cond', 'the Manage Monitor Interface mode', '[NORMAL]', 'equals', 'no', 1), inComp('act', 'the output Monitor Status', '[Status_On]', 'is set to', 'no', 1)], ['','', '', '', ''] , "If the Manage Monitor Interface mode equals [NORMAL] , the Output Monitor Status shall be set to [Status_On].")
+===================================
+R7: If the Manage Monitor Interface mode equals [FAILED] , the Output Monitor Status shall be set to [Failed].
+inReq([inComp('cond', 'the Manage Monitor Interface mode', '[FAILED]', 'equals', 'no', 1), inComp('act', 'the output Monitor Status', '[Failed]', 'is set to', 'no', 1)], ['','', '', '', ''] , "If the Manage Monitor Interface mode equals [FAILED] , the Output Monitor Status shall be set to [Failed].")
+===================================
+R8: If the Monitor Mode equals [INIT] , the Alarm Control shall be set to [Control_Off].
+inReq([inComp('cond', 'the Monitor Mode', '[INIT]', 'equals', 'no', 1), inComp('act', 'the Alarm Control', '[Control_Off]', 'is set to', 'no', 1)], ['','', '', '', ''] , "If the Monitor Mode equals [INIT] , the Alarm Control shall be set to [Control_Off].")
+===================================
+R9: the Manage Monitor Interface mode shall be set to the Monitor Mode.
+inReq([inComp('act', 'the Manage Monitor Interface mode', 'the Monitor Mode', 'is set to', 'no', 1)], ['','', '', '', ''] , "the Manage Monitor Interface mode shall be set to the Monitor Mode.")
+===================================
+R10: the Regulator Mode shall be initialized to [INIT].
+inReq([inComp('act', 'the Regulator Mode', '[INIT]', 'initialise to', 'no', 1)], ['','', '', '', ''] , "the Regulator Mode shall be initialized to [INIT].")
+===================================
+R11: If the Regulator Status equals True , the Regulator Init Timeout shall be set to False.
+inReq([inComp('cond', 'the Regulator Status', 'True', 'equals', 'no', 1), inComp('act', 'the Regulator Init Timeout', 'False', 'is set to', 'no', 1)], ['','', '', '', ''] , "If the Regulator Status equals True , the Regulator Init Timeout shall be set to False.")
+===================================
+R12: If the Regulator Status equals False , the Regulator Init Timeout shall be set to True.
+inReq([inComp('cond', 'the Regulator Status', 'False', 'equals', 'no', 1), inComp('act', 'the Regulator Init Timeout', 'True', 'is set to', 'no', 1)], ['','', '', '', ''] , "If the Regulator Status equals False , the Regulator Init Timeout shall be set to True.")
+===================================
+R13: the Monitor Mode shall be initialized to [INIT].
+inReq([inComp('act', 'the Monitor Mode', '[INIT]', 'initialise to', 'no', 1)], ['','', '', '', ''] , "the Monitor Mode shall be initialized to [INIT].")
+===================================
+R14: If the Monitor Status equals True , the Monitor Init Timeout shall be set to False.
+inReq([inComp('cond', 'the Monitor Status', 'True', 'equals', 'no', 1), inComp('act', 'the Monitor Init Timeout', 'False', 'is set to', 'no', 1)], ['','', '', '', ''] , "If the Monitor Status equals True , the Monitor Init Timeout shall be set to False.")
+===================================
+R15: If the Monitor Status equals False , the Monitor Init Timeout shall be set to True.
+inReq([inComp('cond', 'the Monitor Status', 'False', 'equals', 'no', 1), inComp('act', 'the Monitor Init Timeout', 'True', 'is set to', 'no', 1)], ['','', '', '', ''] , "If the Monitor Status equals False , the Monitor Init Timeout shall be set to True.")
+===================================
+R16: If the Regulator Mode equals [FAILED] , the Regulator Mode shall never be set to [NORMAL].
+inReq([inComp('cond', 'the Regulator Mode', '[FAILED]', 'equals', 'no', 1), inComp('act', 'the Regulator Mode', '[NORMAL]', 'is set to', 'yes', 1)], ['','', '', '', ''] , "If the Regulator Mode equals [FAILED] , the Regulator Mode shall never be set to [NORMAL].")
+===================================
+R17: If the Monitor Mode equals [FAILED] , the Regulator Mode shall never be set to [NORMAL].
+inReq([inComp('cond', 'the Monitor Mode', '[FAILED]', 'equals', 'no', 1), inComp('act', 'the Regulator Mode', '[NORMAL]', 'is set to', 'yes', 1)], ['','', '', '', ''] , "If the Monitor Mode equals [FAILED] , the Regulator Mode shall never be set to [NORMAL].")
+===================================
+R18: when Reset equals True , the Regulator Mode shall be set to [INIT].
+inReq([inComp('trig', 'Reset', 'True', 'equals', 'no', 1), inComp('act', 'the Regulator Mode', '[INIT]', 'is set to', 'no', 1)], ['','', '', '', ''] , "when Reset equals True , the Regulator Mode shall be set to [INIT].")
+===================================
+R19: If the Status attribute of the Lower Desired Temperature or the Upper Desired Temperature equals Invalid , the Regulator Interface Failure shall be set to True.
+inReq([inComp('cond', 'the Status attribute of the Lower Desired Temperature', 'Invalid', 'equals', 'no', 1), inComp('cond', 'the Status attribute of the Upper Desired Temperature', 'Invalid', 'equals', 'no', 2), inComp('act', 'the Regulator Interface Failure', 'True', 'is set to', 'no', 1)], ['','', '(1 or 2)', '', ''] , "If the Status attribute of the Lower Desired Temperature or the Upper Desired Temperature equals Invalid , the Regulator Interface Failure shall be set to True.")
+===================================
+R20: If the Status attribute of the Lower Desired Temperature and the Upper Desired Temperature equals Valid , the Regulator Interface Failure shall be set to False.
+inReq([inComp('cond', 'the Status attribute of the Lower Desired Temperature', 'Valid', 'equals', 'no', 1), inComp('cond', 'the Status attribute of the Upper Desired Temperature', 'Valid', 'equals', 'no', 2), inComp('act', 'the Regulator Interface Failure', 'False', 'is set to', 'no', 1)], ['','', '(1 and 2)', '', ''] , "If the Status attribute of the Lower Desired Temperature and the Upper Desired Temperature equals Valid , the Regulator Interface Failure shall be set to False.")
+===================================
+R21: If the Regulator Mode equals [NORMAL] , and Temp attribute of the Lower Desired Temperature exceeds the Temp attribute of the Current Temperature , the Heat Control shall be set to [Control_On].
+inReq([inComp('cond', 'the Regulator Mode', '[NORMAL]', 'equals', 'no', 1), inComp('cond', 'the Temp attribute of the Lower Desired Temperature', 'the Temp attribute of the Current Temperature', 'exceeds', 'no', 2), inComp('act', 'the Heat Control', '[Control_On]', 'is set to', 'no', 1)], ['','', '(1 and 2)', '', ''] , "If the Regulator Mode equals [NORMAL] , and Temp attribute of the Lower Desired Temperature exceeds the Temp attribute of the Current Temperature , the Heat Control shall be set to [Control_On].")
+===================================
+R22: If the Regulator Mode equals [NORMAL] , and the Temp attribute of the Current Temperature exceeds the Temp attribute of the Upper Desired Temperature , the Heat Control shall be set to [Control_Off].
+inReq([inComp('cond', 'the Regulator Mode', '[NORMAL]', 'equals', 'no', 1), inComp('cond', 'Temp attribute of the Current Temperature', 'the Temp attribute of the Upper Desired Temperature', 'exceeds', 'no', 2), inComp('act', 'the Heat Control', '[Control_Off]', 'is set to', 'no', 1)], ['','', '(1 and 2)', '', ''] , "If the Regulator Mode equals [NORMAL] , and the Temp attribute of the Current Temperature exceeds the Temp attribute of the Upper Desired Temperature , the Heat Control shall be set to [Control_Off].")
+===================================
+R23: If the Status attribute of the Lower Alarm Temperature or the Upper Alarm Temperature equals Invalid , the Monitor Interface Failure shall be set to True.
+inReq([inComp('cond', 'the Status attribute of the Lower Alarm Temperature', 'Invalid', 'equals', 'no', 1), inComp('cond', 'the Status attribute of the Upper Alarm Temperature', 'Invalid', 'equals', 'no', 2), inComp('act', 'the Monitor Interface Failure', 'True', 'is set to', 'no', 1)], ['','', '(1 or 2)', '', ''] , "If the Status attribute of the Lower Alarm Temperature or the Upper Alarm Temperature equals Invalid , the Monitor Interface Failure shall be set to True.")
+===================================
+R24: If the Status attribute of the Lower Alarm Temperature and the Upper Alarm Temperature equals Valid , the Monitor Interface Failure shall be set to False.
+inReq([inComp('cond', 'the Status attribute of the Lower Alarm Temperature', 'Valid', 'equals', 'no', 1), inComp('cond', 'the Status attribute of the Upper Alarm Temperature', 'Valid', 'equals', 'no', 2), inComp('act', 'the Monitor Interface Failure', 'False', 'is set to', 'no', 1)], ['','', '(1 and 2)', '', ''] , "If the Status attribute of the Lower Alarm Temperature and the Upper Alarm Temperature equals Valid , the Monitor Interface Failure shall be set to False.")
+===================================
+R25: If the Regulator Interface Failure is set to False , and the Regulator Internal Failure is set to False , and the Status attribute of the Current Temperature is set to Valid , the Regulator Status shall be set to True.
+inReq([inComp('cond', 'the Regulator Interface Failure', 'False', 'is', 'no', 1), inComp('cond', 'the Regulator Internal Failure', 'False', 'is', 'no', 2), inComp('cond', 'the Status attribute of the Current Temperature', 'Valid', 'is', 'no', 3), inComp('act', 'the Regulator Status', 'True', 'is set to', 'no', 1)], ['','', '(1 and (2 and 3))', '', ''] , "If the Regulator Interface Failure is set to False , and the Regulator Internal Failure is set to False , and the Status attribute of the Current Temperature is set to Valid , the Regulator Status shall be set to True.")
+===================================
+R26: If the Regulator Interface Failure is set to True or the Regulator Internal Failure is set to True or the Status attribute of the Current Temperature is not set to [Valid] , the Regulator Status shall be set to False.
+inReq([inComp('cond', 'the Regulator Interface Failure', 'True', 'is', 'no', 1), inComp('cond', 'the Regulator Internal Failure', 'True', 'is', 'no', 2), inComp('cond', 'the Status attribute of the Current Temperature', 'Valid', 'is', 'yes', 3), inComp('act', 'the Regulator Status', 'False', 'is set to', 'no', 1)], ['','', '(1 or (2 or 3))', '', ''] , "If the Regulator Interface Failure is set to True or the Regulator Internal Failure is set to True or the Status attribute of the Current Temperature is not set to [Valid] , the Regulator Status shall be set to False.")
+===================================
+R27: If the Regulator Mode is set to [NORMAL] and the Regulator Status is set to False , the Regulator Mode shall be set to [FAILED].
+inReq([inComp('cond', 'the Regulator Mode', '[NORMAL]', 'is', 'no', 1), inComp('cond', 'the Regulator Status', 'False', 'is', 'no', 2), inComp('act', 'the Regulator Mode', '[FAILED]', 'is set to', 'no', 1)], ['','', '(1 and 2)', '', ''] , "If the Regulator Mode is set to [NORMAL] and the Regulator Status is set to False , the Regulator Mode shall be set to [FAILED].")
+===================================
+R28: If the Regulator Mode is set to [INIT] and the Regulator Init Timeout is set to True , the Regulator Mode shall be set to [FAILED].
+inReq([inComp('cond', 'the Regulator Mode', '[INIT]', 'is', 'no', 1), inComp('cond', 'the Regulator Init Timeout', 'True', 'is', 'no', 2), inComp('act', 'the Regulator Mode', '[FAILED]', 'is set to', 'no', 1)], ['','', '(1 and 2)', '', ''] , "If the Regulator Mode is set to [INIT] and the Regulator Init Timeout is set to True , the Regulator Mode shall be set to [FAILED].")
+===================================
+R29: If the Monitor Interface Failure is set to False and the Monitor Internal Failure is set to False and the Status attribute of the Current Temperature is set to Valid , the Monitor Status shall be set to True.
+inReq([inComp('cond', 'the Monitor Interface Failure', 'False', 'is', 'no', 1), inComp('cond', 'the Monitor Internal Failure', 'False', 'is', 'no', 2), inComp('cond', 'the Status attribute of the Current Temperature', 'Valid', 'is', 'no', 3), inComp('act', 'the Monitor Status', 'True', 'is set to', 'no', 1)], ['','', '(1 and (2 and 3))', '', ''] , "If the Monitor Interface Failure is set to False and the Monitor Internal Failure is set to False and the Status attribute of the Current Temperature is set to Valid , the Monitor Status shall be set to True.")
+===================================
+R30: If the Monitor Interface Failure is set to True or the Monitor Internal Failure is set to True or the Status attribute of the Current Temperature is not set to [Valid] , the Monitor Status shall be set to False.
+inReq([inComp('cond', 'the Monitor Interface Failure', 'True', 'is', 'no', 1), inComp('cond', 'the Monitor Internal Failure', 'True', 'is', 'no', 2), inComp('cond', 'the Status attribute of the Current Temperature', 'Valid', 'is', 'yes', 3), inComp('act', 'the Monitor Status', 'False', 'is set to', 'no', 1)], ['','', '(1 or (2 or 3))', '', ''] , "If the Monitor Interface Failure is set to True or the Monitor Internal Failure is set to True or the Status attribute of the Current Temperature is not set to [Valid] , the Monitor Status shall be set to False.")
+===================================
+R31: If the Monitor Mode is set to [INIT] and the Monitor Status is set to True , the Monitor Mode shall be set to [NORMAL].
+inReq([inComp('cond', 'the Monitor Mode', '[INIT]', 'is', 'no', 1), inComp('cond', 'the Monitor Status', 'True', 'is', 'no', 2), inComp('act', 'the Monitor Mode', '[NORMAL]', 'is set to', 'no', 1)], ['','', '(1 and 2)', '', ''] , "If the Monitor Mode is set to [INIT] and the Monitor Status is set to True , the Monitor Mode shall be set to [NORMAL].")
+===================================
+R32: If the Monitor Mode is set to [NORMAL] and the Monitor Status is set to False , the Monitor Mode shall be set to [FAILED].
+inReq([inComp('cond', 'the Monitor Mode', '[NORMAL]', 'is', 'no', 1), inComp('cond', 'the Monitor Status', 'False', 'is', 'no', 2), inComp('act', 'the Monitor Mode', '[FAILED]', 'is set to', 'no', 1)], ['','', '(1 and 2)', '', ''] , "If the Monitor Mode is set to [NORMAL] and the Monitor Status is set to False , the Monitor Mode shall be set to [FAILED].")
+===================================
+R33: If the Monitor Mode is set to [INIT] and the Monitor Init Timeout is set to True , the Monitor Mode shall be set to [FAILED].
+inReq([inComp('cond', 'the Monitor Mode', '[INIT]', 'is', 'no', 1), inComp('cond', 'the Monitor Init Timeout', 'True', 'is', 'no', 2), inComp('act', 'the Monitor Mode', '[FAILED]', 'is set to', 'no', 1)], ['','', '(1 and 2)', '', ''] , "If the Monitor Mode is set to [INIT] and the Monitor Init Timeout is set to True , the Monitor Mode shall be set to [FAILED].")
+===================================

@@ -1,0 +1,3 @@
+inReq([inComp(cond,'the NoSailing requests','[True]',equal,no,1),inComp(act,'the steering wheel angle','[True]',equal,no,1)],['','','','',''],"- , , if the NoSailing requests equal [True]   , the steering wheel angle equal [True]   , ."). 
+inReq([inComp(act,'the NoSailing requests','[True]',equal,no,1)],['','','','',''],"- , , , the NoSailing requests equal [True]   , ."). 
+inReq([inComp(cond,'the quality signal','[True]',equal,no,1),inComp(act,'the sailing inhibitor','[True]',equal,no,1)],['','','','',''],"- , , if the quality signal equal [True]   , the sailing inhibitor equal [True]   , ."). 

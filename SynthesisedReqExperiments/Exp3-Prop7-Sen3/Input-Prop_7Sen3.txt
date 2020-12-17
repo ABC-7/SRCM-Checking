@@ -1,0 +1,1 @@
+inReq([inComp(cond,'the IDC inhibitor','[True]',equal,no,1),inComp(act,'the standstill request flag','',set,no,1)],['','','','',''],"- , , if the IDC inhibitor equal [True]   , the standstill request flag set   , ."). 

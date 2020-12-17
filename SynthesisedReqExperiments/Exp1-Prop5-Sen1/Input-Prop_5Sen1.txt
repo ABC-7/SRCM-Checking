@@ -1,0 +1,2 @@
+inReq([inComp(cond,'the brake fault state','[True]',equal,no,1),inComp(act,'the steering wheel angle','[True]',equal,no,1)],['','','','',''],"- , , if the brake fault state equal [True]   , the steering wheel angle equal [True]   , ."). 
+inReq([inComp(cond,'the brake fault state','[True]',equal,no,1),inComp(act,'the steering wheel angle','[True]',equal,no,1)],['','','','',''],"- , , if the brake fault state equal [True]   , the steering wheel angle equal [True]   , . "). 

@@ -1,0 +1,1 @@
+inReq([inComp(cond,'the sailing termination','[True]',equal,no,1),inComp(act,'the steering wheel angle','',set,no,1)],['','','','',''],"- , , if the sailing termination equal [True]   , the steering wheel angle set   , ."). 

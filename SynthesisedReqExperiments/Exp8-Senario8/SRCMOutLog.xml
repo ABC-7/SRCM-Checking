@@ -1,0 +1,1393 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+	<SRCM_Metrics>
+		Total Requirements = 23,Unique-ActionSources = 23
+		Total Triggers = 0, 		Unique-SystemTriggers = 0
+		Total Conditions = 26, 	Unique-SystemConditions = 14
+		Total Actions = 23,		Unique-SystemActions = 11
+		Total Entities = 49, 	Unique-SystemEntities = 13
+	</SRCM_Metrics>
+	<SystemActionSource>
+		<ActionSource>
+			Key = AS2
+			Req-Text = -   if the engine error equal [True]    the LSC equal [True]    .
+			Triggers-Relation = null
+			Conditions-Relation = C1
+			Actions-Relation = A2
+			<SysCondition>
+				Key = C1
+				<Entity>
+					Key = RCMVAR_the_engine_error
+					Text = RCMVAR_the_engine_error
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A2
+				<Entity>
+					Key = RCMVAR_the_LSC
+					Text = RCMVAR_the_LSC
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS3
+			Req-Text = -   if the IDC inhibitor equal [False]    or if the brake fault state equal [True]    the brake pedal equal [True]    .
+			Triggers-Relation = null
+			Conditions-Relation = ( C2 OR C3 )
+			Actions-Relation = A3
+			<SysCondition>
+				Key = C2
+				<Entity>
+					Key = RCMVAR_the_IDC_inhibitor
+					Text = RCMVAR_the_IDC_inhibitor
+				</Entity>
+				<Value>
+					Text = RCMVAL_False
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C3
+				<Entity>
+					Key = RCMVAR_the_brake_fault_state
+					Text = RCMVAR_the_brake_fault_state
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A3
+				<Entity>
+					Key = RCMVAR_the_brake_pedal
+					Text = RCMVAR_the_brake_pedal
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS4
+			Req-Text = -   if the IDC inhibitor equal [False]    the steering wheel angle equal [True]    .
+			Triggers-Relation = null
+			Conditions-Relation = C2
+			Actions-Relation = A4
+			<SysCondition>
+				Key = C2
+				<Entity>
+					Key = RCMVAR_the_IDC_inhibitor
+					Text = RCMVAR_the_IDC_inhibitor
+				</Entity>
+				<Value>
+					Text = RCMVAL_False
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A4
+				<Entity>
+					Key = RCMVAR_the_steering_wheel_angle
+					Text = RCMVAR_the_steering_wheel_angle
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS5
+			Req-Text = -   if the engine error equal [False]    or if the transmission error equal [True]    the steering wheel angle equal [True]    .
+			Triggers-Relation = null
+			Conditions-Relation = ( C4 OR C5 )
+			Actions-Relation = A4
+			<SysCondition>
+				Key = C4
+				<Entity>
+					Key = RCMVAR_the_engine_error
+					Text = RCMVAR_the_engine_error
+				</Entity>
+				<Value>
+					Text = RCMVAL_False
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C5
+				<Entity>
+					Key = RCMVAR_the_transmission_error
+					Text = RCMVAR_the_transmission_error
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A4
+				<Entity>
+					Key = RCMVAR_the_steering_wheel_angle
+					Text = RCMVAR_the_steering_wheel_angle
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS6
+			Req-Text = -   if the engine error equal [False]    and if the transmission error equal [True]   or if the defined position equals [False]   the standstill request flag equal [True]    .
+			Triggers-Relation = null
+			Conditions-Relation = ( ( C4 AND C5 ) OR C6 )
+			Actions-Relation = A5
+			<SysCondition>
+				Key = C4
+				<Entity>
+					Key = RCMVAR_the_engine_error
+					Text = RCMVAR_the_engine_error
+				</Entity>
+				<Value>
+					Text = RCMVAL_False
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C5
+				<Entity>
+					Key = RCMVAR_the_transmission_error
+					Text = RCMVAR_the_transmission_error
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C6
+				<Entity>
+					Key = RCMVAR_the_defined_position
+					Text = RCMVAR_the_defined_position
+				</Entity>
+				<Value>
+					Text = RCMVAL_False
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equals"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A5
+				<Entity>
+					Key = RCMVAR_the_standstill_request_flag
+					Text = RCMVAR_the_standstill_request_flag
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS19
+			Req-Text = -    the engine error equal [True]    .
+			Triggers-Relation = null
+			Conditions-Relation = null
+			Actions-Relation = A11
+			<SysAction>
+				Key = A11
+				<Entity>
+					Key = RCMVAR_the_engine_error
+					Text = RCMVAR_the_engine_error
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS7
+			Req-Text = -   if the quality signal equal [True]    the vehicle speed setpoint equal [True]    .
+			Triggers-Relation = null
+			Conditions-Relation = C7
+			Actions-Relation = A6
+			<SysCondition>
+				Key = C7
+				<Entity>
+					Key = RCMVAR_the_quality_signal
+					Text = RCMVAR_the_quality_signal
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A6
+				<Entity>
+					Key = RCMVAR_the_vehicle_speed_setpoint
+					Text = RCMVAR_the_vehicle_speed_setpoint
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS8
+			Req-Text = -   if the defined position equal [True]    the quality signal equal [True]    .
+			Triggers-Relation = null
+			Conditions-Relation = C8
+			Actions-Relation = A1
+			<SysCondition>
+				Key = C8
+				<Entity>
+					Key = RCMVAR_the_defined_position
+					Text = RCMVAR_the_defined_position
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A1
+				<Entity>
+					Key = RCMVAR_the_quality_signal
+					Text = RCMVAR_the_quality_signal
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS17
+			Req-Text = -   if the vehicle speed quality factor equal [True]    the NoSailing requests equal [True]    .
+			Triggers-Relation = null
+			Conditions-Relation = C13
+			Actions-Relation = A10
+			<SysCondition>
+				Key = C13
+				<Entity>
+					Key = RCMVAR_the_vehicle_speed_quality_factor
+					Text = RCMVAR_the_vehicle_speed_quality_factor
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A10
+				<Entity>
+					Key = RCMVAR_the_NoSailing_requests
+					Text = RCMVAR_the_NoSailing_requests
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS9
+			Req-Text = -   if the vehicle speed setpoint equal [True]    the defined position equal [True]    .
+			Triggers-Relation = null
+			Conditions-Relation = C9
+			Actions-Relation = A7
+			<SysCondition>
+				Key = C9
+				<Entity>
+					Key = RCMVAR_the_vehicle_speed_setpoint
+					Text = RCMVAR_the_vehicle_speed_setpoint
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A7
+				<Entity>
+					Key = RCMVAR_the_defined_position
+					Text = RCMVAR_the_defined_position
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS18
+			Req-Text = -   if the engine error equal [True]    the quality signal equal [True]    .
+			Triggers-Relation = null
+			Conditions-Relation = C1
+			Actions-Relation = A1
+			<SysCondition>
+				Key = C1
+				<Entity>
+					Key = RCMVAR_the_engine_error
+					Text = RCMVAR_the_engine_error
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A1
+				<Entity>
+					Key = RCMVAR_the_quality_signal
+					Text = RCMVAR_the_quality_signal
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS15
+			Req-Text = -   if the transmission error equal [True]    the LSC equal [True]    .
+			Triggers-Relation = null
+			Conditions-Relation = C5
+			Actions-Relation = A2
+			<SysCondition>
+				Key = C5
+				<Entity>
+					Key = RCMVAR_the_transmission_error
+					Text = RCMVAR_the_transmission_error
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A2
+				<Entity>
+					Key = RCMVAR_the_LSC
+					Text = RCMVAR_the_LSC
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS16
+			Req-Text = -    the transmission error equal [True]    .
+			Triggers-Relation = null
+			Conditions-Relation = null
+			Actions-Relation = A9
+			<SysAction>
+				Key = A9
+				<Entity>
+					Key = RCMVAR_the_transmission_error
+					Text = RCMVAR_the_transmission_error
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS13
+			Req-Text = -   if the vehicle speed setpoint equal [False]    the defined position equal [True]    .
+			Triggers-Relation = null
+			Conditions-Relation = C11
+			Actions-Relation = A7
+			<SysCondition>
+				Key = C11
+				<Entity>
+					Key = RCMVAR_the_vehicle_speed_setpoint
+					Text = RCMVAR_the_vehicle_speed_setpoint
+				</Entity>
+				<Value>
+					Text = RCMVAL_False
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A7
+				<Entity>
+					Key = RCMVAR_the_defined_position
+					Text = RCMVAR_the_defined_position
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS14
+			Req-Text = -   if the vehicle speed setpoint equal [True]    the defined position set    .
+			Triggers-Relation = null
+			Conditions-Relation = C9
+			Actions-Relation = A8
+			<SysCondition>
+				Key = C9
+				<Entity>
+					Key = RCMVAR_the_vehicle_speed_setpoint
+					Text = RCMVAR_the_vehicle_speed_setpoint
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A8
+				<Entity>
+					Key = RCMVAR_the_defined_position
+					Text = RCMVAR_the_defined_position
+				</Entity>
+				<Value>
+					Text = RCMVAL_
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "set"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS11
+			Req-Text = -   if the IDC inhibitor equal [True]    the quality signal equal [True]    . 
+			Triggers-Relation = null
+			Conditions-Relation = C10
+			Actions-Relation = A1
+			<SysCondition>
+				Key = C10
+				<Entity>
+					Key = RCMVAR_the_IDC_inhibitor
+					Text = RCMVAR_the_IDC_inhibitor
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A1
+				<Entity>
+					Key = RCMVAR_the_quality_signal
+					Text = RCMVAR_the_quality_signal
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS22
+			Req-Text = -   if the defined position equal [True]    the standstill request flag equal [True]    .
+			Triggers-Relation = null
+			Conditions-Relation = C8
+			Actions-Relation = A5
+			<SysCondition>
+				Key = C8
+				<Entity>
+					Key = RCMVAR_the_defined_position
+					Text = RCMVAR_the_defined_position
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A5
+				<Entity>
+					Key = RCMVAR_the_standstill_request_flag
+					Text = RCMVAR_the_standstill_request_flag
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS12
+			Req-Text = -   if the vehicle speed setpoint equal [False]    or if the LSC equal [True]    the defined position equal [True]    .
+			Triggers-Relation = null
+			Conditions-Relation = ( C11 OR C12 )
+			Actions-Relation = A7
+			<SysCondition>
+				Key = C11
+				<Entity>
+					Key = RCMVAR_the_vehicle_speed_setpoint
+					Text = RCMVAR_the_vehicle_speed_setpoint
+				</Entity>
+				<Value>
+					Text = RCMVAL_False
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysCondition>
+				Key = C12
+				<Entity>
+					Key = RCMVAR_the_LSC
+					Text = RCMVAR_the_LSC
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A7
+				<Entity>
+					Key = RCMVAR_the_defined_position
+					Text = RCMVAR_the_defined_position
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS23
+			Req-Text = -   if the brake fault state equal [True]    the transmission error equal [True]    .
+			Triggers-Relation = null
+			Conditions-Relation = C3
+			Actions-Relation = A9
+			<SysCondition>
+				Key = C3
+				<Entity>
+					Key = RCMVAR_the_brake_fault_state
+					Text = RCMVAR_the_brake_fault_state
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A9
+				<Entity>
+					Key = RCMVAR_the_transmission_error
+					Text = RCMVAR_the_transmission_error
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS20
+			Req-Text = -   if the transmission error equal [True]    the defined position equal [True]    .
+			Triggers-Relation = null
+			Conditions-Relation = C5
+			Actions-Relation = A7
+			<SysCondition>
+				Key = C5
+				<Entity>
+					Key = RCMVAR_the_transmission_error
+					Text = RCMVAR_the_transmission_error
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A7
+				<Entity>
+					Key = RCMVAR_the_defined_position
+					Text = RCMVAR_the_defined_position
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS10
+			Req-Text = -   if the IDC inhibitor equal [True]    the quality signal equal [True]    .
+			Triggers-Relation = null
+			Conditions-Relation = C10
+			Actions-Relation = A1
+			<SysCondition>
+				Key = C10
+				<Entity>
+					Key = RCMVAR_the_IDC_inhibitor
+					Text = RCMVAR_the_IDC_inhibitor
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A1
+				<Entity>
+					Key = RCMVAR_the_quality_signal
+					Text = RCMVAR_the_quality_signal
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS21
+			Req-Text = -   if the standstill request flag equal [True]    the transmission error equal [True]    .
+			Triggers-Relation = null
+			Conditions-Relation = C14
+			Actions-Relation = A9
+			<SysCondition>
+				Key = C14
+				<Entity>
+					Key = RCMVAR_the_standstill_request_flag
+					Text = RCMVAR_the_standstill_request_flag
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A9
+				<Entity>
+					Key = RCMVAR_the_transmission_error
+					Text = RCMVAR_the_transmission_error
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS1
+			Req-Text = -   if the engine error equal [True]    the quality signal equal [True]    .
+			Triggers-Relation = null
+			Conditions-Relation = C1
+			Actions-Relation = A1
+			<SysCondition>
+				Key = C1
+				<Entity>
+					Key = RCMVAR_the_engine_error
+					Text = RCMVAR_the_engine_error
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A1
+				<Entity>
+					Key = RCMVAR_the_quality_signal
+					Text = RCMVAR_the_quality_signal
+				</Entity>
+				<Value>
+					Text = RCMVAL_True
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "equal"
+				Operator is "="
+			</SysAction>
+		</ActionSource>
+	</SystemActionSource>
+	<SystemTriggers>
+	</SystemTriggers>
+	<SystemConditions>
+		<SysCondition>
+			Key = C11
+			<Entity>
+				Key = RCMVAR_the_vehicle_speed_setpoint
+				Text = RCMVAR_the_vehicle_speed_setpoint
+			</Entity>
+			<Value>
+				Text = RCMVAL_False
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS12, AS13]
+		</SysCondition>
+		<SysCondition>
+			Key = C10
+			<Entity>
+				Key = RCMVAR_the_IDC_inhibitor
+				Text = RCMVAR_the_IDC_inhibitor
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS10, AS11]
+		</SysCondition>
+		<SysCondition>
+			Key = C13
+			<Entity>
+				Key = RCMVAR_the_vehicle_speed_quality_factor
+				Text = RCMVAR_the_vehicle_speed_quality_factor
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS17]
+		</SysCondition>
+		<SysCondition>
+			Key = C12
+			<Entity>
+				Key = RCMVAR_the_LSC
+				Text = RCMVAR_the_LSC
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS12]
+		</SysCondition>
+		<SysCondition>
+			Key = C14
+			<Entity>
+				Key = RCMVAR_the_standstill_request_flag
+				Text = RCMVAR_the_standstill_request_flag
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS21]
+		</SysCondition>
+		<SysCondition>
+			Key = C1
+			<Entity>
+				Key = RCMVAR_the_engine_error
+				Text = RCMVAR_the_engine_error
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS1, AS2, AS18]
+		</SysCondition>
+		<SysCondition>
+			Key = C2
+			<Entity>
+				Key = RCMVAR_the_IDC_inhibitor
+				Text = RCMVAR_the_IDC_inhibitor
+			</Entity>
+			<Value>
+				Text = RCMVAL_False
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS3, AS4]
+		</SysCondition>
+		<SysCondition>
+			Key = C3
+			<Entity>
+				Key = RCMVAR_the_brake_fault_state
+				Text = RCMVAR_the_brake_fault_state
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS3, AS23]
+		</SysCondition>
+		<SysCondition>
+			Key = C4
+			<Entity>
+				Key = RCMVAR_the_engine_error
+				Text = RCMVAR_the_engine_error
+			</Entity>
+			<Value>
+				Text = RCMVAL_False
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS5, AS6]
+		</SysCondition>
+		<SysCondition>
+			Key = C5
+			<Entity>
+				Key = RCMVAR_the_transmission_error
+				Text = RCMVAR_the_transmission_error
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS5, AS6, AS15, AS20]
+		</SysCondition>
+		<SysCondition>
+			Key = C6
+			<Entity>
+				Key = RCMVAR_the_defined_position
+				Text = RCMVAR_the_defined_position
+			</Entity>
+			<Value>
+				Text = RCMVAL_False
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equals"
+			Operator is "="
+			Action-Sources = [AS6]
+		</SysCondition>
+		<SysCondition>
+			Key = C7
+			<Entity>
+				Key = RCMVAR_the_quality_signal
+				Text = RCMVAR_the_quality_signal
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS7]
+		</SysCondition>
+		<SysCondition>
+			Key = C8
+			<Entity>
+				Key = RCMVAR_the_defined_position
+				Text = RCMVAR_the_defined_position
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS8, AS22]
+		</SysCondition>
+		<SysCondition>
+			Key = C9
+			<Entity>
+				Key = RCMVAR_the_vehicle_speed_setpoint
+				Text = RCMVAR_the_vehicle_speed_setpoint
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS9, AS14]
+		</SysCondition>
+	</SystemConditions>
+	<SystemActions>
+		<SysAction>
+			Key = A1
+			<Entity>
+				Key = RCMVAR_the_quality_signal
+				Text = RCMVAR_the_quality_signal
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS1, AS8, AS10, AS11, AS18]
+		</SysAction>
+		<SysAction>
+			Key = A10
+			<Entity>
+				Key = RCMVAR_the_NoSailing_requests
+				Text = RCMVAR_the_NoSailing_requests
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS17]
+		</SysAction>
+		<SysAction>
+			Key = A2
+			<Entity>
+				Key = RCMVAR_the_LSC
+				Text = RCMVAR_the_LSC
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS2, AS15]
+		</SysAction>
+		<SysAction>
+			Key = A11
+			<Entity>
+				Key = RCMVAR_the_engine_error
+				Text = RCMVAR_the_engine_error
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS19]
+		</SysAction>
+		<SysAction>
+			Key = A3
+			<Entity>
+				Key = RCMVAR_the_brake_pedal
+				Text = RCMVAR_the_brake_pedal
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS3]
+		</SysAction>
+		<SysAction>
+			Key = A4
+			<Entity>
+				Key = RCMVAR_the_steering_wheel_angle
+				Text = RCMVAR_the_steering_wheel_angle
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS4, AS5]
+		</SysAction>
+		<SysAction>
+			Key = A5
+			<Entity>
+				Key = RCMVAR_the_standstill_request_flag
+				Text = RCMVAR_the_standstill_request_flag
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS6, AS22]
+		</SysAction>
+		<SysAction>
+			Key = A6
+			<Entity>
+				Key = RCMVAR_the_vehicle_speed_setpoint
+				Text = RCMVAR_the_vehicle_speed_setpoint
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS7]
+		</SysAction>
+		<SysAction>
+			Key = A7
+			<Entity>
+				Key = RCMVAR_the_defined_position
+				Text = RCMVAR_the_defined_position
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS9, AS12, AS13, AS20]
+		</SysAction>
+		<SysAction>
+			Key = A8
+			<Entity>
+				Key = RCMVAR_the_defined_position
+				Text = RCMVAR_the_defined_position
+			</Entity>
+			<Value>
+				Text = RCMVAL_
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "set"
+			Operator is "="
+			Action-Sources = [AS14]
+		</SysAction>
+		<SysAction>
+			Key = A9
+			<Entity>
+				Key = RCMVAR_the_transmission_error
+				Text = RCMVAR_the_transmission_error
+			</Entity>
+			<Value>
+				Text = RCMVAL_True
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "equal"
+			Operator is "="
+			Action-Sources = [AS16, AS21, AS23]
+		</SysAction>
+	</SystemActions>
+	<SystemEntities>
+		<SysEntity>
+			Key = RCMVAR_the_steering_wheel_angle
+			Text = RCMVAR_the_steering_wheel_angle
+			<Values>
+				v[1] = RCMVAL_True
+				v[1].SystemAction = A4
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_NoSailing_requests
+			Text = RCMVAR_the_NoSailing_requests
+			<Values>
+				v[1] = RCMVAL_True
+				v[1].SystemAction = A10
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_LSC
+			Text = RCMVAR_the_LSC
+			<Values>
+				v[1] = RCMVAL_True
+				v[1].SystemAction = A2
+				v[1].SystemCondition = C12
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_brake_fault_state
+			Text = RCMVAR_the_brake_fault_state
+			<Values>
+				v[1] = RCMVAL_True
+				v[1].SystemAction = null
+				v[1].SystemCondition = C3
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_standstill_request_flag
+			Text = RCMVAR_the_standstill_request_flag
+			<Values>
+				v[1] = RCMVAL_True
+				v[1].SystemAction = A5
+				v[1].SystemCondition = C14
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_vehicle_speed_quality_factor
+			Text = RCMVAR_the_vehicle_speed_quality_factor
+			<Values>
+				v[1] = RCMVAL_True
+				v[1].SystemAction = null
+				v[1].SystemCondition = C13
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_transmission_error
+			Text = RCMVAR_the_transmission_error
+			<Values>
+				v[1] = RCMVAL_True
+				v[1].SystemAction = A9
+				v[1].SystemCondition = C5
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_quality_signal
+			Text = RCMVAR_the_quality_signal
+			<Values>
+				v[1] = RCMVAL_True
+				v[1].SystemAction = A1
+				v[1].SystemCondition = C7
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_IDC_inhibitor
+			Text = RCMVAR_the_IDC_inhibitor
+			<Values>
+				v[1] = RCMVAL_True
+				v[1].SystemAction = null
+				v[1].SystemCondition = C10
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_False
+				v[2].SystemAction = null
+				v[2].SystemCondition = C2
+				v[2].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_defined_position
+			Text = RCMVAR_the_defined_position
+			<Values>
+				v[1] = RCMVAL_
+				v[1].SystemAction = A8
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_True
+				v[2].SystemAction = A7
+				v[2].SystemCondition = C8
+				v[2].SystemTrigger = null
+				v[3] = RCMVAL_False
+				v[3].SystemAction = null
+				v[3].SystemCondition = C6
+				v[3].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_engine_error
+			Text = RCMVAR_the_engine_error
+			<Values>
+				v[1] = RCMVAL_True
+				v[1].SystemAction = A11
+				v[1].SystemCondition = C1
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_False
+				v[2].SystemAction = null
+				v[2].SystemCondition = C4
+				v[2].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_brake_pedal
+			Text = RCMVAR_the_brake_pedal
+			<Values>
+				v[1] = RCMVAL_True
+				v[1].SystemAction = A3
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_vehicle_speed_setpoint
+			Text = RCMVAR_the_vehicle_speed_setpoint
+			<Values>
+				v[1] = RCMVAL_True
+				v[1].SystemAction = A6
+				v[1].SystemCondition = C9
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_False
+				v[2].SystemAction = null
+				v[2].SystemCondition = C11
+				v[2].SystemTrigger = null
+			</Values>
+		</SysEntity>
+	</SystemEntities>
+</log>
