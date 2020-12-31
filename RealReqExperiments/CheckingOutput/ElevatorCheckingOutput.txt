@@ -1,0 +1,24 @@
+Action Source Key: AS2
+	has Incompleteness issue "Unchecked value"
+	has Incompleteness issue "Unsatisfiable rule"
+=================================
+Action Source Key: AS3
+	has Incompleteness issue "Unchecked value"
+	has Incompleteness issue "Unsatisfiable rule"
+=================================
+Action Source Key: AS4
+	has Incompleteness issue "Unchecked value"
+	has Incompleteness issue "Unsatisfiable rule"
+=================================
+Action Source Key: AS5
+	has Redundancy issue with 'AS4'
+	has Incompleteness issue "Unchecked value"
+	has Incompleteness issue "Unsatisfiable rule"
+=================================
+Action Source Key: AS6
+	has Incompleteness issue "Unsatisfiable rule"
+	has Incompleteness issue "Unchecked value"
+=================================
+Action Source Key: AS1
+	has Incompleteness issue "Unchecked value"
+=================================
