@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+	<SRCM_Metrics>
+		Total Requirements = 6,Unique-ActionSources = 6
+		Total Triggers = 3, 		Unique-SystemTriggers = 3
+		Total Conditions = 3, 	Unique-SystemConditions = 2
+		Total Actions = 6,		Unique-SystemActions = 4
+		Total Entities = 14, 	Unique-SystemEntities = 5
+	</SRCM_Metrics>
+	<SystemActionSource>
+		<ActionSource>
+			Key = AS2
+			Req-Text = When the direction status is [Up] or [down] the elevator motion status shall be changed.
+			Triggers-Relation = ( T1 OR T2 )
+			Conditions-Relation = null
+			Actions-Relation = A2
+			<SysTrigger>
+				Key = T1
+				<Entity>
+					Key = RCMVAR_the_direction_status
+					Text = RCMVAR_the_direction_status
+				</Entity>
+				<Value>
+					Text = RCMVAL_Up
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysTrigger>
+			<SysTrigger>
+				Key = T2
+				<Entity>
+					Key = RCMVAR_the_direction_status
+					Text = RCMVAR_the_direction_status
+				</Entity>
+				<Value>
+					Text = RCMVAL_down
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysTrigger>
+			<SysAction>
+				Key = A2
+				<Entity>
+					Key = RCMVAR_the_elevator_motion_status
+					Text = RCMVAR_the_elevator_motion_status
+				</Entity>
+				<Value>
+					Text = RCMVAL_changed
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "shall be"
+				Operator is "NONE"
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS3
+			Req-Text = When the direction status is false the elevator motion status shall be transitioned to [Idle].
+			Triggers-Relation = T3
+			Conditions-Relation = null
+			Actions-Relation = A3
+			<SysTrigger>
+				Key = T3
+				<Entity>
+					Key = RCMVAR_the_direction_status
+					Text = RCMVAR_the_direction_status
+				</Entity>
+				<Value>
+					Text = RCMVAL_false
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysTrigger>
+			<SysAction>
+				Key = A3
+				<Entity>
+					Key = RCMVAR_the_elevator_motion_status
+					Text = RCMVAR_the_elevator_motion_status
+				</Entity>
+				<Value>
+					Text = RCMVAL_Idle
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "shall be transitioned to"
+				Operator is "NONE"
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS4
+			Req-Text = If the weight of the elevator exceeds weight_thr the elevator motion status shall be [Idle].
+			Triggers-Relation = null
+			Conditions-Relation = C1
+			Actions-Relation = A3
+			<SysCondition>
+				Key = C1
+				<Entity>
+					Key = RCMVAR_the_weight_of_the_elevator
+					Text = RCMVAR_the_weight_of_the_elevator
+				</Entity>
+				<Value>
+					Text = RCMVAR_weight_thr
+					Type = ExternalValue
+					SourceEntity = Checking.SRCM.Entity@52bb199f
+				</Value>
+				Relation is "exceeds"
+				Operator is ">"
+			</SysCondition>
+			<SysAction>
+				Key = A3
+				<Entity>
+					Key = RCMVAR_the_elevator_motion_status
+					Text = RCMVAR_the_elevator_motion_status
+				</Entity>
+				<Value>
+					Text = RCMVAL_Idle
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "shall be transitioned to"
+				Operator is "NONE"
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS5
+			Req-Text = The elevator motion status shall be set to [Idle] if the weight of the elevator is larger than weight_thr
+			Triggers-Relation = null
+			Conditions-Relation = C1
+			Actions-Relation = A3
+			<SysCondition>
+				Key = C1
+				<Entity>
+					Key = RCMVAR_the_weight_of_the_elevator
+					Text = RCMVAR_the_weight_of_the_elevator
+				</Entity>
+				<Value>
+					Text = RCMVAR_weight_thr
+					Type = ExternalValue
+					SourceEntity = Checking.SRCM.Entity@52bb199f
+				</Value>
+				Relation is "exceeds"
+				Operator is ">"
+			</SysCondition>
+			<SysAction>
+				Key = A3
+				<Entity>
+					Key = RCMVAR_the_elevator_motion_status
+					Text = RCMVAR_the_elevator_motion_status
+				</Entity>
+				<Value>
+					Text = RCMVAL_Idle
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "shall be transitioned to"
+				Operator is "NONE"
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS6
+			Req-Text = If the weight of the elevator is heavy the alert light shall be set to true.
+			Triggers-Relation = null
+			Conditions-Relation = C2
+			Actions-Relation = A4
+			<SysCondition>
+				Key = C2
+				<Entity>
+					Key = RCMVAR_the_weight_of_the_elevator
+					Text = RCMVAR_the_weight_of_the_elevator
+				</Entity>
+				<Value>
+					Text = RCMVAL_heavy
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is"
+				Operator is "="
+			</SysCondition>
+			<SysAction>
+				Key = A4
+				<Entity>
+					Key = RCMVAR_the_alert_light
+					Text = RCMVAR_the_alert_light
+				</Entity>
+				<Value>
+					Text = RCMVAL_true
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "shall be set to"
+				Operator is "NONE"
+			</SysAction>
+		</ActionSource>
+		<ActionSource>
+			Key = AS1
+			Req-Text = weight_thr is initialised to 1000.
+			Triggers-Relation = null
+			Conditions-Relation = null
+			Actions-Relation = A1
+			<SysAction>
+				Key = A1
+				<Entity>
+					Key = RCMVAR_weight_thr
+					Text = RCMVAR_weight_thr
+				</Entity>
+				<Value>
+					Text = RCMVAL_1000
+					Type = InternalValue
+					SourceEntity = null
+				</Value>
+				Relation is "is initialised to"
+				Operator is "NONE"
+			</SysAction>
+		</ActionSource>
+	</SystemActionSource>
+	<SystemTriggers>
+		<SysTrigger>
+			<Entity>
+				Key = RCMVAR_the_direction_status
+				Text = RCMVAR_the_direction_status
+			</Entity>
+			<Value>
+				Text = RCMVAL_Up
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS2]
+		</SysTrigger>
+		<SysTrigger>
+			<Entity>
+				Key = RCMVAR_the_direction_status
+				Text = RCMVAR_the_direction_status
+			</Entity>
+			<Value>
+				Text = RCMVAL_down
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS2]
+		</SysTrigger>
+		<SysTrigger>
+			<Entity>
+				Key = RCMVAR_the_direction_status
+				Text = RCMVAR_the_direction_status
+			</Entity>
+			<Value>
+				Text = RCMVAL_false
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS3]
+		</SysTrigger>
+	</SystemTriggers>
+	<SystemConditions>
+		<SysCondition>
+			Key = C1
+			<Entity>
+				Key = RCMVAR_the_weight_of_the_elevator
+				Text = RCMVAR_the_weight_of_the_elevator
+			</Entity>
+			<Value>
+				Text = RCMVAR_weight_thr
+				Type = ExternalValue
+				SourceEntity = Checking.SRCM.Entity@52bb199f
+			</Value>
+			Relation is "exceeds"
+			Operator is ">"
+			Action-Sources = [AS4, AS5]
+		</SysCondition>
+		<SysCondition>
+			Key = C2
+			<Entity>
+				Key = RCMVAR_the_weight_of_the_elevator
+				Text = RCMVAR_the_weight_of_the_elevator
+			</Entity>
+			<Value>
+				Text = RCMVAL_heavy
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is"
+			Operator is "="
+			Action-Sources = [AS6]
+		</SysCondition>
+	</SystemConditions>
+	<SystemActions>
+		<SysAction>
+			Key = A1
+			<Entity>
+				Key = RCMVAR_
+				Text = RCMVAR_weight_thr
+			</Entity>
+			<Value>
+				Text = RCMVAL_1000
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "is initialised to"
+			Operator is "NONE"
+			Action-Sources = [AS1]
+		</SysAction>
+		<SysAction>
+			Key = A2
+			<Entity>
+				Key = RCMVAR_the_elevator_motion_status
+				Text = RCMVAR_the_elevator_motion_status
+			</Entity>
+			<Value>
+				Text = RCMVAL_changed
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "shall be"
+			Operator is "NONE"
+			Action-Sources = [AS2]
+		</SysAction>
+		<SysAction>
+			Key = A3
+			<Entity>
+				Key = RCMVAR_the_elevator_motion_status
+				Text = RCMVAR_the_elevator_motion_status
+			</Entity>
+			<Value>
+				Text = RCMVAL_Idle
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "shall be transitioned to"
+			Operator is "NONE"
+			Action-Sources = [AS3, AS4, AS5]
+		</SysAction>
+		<SysAction>
+			Key = A4
+			<Entity>
+				Key = RCMVAR_the_alert_light
+				Text = RCMVAR_the_alert_light
+			</Entity>
+			<Value>
+				Text = RCMVAL_true
+				Type = InternalValue
+				SourceEntity = null
+			</Value>
+			Relation is "shall be set to"
+			Operator is "NONE"
+			Action-Sources = [AS6]
+		</SysAction>
+	</SystemActions>
+	<SystemEntities>
+		<SysEntity>
+			Key = RCMVAR_the_elevator_motion_status
+			Text = RCMVAR_the_elevator_motion_status
+			<Values>
+				v[1] = RCMVAL_changed
+				v[1].SystemAction = A2
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_Idle
+				v[2].SystemAction = A3
+				v[2].SystemCondition = null
+				v[2].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_direction_status
+			Text = RCMVAR_the_direction_status
+			<Values>
+				v[1] = RCMVAL_Up
+				v[1].SystemAction = null
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = T1
+				v[2] = RCMVAL_false
+				v[2].SystemAction = null
+				v[2].SystemCondition = null
+				v[2].SystemTrigger = T3
+				v[3] = RCMVAL_down
+				v[3].SystemAction = null
+				v[3].SystemCondition = null
+				v[3].SystemTrigger = T2
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_weight_of_the_elevator
+			Text = RCMVAR_the_weight_of_the_elevator
+			<Values>
+				v[1] = RCMVAR_weight_thr
+				v[1].SystemAction = null
+				v[1].SystemCondition = C1
+				v[1].SystemTrigger = null
+				v[2] = RCMVAL_heavy
+				v[2].SystemAction = null
+				v[2].SystemCondition = C2
+				v[2].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_weight_thr
+			Text = RCMVAR_weight_thr
+			<Values>
+				v[1] = RCMVAL_1000
+				v[1].SystemAction = A1
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+		<SysEntity>
+			Key = RCMVAR_the_alert_light
+			Text = RCMVAR_the_alert_light
+			<Values>
+				v[1] = RCMVAL_true
+				v[1].SystemAction = A4
+				v[1].SystemCondition = null
+				v[1].SystemTrigger = null
+			</Values>
+		</SysEntity>
+	</SystemEntities>
